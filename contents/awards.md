@@ -1,4 +1,4 @@
-- First-prize Academic Scholarship, 2023.
+- First-class Academic Scholarship, 2024, 2023.
 
 - Freshman Academic Scholarship, 2022.
 
