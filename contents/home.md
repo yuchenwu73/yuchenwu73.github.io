@@ -9,8 +9,8 @@ He will be pursuing a master's degree at the Institute of Intelligent Computing,
 ycwu[at]aust.edu.cn
 
 #### Education
-M.E., Computer Technology, University of Electronic Science and Technology, China, 2025—2028 (expected).\
-B.E., Computer Science and Technology, Anhui University of Science and Technology, China, 2021—2025
+M.E., Computer Technology, University of Electronic Science and Technology, China, 2025—2028(expected).\
+B.E., Computer Science and Technology, Anhui University of Science and Technology, China, 2021—2025(expected).
 
 #### Research Interests
 Deep Learning(DL), Computer Vision(CV), Embodied AI(EAI), Large Language Models(LLMs)
