@@ -1,9 +1,11 @@
-- First-class Academic Scholarship, 2024, 2023.
+- First Class Academic Scholarship, 2024, 2023.
 
-- Freshman Academic Scholarship, 2022.
+- Three Good Student Pacesetter, 2024.
 
-- Excellent Graduation Project of Jiangsu Province, 2022.
+- Outstanding Student Cadre Pacesetter, 2023.
 
-- First-prize Enterprise Scholarship, 2021.
+- Three Good Student, 2024, 2023, 2022.
 
-- First-prize Academic Scholarship, 2019.
+- Outstanding Student Cadre, 2024, 2023, 2022.
+
+- Outstanding Communist Youth League Member, 2023.
