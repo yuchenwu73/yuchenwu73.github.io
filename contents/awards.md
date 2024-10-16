@@ -1,11 +1,11 @@
-- First Class Academic Scholarship, 2024, 2023.
+- The First Prize Scholarship, 2024, 2023.
 
-- Three Good Student Pacesetter, 2024.
+- Pacemaker to Merit Student, 2024.
 
-- Outstanding Student Cadre Pacesetter, 2023.
+- Pacemaker to Excellent Student Cadre, 2023.
 
-- Three Good Student, 2024, 2023, 2022.
+- Merit Student, 2024, 2023, 2022.
 
-- Outstanding Student Cadre, 2024, 2023, 2022.
+- Excellent Student Cadre, 2024, 2023, 2022.
 
-- Outstanding Communist Youth League Member, 2023.
+- Excellent League Member, 20213.

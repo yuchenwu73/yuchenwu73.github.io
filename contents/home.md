@@ -3,8 +3,9 @@
 [![senli1073](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
 
 #### About Me
-I am currently pursuing his bachelor's degree at the [School of Computer Science and Engineering](https://jsj.aust.edu.cn/), [Anhui University of Science and Technology](https://www.aust.edu.cn/). 
-I will be pursuing a master's degree at the [Institute of Intelligent Computing](https://icct.uestc.edu.cn/index.htm), [University of Electronic Science and Technology of China](https://www.uestc.edu.cn/) in 2025.
+
+I am currently pursuing a bachelor's degree at [Anhui University of Science and Technology](https://www.aust.edu.cn/), [School of Computer Science and Engineering](https://jsj.aust.edu.cn/). 
+I will pursue a master's degree at [University of Electronic Science and Technology of China](https://www.uestc.edu.cn/), [Institute of Intelligent Computing](https://icct.uestc.edu.cn/index.htm), starting in September 2025.
 
 #### Email
 ycwu73[at]163.com or ycwu[at]aust.edu.cn
