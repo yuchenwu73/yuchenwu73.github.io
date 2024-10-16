@@ -114,5 +114,5 @@ a {
     color: #1a73e8; /* 设置链接颜色，您可以根据需要更改 */
     text-decoration: underline; /* 添加下划线 */
     text-decoration-thickness: 1px; /* 调整下划线厚度 */
-    text-underline-offset: 0.2em; /* 调整下划线与文本的垂直距离 */
+    text-underline-offset: 0.4em; /* 调整下划线与文本的垂直距离 */
 }
