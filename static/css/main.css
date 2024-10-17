@@ -116,3 +116,12 @@ a {
     text-decoration-thickness: 1px; /* 调整下划线厚度 */
     text-underline-offset: 0.3em; /* 调整下划线与文本的垂直距离 */
 }
+
+/* 页脚的容器样式，确保内容在同一行显示 */
+.footer-content {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    flex-wrap: wrap; /* 如果屏幕宽度太小，则允许内容换行 */
+    gap: 1rem; /* 各个部分之间的间距 */
+}
