@@ -189,6 +189,7 @@
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
             <div class="text-white-50 small">
+                <div id="view-count" class="mb-2">总浏览次数：</div>
                 <div id="copyright-text" class="mb-2"></div>
                 <a id="github-link" href="https://github.com/yuchenwu73">Github</a>
                 <span class="mx-1">&middot;</span>
@@ -196,6 +197,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript to Fetch View Count -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fetch('http://localhost:3000/api/viewcount')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('view-count').textContent = `总浏览次数：${data.viewCount}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching view count:', error);
+                });
+        });
+    </script>
+
 
 </body>
 
