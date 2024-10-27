@@ -3,7 +3,7 @@
 
 ### About Me
 
-I am currently a senior student at [Anhui University of Science and Technology (AUST)](https://www.aust.edu.cn/), [School of Computer Science and Engineering](https://jsj.aust.edu.cn/). 
+I am currently a senior student at [Anhui University of Science & Technology (AUST)](https://www.aust.edu.cn/), [School of Computer Science and Engineering](https://jsj.aust.edu.cn/). 
 I will pursue a master's degree at [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), [Institute of Intelligent Computing](https://icct.uestc.edu.cn/index.htm), starting in September 2025.
 ### Email
 ycwu73[at]163.com or ycwu[at]aust.edu.cn
