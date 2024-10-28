@@ -67,28 +67,14 @@ window.addEventListener('DOMContentLoaded', event => {
 
 // 确保DOM加载完成后才初始化
 document.addEventListener('DOMContentLoaded', () => {
+    // 查找所有具有dropdown-toggle类的元素
     const dropdown = document.querySelector('#navbarDropdownCV');
 
-    // 判断屏幕宽度
-    function toggleDropdown() {
-        const isMobile = window.innerWidth < 992;
-
-        // 移动端点击时展开下拉菜单
-        if (isMobile) {
-            dropdown.addEventListener('click', function (e) {
-                e.preventDefault(); // 阻止默认行为
-                this.nextElementSibling.classList.toggle('show'); // 切换显示状态
-            });
-        }
+    if (window.innerWidth < 992) { // 仅在手机端执行
+        dropdown.addEventListener('click', function (e) {
+            e.preventDefault(); // 阻止默认行为
+            this.nextElementSibling.classList.toggle('show'); // 切换显示状态
+        });
     }
-
-    // 初始化时调用一次
-    toggleDropdown();
-
-    // 监听窗口大小变化，动态调整
-    window.addEventListener('resize', () => {
-        toggleDropdown();
-    });
 });
-
 

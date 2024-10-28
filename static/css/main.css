@@ -127,31 +127,19 @@ a {
 }
 
 
-/* 针对桌面端和移动端的下拉菜单样式调整 */
+/* 大屏幕（桌面端）隐藏 mobile-only 菜单 */
 @media (min-width: 992px) {
-    /* 桌面端样式 */
-    .dropdown-menu {
-        display: block;
-        position: absolute;
+    .mobile-only {
+        display: none !important;
     }
 }
 
+/* 小屏幕（手机端）显示 mobile-only 菜单 */
 @media (max-width: 991px) {
-    /* 移动端样式 */
-    .dropdown-menu {
-        display: none; /* 默认隐藏 */
+    .mobile-only {
+        display: block !important;
         position: relative;
         width: 100%;
         background-color: #fff;
     }
-    .dropdown-menu.show {
-        display: block; /* 展开时显示 */
-    }
-
-    /* 调整下拉菜单项的样式 */
-    .dropdown-menu .dropdown-item {
-        padding: 10px 20px;
-        color: #3948d2;
-    }
 }
-
