@@ -64,17 +64,16 @@ window.addEventListener('DOMContentLoaded', event => {
 
 }); 
 
-
 // 确保DOM加载完成后才初始化
 document.addEventListener('DOMContentLoaded', () => {
     // 查找所有具有dropdown-toggle类的元素
-    const dropdown = document.querySelector('#navbarDropdownCV');
-
-    if (window.innerWidth < 992) { // 仅在手机端执行
+    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+    dropdowns.forEach(dropdown => {
         dropdown.addEventListener('click', function (e) {
-            e.preventDefault(); // 阻止默认行为
-            this.nextElementSibling.classList.toggle('show'); // 切换显示状态
+            // 阻止默认点击事件，确保在手机端正常展开
+            e.preventDefault();
+            // 切换当前菜单的显示状态
+            this.nextElementSibling.classList.toggle('show');
         });
-    }
+    });
 });
-
