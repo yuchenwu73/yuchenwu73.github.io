@@ -125,3 +125,18 @@ a {
     flex-wrap: wrap; /* 如果屏幕宽度太小，则允许内容换行 */
     gap: 1rem; /* 各个部分之间的间距 */
 }
+/* 针对移动端调整下拉菜单 */
+@media (max-width: 991px) {
+    .dropdown-menu {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    /* 调整下拉菜单内的项 */
+    .dropdown-menu .dropdown-item {
+        padding: 10px 20px;
+        color: #3948d2; /* 可以根据需要自定义颜色 */
+    }
+}
