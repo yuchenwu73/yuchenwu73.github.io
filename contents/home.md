@@ -8,8 +8,9 @@ Hi👋 nice to meet you! \
 I am currently a senior student at [Anhui University of Science & Technology (AUST)](https://www.aust.edu.cn/), [School of Computer Science and Engineering](https://jsj.aust.edu.cn/). \
 Starting in September 2025, I will pursue a master's degree at the [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), [Institute of Intelligent Computing](https://icct.uestc.edu.cn/index.htm), supervised by Prof. [Guoqing Wang](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm). 
 
+[CV in English (PDF)](/assets/cv_en.pdf) | [CV in Chinese (PDF)](/assets/cv_zh.pdf)
 
-[//]: # ([CV-En]&#40;/assets/cv_en.pdf&#41; | [CV-中文]&#40;/assets/cv_zh.pdf&#41;)
+
 
 ### Email
 ycwu73[at]163.com or ycwu[at]aust.edu.cn
