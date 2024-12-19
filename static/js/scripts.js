@@ -39,7 +39,6 @@ window.addEventListener('DOMContentLoaded', event => {
                 } catch {
                     console.log("Unknown id and value: " + key + "," + yml[key].toString())
                 }
-
             })
         })
         .catch(error => console.log(error));
@@ -47,8 +46,8 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
-    
-    // 首先加载除publications之外的部分
+
+    // 先加载除了publications之外的部分
     Promise.all(
         section_names.map(name =>
             fetch(content_dir + name + '.md')
@@ -59,15 +58,15 @@ window.addEventListener('DOMContentLoaded', event => {
                 })
         )
     ).then(() => {
-        // 其他部分加载完成后再加载publications
+        // 所有其他部分加载完成后，再加载publications
         return fetch(content_dir + 'publications.md')
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
                 document.getElementById('publications-md').innerHTML = html;
-            })
+            });
     }).then(() => {
-        // 所有内容加载完后再处理数学公式
+        // 所有内容加载完成后处理MathJax
         MathJax.typeset();
     }).catch(error => console.log(error));
 
