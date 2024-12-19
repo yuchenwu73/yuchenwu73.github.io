@@ -1,6 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'competitions','awards']
+// 不包括publications
+const section_names = ['home', 'competitions', 'awards'];
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -46,22 +47,28 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Marked
     marked.use({ mangle: false, headerIds: false })
-    section_names.forEach((name, idx) => {
-        // 如果是 publications 则跳过加载
-        if (name === 'publications') {
-            return;
-        }
-
-        fetch(content_dir + name + '.md')
+    
+    // 首先加载除publications之外的部分
+    Promise.all(
+        section_names.map(name =>
+            fetch(content_dir + name + '.md')
+                .then(response => response.text())
+                .then(markdown => {
+                    const html = marked.parse(markdown);
+                    document.getElementById(name + '-md').innerHTML = html;
+                })
+        )
+    ).then(() => {
+        // 其他部分加载完成后再加载publications
+        return fetch(content_dir + 'publications.md')
             .then(response => response.text())
             .then(markdown => {
                 const html = marked.parse(markdown);
-                document.getElementById(name + '-md').innerHTML = html;
-            }).then(() => {
-                // MathJax
-                MathJax.typeset();
+                document.getElementById('publications-md').innerHTML = html;
             })
-            .catch(error => console.log(error));
-    })
+    }).then(() => {
+        // 所有内容加载完后再处理数学公式
+        MathJax.typeset();
+    }).catch(error => console.log(error));
 
 });
