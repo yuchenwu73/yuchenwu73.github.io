@@ -1,9 +1,6 @@
-
-
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 const section_names = ['home', 'publications', 'competitions','awards']
-
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -50,6 +47,11 @@ window.addEventListener('DOMContentLoaded', event => {
     // Marked
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
+        // 如果是 publications 则跳过加载
+        if (name === 'publications') {
+            return;
+        }
+
         fetch(content_dir + name + '.md')
             .then(response => response.text())
             .then(markdown => {
@@ -62,6 +64,4 @@ window.addEventListener('DOMContentLoaded', event => {
             .catch(error => console.log(error));
     })
 
-}); 
-
-
+});
