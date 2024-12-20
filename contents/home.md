@@ -15,7 +15,7 @@ Starting in September 2025, I will pursue a master's degree at the [Institute of
 
 
 ### Email
-ycwu[at]aust.edu.cn or ycwu73[at]163.com
+ycwu[at]aust.edu.cn or ycwu73[at]gmail.com
 
 ### Education
 - 09/2025 - 07/2028(expected) &nbsp; M.Eng., Institute of Intelligent Computing, University of Electronic Science and Technology of China, Chengdu, China
