@@ -23,5 +23,4 @@ ycwu[at]aust.edu.cn or ycwu73[at]163.com
 
 
 ### Research Interests
-Computer Vision, Efficient AI, Embodied AI, Large Language Models, Multimodal Large Language Models
-
+Computer Vision (CV), Efficient AI, Embodied AI, Large Language Models (LLMs), Multimodal Large Language Models (MLLMs)
