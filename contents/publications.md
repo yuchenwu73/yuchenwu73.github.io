@@ -1,11 +1,11 @@
 <!-- publications.md内容 -->
 <div class="publication-card row align-items-center mb-4">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <div class="publication-image-container">
             <img src="static/assets/applsci.png" class="img-fluid publication-image" alt="Publication Image">
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
         <h3 class="publication-title">
             <b>Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model</b>
         </h3>
@@ -25,12 +25,12 @@
 </div>
 
 <div class="publication-card row align-items-center mb-4">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <div class="publication-image-container">
             <img src="static/assets/AUTEEE.png" class="img-fluid publication-image" alt="Publication Image">
         </div>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-6">
         <h3 class="publication-title">
             <b>Using Improved DeepLabV3+ for Complex Scene Segmentation</b>
         </h3>

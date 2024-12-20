@@ -150,21 +150,9 @@ a {
     height: auto;
     object-fit: contain;
     /* 根据需要增加最大高度，确保图片不太小，也不过分撑大，可根据实际情况调整 */
-    max-height: 250px;
+    max-height: 300px;
     display: block;
     margin: 0 auto;
-}
-
-.conference-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: #0044cc;
-    color: #fff;
-    font-size: 0.85rem;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: 600;
 }
 
 .publication-title {
