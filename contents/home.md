@@ -23,5 +23,5 @@ ycwu[at]aust.edu.cn or ycwu73[at]163.com
 
 
 ### Research Interests
-Deep Learning(DL), Computer Vision(CV), Embodied AI(EAI)
+Deep Learning(DL), Computer Vision(CV), Embodied AI(EAI), Large Language Models (LLMs)
 
