@@ -150,7 +150,7 @@ a {
     height: auto;
     object-fit: contain;
     /* 根据需要增加最大高度，确保图片不太小，也不过分撑大，可根据实际情况调整 */
-    max-height: 300px;
+    max-height: 350px;
     display: block;
     margin: 0 auto;
 }
