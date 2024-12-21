@@ -44,7 +44,7 @@
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">[Paper]</a>
         </p>
         <p class="publication-description">
-            This paper proposes an improved DeepLabV3+ framework to achieve high-precision and efficient semantic segmentation in complex scenes.
+            This paper proposes an improved DeepLabV3+ model to achieve high-precision and efficient semantic segmentation in complex scenes.
         </p>
     </div>
 </div>
