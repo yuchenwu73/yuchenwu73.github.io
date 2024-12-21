@@ -19,7 +19,7 @@
             <a href="paper/applsci-14-06621-v2.pdf">[Paper]</a>
         </p>
         <p class="publication-description">
-            This paper proposes an advanced UAV material transportation and precision delivery method based on the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 model.
+            This paper proposes the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 model to optimize UAV delivery and improve path planning efficiency and detection accuracy.
         </p>
     </div>
 </div>
@@ -44,7 +44,7 @@
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">[Paper]</a>
         </p>
         <p class="publication-description">
-            This paper improves DeepLabV3+ for complex scene segmentation tasks to enhance image semantic segmentation performance in diverse and complex environments.
+            This paper proposes an improved DeepLabV3+ framework to achieve high-precision and efficient semantic segmentation in complex scenes.
         </p>
     </div>
 </div>
