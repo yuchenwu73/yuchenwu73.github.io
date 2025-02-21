@@ -1,3 +1,5 @@
+- Outstanding Graduate, Anhui Province, 2025
+
 - The Hongda Blasting Scholarship (Top 0.2%), AUST, 2024
 
 - The First Prize Scholarship (Top 3%), AUST, 2024, 2023
