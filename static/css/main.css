@@ -190,11 +190,11 @@ a {
     line-height: 1.5;
 }
 
-.publication-links {
+/* .publication-links {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-}
+} */
 
 
 .publication-links a {
