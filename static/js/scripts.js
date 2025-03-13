@@ -71,3 +71,26 @@ window.addEventListener('DOMContentLoaded', event => {
     }).catch(error => console.log(error));
 
 });
+
+// 加载markdown文件
+function loadMarkdown(id, file) {
+    fetch(`contents/${file}`)
+        .then(response => response.text())
+        .then(text => {
+            // 对于publications部分，直接使用HTML内容
+            if (file === 'publications.md') {
+                document.getElementById(id).innerHTML = text;
+                // 触发MathJax重新渲染
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise && MathJax.typesetPromise();
+                }
+            } else {
+                // 其他markdown文件正常处理
+                document.getElementById(id).innerHTML = marked.parse(text);
+                // 触发MathJax重新渲染
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise && MathJax.typesetPromise();
+                }
+            }
+        });
+}
