@@ -199,16 +199,16 @@ a {
 
 .publication-links a {
     display: inline-block;
-    padding: 8px 20px;
-    /* 增加水平内边距，调节按钮的宽度 */
-    background-color: #F1F5F9;
+    padding: 6px 18px;
+    /* 调整按钮的内边距，使其更加紧凑 */
+    background-color: #d7e8f9;
     /* 按钮背景颜色 */
     color: #304EA4;
     /* 按钮文字颜色 */
     text-decoration: none;
     /* 去掉文字下划线 */
-    border-radius: 25px;
-    /* 设置为椭圆形，调整圆角大小 */
+    border-radius: 20px;
+    /* 较小的圆角，使按钮呈现更窄的椭圆形 */
     font-size: 1rem;
     /* 设置按钮文字大小 */
     font-weight: 500;
@@ -217,7 +217,7 @@ a {
     /* 文字居中 */
     transition: background-color 0.3s ease, transform 0.2s ease;
     /* 增加过渡效果 */
-    }
+}
 
 
 /* 美化面板 */
