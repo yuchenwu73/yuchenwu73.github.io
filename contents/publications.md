@@ -1,7 +1,3 @@
-<!-- - **Y. Wu**, Z. Wei, H. Liu*, J. Qi, X. Su, J. Yang, and Q. Wu, " Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model", **Applied Sciences**, vol. 14, no. 15, p. 6621, 2024. [[Paper]](paper/applsci-14-06621-v2.pdf)
-
-- **Y. Wu**, J. Li, and J. Yang*, "Using Improved DeepLabV3+ for Complex Scene Segmentation", in 2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (**AUTEEE**), Shenyang, China, 2023, pp. 855-860. [[Paper]](paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf) -->
-
 <style>
 .publication-container {
     display: flex;
@@ -24,24 +20,24 @@
 
 <div class="publication-container">
     <div class="publication-image">
-        <img src="static/assets/img/KBS.png" alt="KBS">
+        <img src="static/assets/applsci.png" alt="">
     </div>
     <div class="publication-content">
-        <b>Multi-kernel based sparse ensemble learning model for network intrusion detection</b><br>
-        <b>Yuchen Wu</b>, Xu Feng, Yulong Fu, Wencheng Yang, Enyan Deng, Huaian Yu<br>
-        Knowledge-Based Systems<br>
-        <a href="https://doi.org/10.1016/j.knosys.2023.110789" target="_blank">Paper</a> | <a href="">Code</a>
+        Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model<br>
+        **Y. Wu**, Z. Wei, H. Liu*, J. Qi, X. Su, J. Yang, and Q. Wu<br>
+        **Applied Sciences**<br>
+        <a href="paper/applsci-14-06621-v2.pdf">Paper</a>
     </div>
 </div>
 
 <div class="publication-container">
     <div class="publication-image">
-        <img src="static/assets/img/DataFusion.jpg" alt="Data Fusion">
+        <img src="static/assets/AUTEEE.png" alt="Data Fusion">
     </div>
     <div class="publication-content">
-        <b>A data fusion approach to IoT botnet detection using heterogeneous features and self-paced learning</b><br>
-        <b>Yuchen Wu</b>, Xu Feng, Wencheng Yang, Zili Zhang, Yulong Fu<br>
-        Information Fusion<br>
-        <a href="https://doi.org/10.1016/j.inffus.2023.101810" target="_blank">Paper</a> | <a href="">Code</a> 
+        Using Improved DeepLabV3+ for Complex Scene Segmentation</b><br>
+        **Y. Wu**, J. Li, and J. Yang*<br>
+        In 2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (**AUTEEE**), Shenyang, China, 2023, pp. 855-860.<br>
+        <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">Paper</a>
     </div>
 </div>
