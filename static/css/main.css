@@ -196,28 +196,29 @@ a {
     gap: 0.5rem;
 }
 
-.publication-link {
+/* 创建类似的按钮样式 */
+.publication-links a {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #f5f7fa;
-    /* Changed from #c6e0fa to a lighter gray */
-    color: #4169e1;
-    /* Changed from white to blue for the text */
+    /* 调整按钮的内边距 */
+    background-color: #b9d7f4;
+    /* 按钮背景颜色 */
+    color: #fff;
+    /* 按钮文字颜色 */
     text-decoration: none;
-    border-radius: 50px;
-    /* Increased from 5px to 50px for pill shape */
+    /* 去掉文字下划线 */
+    border-radius: 10px;
+    /* 圆角 */
     font-size: 1rem;
+    /* 设置按钮文字大小 */
     font-weight: 500;
+    /* 设置按钮文字加粗 */
     text-align: center;
+    /* 文字居中 */
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    /* Optional subtle shadow */
+    /* 增加过渡效果 */
 }
 
-.publication-link:hover {
-    background-color: #e0e0e0;
-    color: #000;
-}
 
 /* 美化面板 */
 .publication-card {
