@@ -22,9 +22,6 @@
         <p class="publication-links">
             <a href="paper/applsci-14-06621-v2.pdf">[Paper]</a>
         </p>
-        <p class="publication-description">
-            This paper proposes the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 model to optimize UAV delivery and improve path planning efficiency and detection accuracy.
-        </p>
     </div>
 </div>
 
@@ -46,9 +43,6 @@
         </p>
         <p class="publication-links">
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">[Paper]</a>
-        </p>
-        <p class="publication-description">
-            This paper proposes an improved DeepLabV3+ model to achieve high-precision and efficient semantic segmentation in complex scenes.
         </p>
     </div>
 </div>
