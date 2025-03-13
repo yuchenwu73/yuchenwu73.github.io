@@ -20,7 +20,7 @@
             <i><b>Applied Sciences</b>, vol. 14, no. 15, p. 6621, 2024.</i>
         </p>
         <p class="publication-links">
-            <a href="paper/applsci-14-06621-v2.pdf">[Paper]</a>
+            <a href="paper/applsci-14-06621-v2.pdf">Paper</a>
         </p>
     </div>
 </div>
@@ -42,7 +42,7 @@
             <i>In 2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (<b>AUTEEE</b>), Shenyang, China, 2023, pp. 855-860.</i>
         </p>
         <p class="publication-links">
-            <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">[Paper]</a>
+            <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">Paper</a>
         </p>
     </div>
 </div>
