@@ -196,18 +196,21 @@ a {
 }
 
 .publication-image {
-    flex: 0 0 25%; /* 减小图片区域的比例 */
-    margin-right: 1.5rem;
+    flex: 0 0 20%; /* 将图片区域比例从25%减小到20% */
+    margin-right: 2rem;
+    max-width: 180px; /* 限制图片容器最大宽度 */
 }
 
 .publication-image img {
     max-width: 100%;
+    max-height: 180px; /* 限制图片最大高度 */
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: contain; /* 确保图片比例不变形 */
 }
 
 .publication-content {
-    flex: 1;
+    flex: 1; /* 内容区域占据剩余空间 */
 }
 
 .publication-title {
@@ -267,6 +270,10 @@ a {
         flex: 0 0 100%;
         margin-right: 0;
         margin-bottom: 1rem;
-        max-width: 250px;
+        max-width: 160px; /* 在小屏幕上进一步减小图片最大宽度 */
+    }
+    
+    .publication-image img {
+        max-height: 160px; /* 在小屏幕上减小图片最大高度 */
     }
 }
