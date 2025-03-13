@@ -1,8 +1,8 @@
 @import "./styles.css";
 
 
-:root{
-    --h-title-color:#3948d2;
+:root {
+    --h-title-color: #3948d2;
 }
 
 .header {
@@ -41,14 +41,14 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-section header h2{
+section header h2 {
     font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     color: var(--h-title-color);
     font-size: 2.3rem;
     line-height: 4rem;
 }
 
-section .main-body{
+section .main-body {
     font-size: 1.3rem;
     font-weight: 200;
     line-height: 2.4rem;
@@ -91,7 +91,7 @@ section .main-body{
 #avatar {
     position: relative;
     height: 0;
-    top:min(-65px,max(-100px,calc(-1*100vw/12)));
+    top: min(-65px, max(-100px, calc(-1*100vw/12)));
     max-width: 55em;
     margin: 0 1.5rem 0 0;
     float: right;
@@ -99,7 +99,7 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(130px, min(200px, calc(100vw/6)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -111,20 +111,30 @@ section .main-body{
 
 /* 调整超链接下划线的样式 */
 a {
-    color: #1a73e8; /* 设置链接颜色，您可以根据需要更改 */
-    text-decoration: underline; /* 添加下划线 */
-    text-decoration-thickness: 1px; /* 调整下划线厚度 */
-    text-underline-offset: 0.3em; /* 调整下划线与文本的垂直距离 */
+    color: #1a73e8;
+    /* 设置链接颜色，您可以根据需要更改 */
+    text-decoration: underline;
+    /* 添加下划线 */
+    text-decoration-thickness: 1px;
+    /* 调整下划线厚度 */
+    text-underline-offset: 0.3em;
+    /* 调整下划线与文本的垂直距离 */
 }
 
 /* 页脚的容器样式，确保内容在同一行显示 */
 .footer-content {
-    display: flex; /* 使用 Flexbox 布局 */
-    justify-content: center; /* 水平居中对齐 */
-    align-items: center; /* 垂直居中对齐 */
-    flex-wrap: wrap; /* 如果屏幕宽度太小，则允许内容换行 */
-    gap: 1rem; /* 各个部分之间的间距 */
+    display: flex;
+    /* 使用 Flexbox 布局 */
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    flex-wrap: wrap;
+    /* 如果屏幕宽度太小，则允许内容换行 */
+    gap: 1rem;
+    /* 各个部分之间的间距 */
 }
+
 /* 修改publication部分的布局 */
 .publication-item {
     display: flex;
@@ -186,21 +196,21 @@ a {
     gap: 0.5rem;
 }
 
-/* 创建类似的按钮样式 */
-.publication-links {
+.publication-link {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: #0066cc;
-    /* Same blue as your publication links */
-    color: #fff;
+    padding: 0.25rem 0.75rem;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: #444;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
+.publication-link:hover {
+    background-color: #e0e0e0;
+    color: #000;
+}
 
 /* 美化面板 */
 .publication-card {
