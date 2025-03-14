@@ -1,253 +1,303 @@
+/* 导入外部样式表 - 包含基础样式定义和通用组件样式 */
 @import "./styles.css";
 
-
+/* 
+ * 全局CSS变量定义
+ * 使用CSS变量可以集中管理颜色主题，便于整站颜色统一调整
+ */
 :root {
-    --h-title-color: #3948d2;
+    --h-title-color: #3948d2; /* 蓝紫色标题主题色 - 用于标题和强调元素 */
 }
 
+/* 
+ * 页面顶部导航栏样式 
+ * 具有边框和较高层级，确保在页面滚动时始终可见
+ */
 .header {
-    border-bottom: solid 2px var(--bs-blue);
-    z-index: 10000;
+    border-bottom: solid 2px var(--bs-blue); /* 使用Bootstrap蓝色作为边框 */
+    z-index: 10000; /* 高z-index确保导航在滚动内容之上 */
 }
 
+/* 页面底部背景样式 - 使用主题色实现视觉一致性 */
 .bg-bottom {
     background-color: var(--h-title-color);
 }
 
+/* 
+ * 顶部横幅/英雄区域样式 
+ * 大尺寸展示区域，通常放置背景图和主要标题
+ */
 .top-section {
-    position: relative;
-    padding: 10rem 0;
+    position: relative;       /* 为绝对定位子元素创建定位上下文 */
+    padding: 10rem 0;         /* 大间距创造空旷感 */
     background-position: center;
-    background-size: cover;
-    height: 25rem;
+    background-size: cover;   /* 背景图覆盖整个区域，不重复 */
+    height: 25rem;            /* 固定高度确保视觉一致性 */
 }
 
+/* 顶部横幅中的二级标题样式 - 使用较轻的字重增强现代感 */
 .top-section h2 {
-    font-weight: 400;
+    font-weight: 400;         /* 中等字重，比默认的500更轻盈 */
 }
 
+/* 顶部横幅内容定位 - 使用z-index确保内容在遮罩层之上 */
 .top-section .top-section-content {
     position: relative;
-    z-index: 1;
+    z-index: 1;               /* 确保内容在半透明遮罩层之上可见 */
 }
 
+/* 
+ * 创建半透明遮罩层 - 伪元素实现
+ * 用于增强顶部区域文字的可读性，特别是当背景图较亮或复杂时
+ */
 .top-section:before {
-    content: "";
-    position: absolute;
+    content: "";              /* 伪元素必需属性 */
+    position: absolute;       /* 绝对定位使其覆盖父元素整个区域 */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5); /* 50%透明度黑色遮罩 - 增强文字对比度 */
 }
 
+/* 
+ * 章节标题样式 
+ * 使用特定字体和颜色增强层次感和品牌一致性
+ */
 section header h2 {
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    color: var(--h-title-color);
-    font-size: 2.3rem;
-    line-height: 4rem;
+    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important; /* 特色字体优先，后跟系统字体回退链 */
+    color: var(--h-title-color);  /* 使用主题色 */
+    font-size: 2.3rem;            /* 较大字号增强视觉层次 */
+    line-height: 4rem;            /* 增加行高改善可读性，特别适合较长标题 */
 }
 
+/* 
+ * 正文内容样式 
+ * 使用较大字号和细字重创建现代、易读的排版
+ */
 section .main-body {
-    font-size: 1.3rem;
-    font-weight: 200;
-    line-height: 2.4rem;
+    font-size: 1.3rem;          /* 较大基础字号提高可读性 */
+    font-weight: 200;           /* 使用细字体增强现代感和优雅外观 */
+    line-height: 2.4rem;        /* 宽松行高(约185%)提升可读性和专业感 */
 }
 
-
+/* 
+ * 背景渐变样式 - 用于创建微妙的视觉差异
+ * 使用极其相近的颜色创造精致、低调的渐变效果
+ */
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important; /* 45度白色渐变 */
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important; /* 45度浅灰渐变 */
 }
 
-
-
+/* 
+ * 元素置于顶层 - 用于重要交互元素
+ * 确保元素不被其他内容覆盖
+ */
 .on-top {
     position: relative;
-    z-index: 10000;
+    z-index: 10000;              /* 高z-index确保元素位于大多数内容之上 */
 }
 
+/* 
+ * 顶部背景图设置 - 用于创建全宽度背景图效果
+ */
 .top-bg {
     background-position: center;
-    background-size: fill;
+    background-size: fill;       /* 确保背景图填满容器 */
     width: 100%;
     height: 100%;
 }
 
+/* 
+ * 顶部背景遮罩层 - 类似top-section:before
+ * 但透明度较低，用于需要较高可见度的背景图
+ */
 .top-bg::before {
-    content: "";
+    content: "";                 /* 伪元素必需属性 */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4); /* 40%透明度，比top-section略微透明 */
 }
 
-
+/* 
+ * 头像定位与样式 - 复杂的响应式定位
+ * 根据视窗宽度动态调整位置和大小
+ */
 #avatar {
     position: relative;
-    height: 0;
-    top: min(-65px, max(-100px, calc(-1*100vw/12)));
-    max-width: 55em;
-    margin: 0 1.5rem 0 0;
-    float: right;
-    z-index: 9000;
+    height: 0;                    /* 高度设为0，避免占用空间 */
+    top: min(-65px, max(-100px, calc(-1*100vw/12))); /* 响应式垂直位置计算:
+                                     * -65px为最小上移距离
+                                     * -100px为最大上移距离
+                                     * calc(-1*100vw/12)根据视窗宽度动态计算上移距离
+                                     */
+    max-width: 55em;              /* 限制最大宽度增强在大屏幕上的布局控制 */
+    margin: 0 1.5rem 0 0;         /* 右侧边距创建与周围内容的间隔 */
+    float: right;                 /* 右浮动使其靠右对齐 */
+    z-index: 9000;                /* 高层级确保头像不被其他内容覆盖 */
 }
 
 #avatar img {
-    height: max(130px, min(200px, calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    height: max(130px, min(200px, calc(100vw/6))); /* 响应式高度计算:
+                                    * 130px为最小高度
+                                    * 200px为最大高度
+                                    * calc(100vw/6)根据视窗宽度动态计算，视窗宽度的1/6
+                                    */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); /* 柔和阴影增强立体感 */
 }
 
+/* 
+ * 媒体查询 - 平板与移动设备布局调整
+ * 针对小于991px宽度的屏幕进行布局优化
+ */
 @media screen and (max-width: 991px) {
     #avatar {
-        margin: 0;
+        margin: 0;                /* 移除右侧边距，使头像在小屏上居中对齐 */
     }
 }
 
-/* 调整超链接下划线的样式 */
+/* 
+ * 链接样式 - 全站统一链接文本样式
+ * 使用蓝色和精细下划线提升可访问性和视觉一致性
+ */
 a {
-    color: #1a73e8;
-    /* 设置链接颜色，您可以根据需要更改 */
+    color: #1a73e8;               /* Google蓝色 - 广泛认可的链接色调 */
     text-decoration: underline;
-    /* 添加下划线 */
-    text-decoration-thickness: 1px;
-    /* 调整下划线厚度 */
-    text-underline-offset: 0.3em;
-    /* 调整下划线与文本的垂直距离 */
+    text-decoration-thickness: 1px; /* 细下划线提升精致感 */
+    text-underline-offset: 0.3em;   /* 增加下划线与文本间距，提高可读性 */
 }
 
-/* 页脚的容器样式，确保内容在同一行显示 */
+/* 
+ * 页脚内容布局 - 使用Flexbox实现灵活居中布局
+ */
 .footer-content {
     display: flex;
-    /* 使用 Flexbox 布局 */
-    justify-content: center;
-    /* 水平居中对齐 */
-    align-items: center;
-    /* 垂直居中对齐 */
-    flex-wrap: wrap;
-    /* 如果屏幕宽度太小，则允许内容换行 */
-    gap: 1rem;
-    /* 各个部分之间的间距 */
+    justify-content: center;       /* 水平居中对齐 */
+    align-items: center;           /* 垂直居中对齐 */
+    flex-wrap: wrap;               /* 允许内容在窄屏上换行 */
+    gap: 1rem;                     /* 元素之间的间距，比margin更现代的方法 */
 }
 
-/* 修改publication部分的布局 */
+/* 
+ * 出版物项目样式 - 使用Flexbox布局实现复杂内容排版
+ * 水平排列图片和文本内容
+ */
 .publication-item {
     display: flex;
-    margin-bottom: 2rem;
-    align-items: flex-start;
-    justify-content: space-between;
-    /* 增加水平间距 */
+    margin-bottom: 2rem;          /* 项目间大间距提高可读性 */
+    align-items: flex-start;      /* 顶部对齐，适合长度不一的内容 */
+    justify-content: space-between; /* 分散对齐使内容充分利用空间 */
 }
 
 .publication-image {
-    flex: 0 0 40%;
-    /* 调整图片区域为40% */
+    flex: 0 0 40%;                /* flex-grow:0, flex-shrink:0, flex-basis:40% 
+                                   * 不伸缩，保持固定40%宽度
+                                   */
     margin-right: 1.5rem;
 }
 
 .publication-image img {
-    max-width: 90%;
-    /* 图片宽度调整为90% */
-    max-height: 300px;
-    /* 控制图片最大高度 */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;               /* 限制图片宽度，留出一点边距 */
+    max-height: 300px;            /* 限制最大高度确保一致性 */
+    border-radius: 5px;           /* 轻微圆角提升现代感 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔和阴影增加深度 */
 }
 
 .publication-content {
-    flex: 1;
-    width: 55%;
-    /* 文字部分占据55%的宽度 */
+    flex: 1;                      /* 自动填充剩余空间 */
+    width: 55%;                   /* 基础宽度，在flex布局下可能被覆盖 */
 }
 
 .publication-title {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.3rem;            /* 大号字体强调标题重要性 */
+    font-weight: 600;             /* 较粗字重增强视觉突出度 */
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #333;                  /* 深灰色提高可读性但比纯黑更柔和 */
 }
 
 .publication-authors {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #555;
+    color: #555;                  /* 中灰色，清晰但不抢眼 */
 }
 
 .publication-venue {
-    font-style: italic;
+    font-style: italic;           /* 斜体突出发表场所 */
     margin-bottom: 0.5rem;
-    color: #666;
+    color: #666;                  /* 稍浅的灰色创建视觉层次 */
 }
 
 .publication-description {
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.5;             /* 舒适的行高提高段落可读性 */
 }
 
-/* .publication-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-} */
-
-
+/* 
+ * 出版物链接按钮样式 - 圆角胶囊设计
+ * 与简单文本链接区分，用于强调可点击的操作
+ */
 .publication-links a {
     display: inline-block;
-    padding: 6px 18px;
-    /* 调整按钮的内边距，使其更加紧凑 */
-    background-color: #d7e8f9;
-    /* 按钮背景颜色 */
-    color: #304EA4;
-    /* 按钮文字颜色 */
-    text-decoration: none;
-    /* 去掉文字下划线 */
-    border-radius: 20px;
-    /* 较小的圆角，使按钮呈现更窄的椭圆形 */
+    padding: 6px 18px;            /* 水平方向更宽的内边距创造胶囊形状 */
+    background-color: #d7e8f9;    /* 浅蓝色背景，与主题色协调 */
+    color: #304EA4;               /* 深蓝色文字，与背景形成足够对比 */
+    text-decoration: none;        /* 移除下划线，由于背景色已经足够表明这是链接 */
+    border-radius: 20px;          /* 大圆角实现胶囊外观 */
     font-size: 1rem;
-    /* 设置按钮文字大小 */
-    font-weight: 500;
-    /* 设置按钮文字加粗 */
+    font-weight: 500;             /* 中等字重提高可见性 */
     text-align: center;
-    /* 文字居中 */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    /* 增加过渡效果 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 复合过渡效果:
+                                   * 背景颜色变化较慢(0.3s)
+                                   * 变形效果较快(0.2s)，提供即时反馈
+                                   */
 }
 
-
-/* 美化面板 */
+/* 
+ * 出版物卡片样式与悬停效果 - 现代卡片UI
+ * 使用阴影和边框创建浮动卡片外观
+ */
 .publication-card {
     background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
+    border: 1px solid #ddd;       /* 浅色边框提供微妙的边界 */
+    border-radius: 12px;          /* 明显的圆角增强现代感 */
     padding: 20px;
-    transition: box-shadow 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out; /* 平滑阴影变化动画 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影创建立体感 */
 }
 
 .publication-card:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* 悬停时加深阴影效果:
+                                              * 垂直偏移从4px增加到6px
+                                              * 模糊半径从8px增加到16px
+                                              * 创造卡片"抬起"的视觉效果
+                                              */
 }
 
-/* 响应式调整 */
+/* 
+ * 响应式设计 - 移动设备适配
+ * 针对小屏设备(手机)进行布局重构
+ */
 @media (max-width: 768px) {
     .publication-item {
-        flex-direction: column;
+        flex-direction: column;   /* 改为垂直堆叠布局，更适合窄屏 */
     }
 
     .publication-image {
-        flex: 0 0 100%;
-        margin-right: 0;
-        margin-bottom: 1rem;
-        max-width: 250px;
+        flex: 0 0 100%;           /* 占满整行宽度 */
+        margin-right: 0;          /* 移除右侧边距，因垂直布局不再需要 */
+        margin-bottom: 1rem;      /* 添加底部边距分隔图片和内容 */
+        max-width: 250px;         /* 限制图片在小屏上的最大宽度 */
     }
 
     .publication-content {
-        width: 100%;
+        width: 100%;              /* 确保内容块占满整行 */
     }
 }
