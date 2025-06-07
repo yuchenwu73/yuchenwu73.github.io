@@ -1,7 +1,7 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
 // 不包括publications
-const section_names = ['home', 'competitions', 'awards'];
+const section_names = ['home', 'competitions', 'awards', 'projects'];
 
 window.addEventListener('DOMContentLoaded', event => {
 
