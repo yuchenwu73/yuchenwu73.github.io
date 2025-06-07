@@ -11,10 +11,6 @@
         <p class="publication-info">
             Bachelor's Thesis project implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
         </p>
-        <ul>
-            <li>Dynamic Feature Enhancement Network (DFENet) for small object detection</li>
-            <li>Model pruning and knowledge distillation for efficient deployment</li>
-        </ul>
         <p class="publication-links">
             <a href="https://github.com/yuchenwu73/LRS-DETR" target="_blank">Code</a>
         </p>
