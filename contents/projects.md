@@ -9,10 +9,10 @@
             <b>LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer</b>
         </h3>
         <p class="publication-info">
-            Undergraduate thesis project implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
+            Bachelor's Thesis project implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
         </p>
         <ul>
-            <li>Feature extraction network (DFENet) for small object detection</li>
+            <li>Dynamic Feature Enhancement Network (DFENet) for small object detection</li>
             <li>Model pruning and knowledge distillation for efficient deployment</li>
         </ul>
         <p class="publication-links">
