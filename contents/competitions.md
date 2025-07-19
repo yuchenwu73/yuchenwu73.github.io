@@ -1,3 +1,5 @@
-- Meritorious Winner (Top 8%), Interdisciplinary Contest in Modeling (ICM), 2024
+- 🥈 Silver Award, Sichuan International College Students' Innovation Competition, 2025
 
-- Second Prize ,China Undergraduate Mathematical Contest in Modeling (CUMCM) - Anhui Division, 2023
+- 🏅 Meritorious Winner (Top 8%), Interdisciplinary Contest in Modeling (ICM), 2024
+
+- 🥈 Second Prize, Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM) Anhui Division, 2023

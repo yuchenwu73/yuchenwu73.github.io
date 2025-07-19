@@ -2,7 +2,7 @@
 
 Hi there!👋
 
-I am an incoming M.Eng. student at the [National Key Laboratory of Intelligent Collaborative Computing Technology (Institute of Intelligent Computing)](https://icct.uestc.edu.cn/index.htm), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), supervised by Prof. [Guoqing Wang](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm). I will also join the [Center for Future Media (CFM)](https://cfm.uestc.edu.cn/), led by Prof. [Heng Tao Shen](https://cfm.uestc.edu.cn/~shenht/).  
+I am an incoming M.Eng. student at the [Laboratory of Intelligent Collaborative Computing](https://icct.uestc.edu.cn/index.htm), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), supervised by Prof. [Guoqing Wang](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm). I will also join the [Center for Future Media (CFM)](https://cfm.uestc.edu.cn/), led by Prof. [Heng Tao Shen](https://cfm.uestc.edu.cn/~shenht/).  
 
 I hold a B.Eng. from the [School of Computer Science and Engineering](https://jsj.aust.edu.cn/), [Anhui University of Science and Technology (AUST)](https://www.aust.edu.cn/).  
 
@@ -15,7 +15,7 @@ I hold a B.Eng. from the [School of Computer Science and Engineering](https://js
 
 ### Education
 
-* **M.Eng. (Expected: 09/2025 - 06/2028)**: National Key Laboratory of Intelligent Collaborative Computing Technology, University of Electronic Science and Technology of China, Chengdu, China
+* **M.Eng. (Expected: 09/2025 - 06/2028)**: Laboratory of Intelligent Collaborative Computing, University of Electronic Science and Technology of China, Chengdu, China
 * **B.Eng. (09/2021 - 06/2025)**: School of Computer Science and Engineering, Anhui University of Science and Technology, Huainan, China
 
 ### Research Interests
