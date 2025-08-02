@@ -2,7 +2,7 @@
 
 Hi there!👋
 
-I am an incoming M.Eng. student at the [Laboratory of Intelligent Collaborative Computing](https://icct.uestc.edu.cn/index.htm), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), supervised by Prof. [Guoqing Wang](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm). I will also join the [Center for Future Media (CFM)](https://cfm.uestc.edu.cn/), led by Prof. [Heng Tao Shen](https://cfm.uestc.edu.cn/~shenht/).  
+I am an incoming M.Eng. student at the [Laboratory of Intelligent Collaborative Computing](https://icct.uestc.edu.cn/index.htm), [University of Electronic Science and Technology of China (UESTC)](https://www.uestc.edu.cn/), supervised by Prof. [Guoqing Wang](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm). I will also join the [Multi-modal Intelligence Group (MIG)](https://mig-uestc-lab.github.io/), [Center for Future Media (CFM)](https://cfm.uestc.edu.cn/).
 
 I hold a B.Eng. from the [School of Computer Science and Engineering](https://jsj.aust.edu.cn/), [Anhui University of Science and Technology (AUST)](https://www.aust.edu.cn/).  
 
