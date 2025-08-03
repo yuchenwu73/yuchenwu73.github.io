@@ -19,6 +19,7 @@ I hold a B.Eng. from the [School of Computer Science and Engineering (SCSE)](htt
 * **M.Eng. (Expected: 09/2025 - 06/2028)**: Laboratory of Intelligent Collaborative Computing, University of Electronic Science and Technology of China, Chengdu, China
 * **B.Eng. (09/2021 - 06/2025)**: School of Computer Science and Engineering, Anhui University of Science and Technology, Huainan, China
 
+
 ### Research Interests
 
 * Computer Vision (CV)
