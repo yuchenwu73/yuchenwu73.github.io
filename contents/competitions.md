@@ -1,3 +1,5 @@
+- 🥈 Second Prize, China Youth Science and Technology Innovation Open Challenge - Artificial Intelligence Track, 2025
+
 - 🥈 Silver Award, Sichuan International College Students' Innovation Competition, 2025
 
 - 🏅 Meritorious Winner (Top 8%), Interdisciplinary Contest in Modeling (ICM), 2024
