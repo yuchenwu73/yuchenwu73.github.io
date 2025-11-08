@@ -1,4 +1,5 @@
 <!-- publications.md内容 -->
+
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
@@ -10,10 +11,10 @@
             <b>Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model</b>
         </h3>
         <p class="publication-authors">
-            <b>Y. Wu</b>, Z. Wei, H. Liu*, J. Qi, X. Su, J. Yang, and Q. Wu
+            <b>Yuchen Wu</b>, Zhijian Wei, Huilin Liu*, Jiawei Qi, Xu Su, Jiqiang Yang, and Qinglin Wu
         </p>
         <p class="publication-info">
-            <i><b>Applied Sciences</b>, vol. 14, no. 15, p. 6621, 2024.</i>
+            <i><b>Applied Sciences-Basel</b>, vol. 14, no. 15, p. 6621, 2024.</i>
         </p>
         <p class="publication-links">
             <a href="paper/applsci-14-06621-v2.pdf">Paper</a>
@@ -32,7 +33,7 @@
             <b>Using Improved DeepLabV3+ for Complex Scene Segmentation</b>
         </h3>
         <p class="publication-authors">
-            <b>Y. Wu</b>, J. Li, and J. Yang*
+            <b>Yuchen Wu</b>, Jin Li, and Junkai Yang*
         </p>
         <p class="publication-info">
             <i>In 2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (<b>AUTEEE</b>), Shenyang, China, 2023, pp. 855-860.</i>
