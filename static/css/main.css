@@ -204,10 +204,11 @@ a {
 }
 
 .publication-image img {
-    max-width: 90%;               /* 限制图片宽度，留出一点边距 */
-    max-height: 300px;            /* 限制最大高度确保一致性 */
-    border-radius: 5px;           /* 轻微圆角提升现代感 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔和阴影增加深度 */
+    max-width: 100%;              /* 充分利用图片容器宽度 */
+    max-height: 280px;            /* 略微减小最大高度，使图文更协调 */
+    border-radius: 8px;           /* 增加圆角提升现代感 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增强阴影效果，增加深度 */
+    object-fit: cover;            /* 确保图片填充容器同时保持比例 */
 }
 
 .publication-content {
@@ -217,21 +218,46 @@ a {
 
 .publication-title {
     font-size: 1.3rem;            /* 大号字体强调标题重要性 */
-    font-weight: 600;             /* 较粗字重增强视觉突出度 */
-    margin-bottom: 0.5rem;
+    font-weight: 700;             /* 加粗标题（从600调整为700） */
+    margin-bottom: 0.75rem;       /* 增加标题与作者之间的间距 */
     color: #333;                  /* 深灰色提高可读性但比纯黑更柔和 */
+    line-height: 1.5;             /* 增加行高提高长标题可读性 */
 }
 
 .publication-authors {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.05rem;           /* 略微增大字体提高可读性 */
+    margin-bottom: 0.6rem;        /* 增加作者与期刊/会议之间的间距 */
     color: #555;                  /* 中灰色，清晰但不抢眼 */
+    line-height: 1.6;             /* 增加行高，使多行作者列表更易读 */
 }
 
 .publication-venue {
     font-style: italic;           /* 斜体突出发表场所 */
     margin-bottom: 0.5rem;
     color: #666;                  /* 稍浅的灰色创建视觉层次 */
+}
+
+/* 期刊/会议信息样式 */
+.publication-info {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;        /* 增加与链接按钮之间的间距 */
+    color: #666;                  /* 与 publication-venue 保持一致的颜色 */
+    line-height: 1.6;             /* 增加行高提高可读性 */
+}
+
+/* 作者姓名加粗和下划线样式 */
+.publication-authors b u {
+    font-weight: 700;             /* 确保作者姓名加粗 */
+    text-decoration: underline;   /* 确保下划线显示 */
+    text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
+    text-underline-offset: 2px;   /* 下划线与文字的距离 */
+}
+
+/* 期刊/会议名称加粗加倾斜样式 */
+.publication-info i b,
+.publication-info b i {
+    font-weight: 700;             /* 确保期刊/会议名称加粗 */
+    font-style: italic;           /* 确保倾斜显示 */
 }
 
 .publication-description {
@@ -266,19 +292,17 @@ a {
  */
 .publication-card {
     background: #ffffff;
-    border: 1px solid #ddd;       /* 浅色边框提供微妙的边界 */
+    border: 1px solid #e0e0e0;    /* 稍微加深边框颜色提高辨识度 */
     border-radius: 12px;          /* 明显的圆角增强现代感 */
-    padding: 20px;
-    transition: box-shadow 0.3s ease-in-out; /* 平滑阴影变化动画 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影创建立体感 */
+    padding: 1.5rem;              /* 使用 rem 单位保持一致性 */
+    margin-bottom: 1.5rem;        /* 确保卡片间距合适 */
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* 添加变形动画 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 轻微阴影创建立体感 */
 }
 
 .publication-card:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* 悬停时加深阴影效果:
-                                              * 垂直偏移从4px增加到6px
-                                              * 模糊半径从8px增加到16px
-                                              * 创造卡片"抬起"的视觉效果
-                                              */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* 悬停时明显加深阴影效果 */
+    transform: translateY(-2px);  /* 轻微上移营造"浮起"效果 */
 }
 
 /* 

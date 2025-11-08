@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            <b>LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer</b>
+            LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer
         </h3>
         <p class="publication-info">
             Bachelor's Thesis project implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
