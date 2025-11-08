@@ -1,6 +1,6 @@
 - 🏆Outstanding Undergraduate Graduation Thesis (1 of 19 awardees in Anhui Province), Anhui Computer Federation (ACF), 2025
 - 🎓 Outstanding Graduate, Anhui Province, 2025
-- 📚 Outstanding Undergraduate Graduation Thesis (30/8441), AUST, 2025
+- 📚 Outstanding Undergraduate Graduation Thesis (30/8441), Anhui University of Science and Technology (AUST), 2025
 - 💰 The Hongda Blasting Scholarship (5/3766), AUST, 2024
 - 🥇 The First Prize Scholarship (Top 3%), AUST, 2024, 2023
 - 🌟 Pacemaker to Merit Student (Top 1%), AUST, 2024
