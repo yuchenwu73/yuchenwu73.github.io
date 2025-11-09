@@ -260,6 +260,15 @@ a {
     font-style: italic;           /* 确保倾斜显示 */
 }
 
+/* 奖项名称加粗和下划线样式 */
+.publication-info b u,
+.publication-info u b {
+    font-weight: 700;             /* 确保奖项名称加粗 */
+    text-decoration: underline;   /* 确保下划线显示 */
+    text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
+    text-underline-offset: 2px;   /* 下划线与文字的距离 */
+}
+
 .publication-description {
     margin-bottom: 0.5rem;
     font-size: 1rem;
