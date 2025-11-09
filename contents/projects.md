@@ -9,10 +9,13 @@
             LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer
         </h3>
         <p class="publication-info">
-            Bachelor's Thesis project implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
+            My Bachelor's Thesis project at Anhui University of Science and Technology (AUST), implementing a lightweight Transformer-based real-time object detector for UAV vision scenarios.
+        </p>
+        <p class="publication-info">
+            🏆 Awarded <b><u>Outstanding Undergraduate Graduation Thesis (1/19 in Anhui Province)</u></b> by <i><b>Anhui Computer Federation (ACF)</b></i>, 2025.
         </p>
         <p class="publication-links">
             <a href="https://github.com/yuchenwu73/LRS-DETR" target="_blank">Code</a>
         </p>
     </div>
-</div> 
+</div>
