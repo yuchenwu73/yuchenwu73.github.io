@@ -250,7 +250,8 @@ a {
     font-weight: 700;             /* 确保作者姓名加粗 */
     text-decoration: underline;   /* 确保下划线显示 */
     text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
-    text-underline-offset: 2px;   /* 下划线与文字的距离 */
+    text-underline-offset: 4px;   /* 增加下划线与文字的距离，避免与字母下降部分接触 */
+    text-decoration-skip-ink: none; /* 防止下划线在字母下方断开，保持连续性 */
 }
 
 /* 期刊/会议名称加粗加倾斜样式 */
@@ -266,7 +267,8 @@ a {
     font-weight: 700;             /* 确保奖项名称加粗 */
     text-decoration: underline;   /* 确保下划线显示 */
     text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
-    text-underline-offset: 2px;   /* 下划线与文字的距离 */
+    text-underline-offset: 4px;   /* 增加下划线与文字的距离，避免与字母下降部分接触 */
+    text-decoration-skip-ink: none; /* 防止下划线在字母下方断开，保持连续性 */
 }
 
 .publication-description {
