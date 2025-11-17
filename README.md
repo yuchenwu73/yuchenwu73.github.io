@@ -1,69 +1,68 @@
+# Yuchen Wu's Personal Homepage
 
+[English](README.md) | [简体中文](README_zh-CN.md)
 
-![Github Forks](https://img.shields.io/github/forks/yuchenwu73/yuchenwu73.github.io?style=flat)
-![Github Stars](https://img.shields.io/github/stars/yuchenwu73/yuchenwu73.github.io?style=flat)
-![License](https://img.shields.io/github/license/yuchenwu73/yuchenwu73.github.io)
 ![Last Commit](https://img.shields.io/github/last-commit/yuchenwu73/yuchenwu73.github.io)
+![License](https://img.shields.io/github/license/yuchenwu73/yuchenwu73.github.io)
 
-# A simple Github Pages template for academic personal website.
+## About
 
-## Preview
-[![Screenshot of the Website](https://raw.githubusercontent.com/senli1073/senli1073.github.io/main/screenshot_full.png)](https://senli1073.github.io/)
+This is the source code for my personal academic homepage, hosted at [https://yuchenwu73.github.io](https://yuchenwu73.github.io).
 
+## Features
 
-## Introduction
+- **Markdown-based content**: All content sections are written in Markdown files for easy editing
+- **LaTeX support**: Mathematical formulas can be written using LaTeX syntax with MathJax
+- **Responsive design**: Mobile-friendly layout based on Bootstrap
+- **Auto-updated**: Last updated date is automatically generated
 
-This is an academic personal website template based on [bootstrap](https://github.com/StartBootstrap/startbootstrap-new-age).
+## Project Structure
 
-The template is designed to integrate Markdown files as content input.  There's no need to compile the webpage before deployment.  Upon loading, the Markdown files are automatically parsed and embedded into the page.
-
-This template supports LaTeX formula input. You can use `$...$` and `\(...\)` as delimiters for inline-math, or use `$$...$$` and `\[...\]` as delimiters for display-math. Macros such as `\ref{...}`, `\eqref{...}`, and `\begin{equation}...\end{equation}` are also supported. See [MathJax](https://docs.mathjax.org/en/latest/index.html) for more details.
-
-:milky_way: Demo: https://senli1073.github.io/
-
-
-## Getting Start
-### 1. Fork this repository
-The repository name should be `<username>.github.io`, which will also be your website's URL.
-
-
-### 2. Edit page content
-
-(1) Go to the folder where you want to store your project, and clone the new repository:
 ```
-git clone https://github.com/<username>/<username>.github.io.git
-```
-The directory structure is as follows:
-
-```.
 .
-├── contents
-└── static
-    ├── assets
-    │   └── img
-    ├── css
-    └── js
+├── contents/              # Content files
+│   ├── config.yml        # Site configuration
+│   ├── home.md           # Home section
+│   ├── publications.md   # Publications section
+│   ├── projects.md       # Projects section
+│   ├── competitions.md   # Selected competitions
+│   └── awards.md         # Selected awards
+├── static/
+│   ├── assets/           # Images and other assets
+│   │   └── img/         # Photos and background images
+│   ├── css/             # Stylesheets
+│   └── js/              # JavaScript files
+├── paper/               # PDF files of publications
+└── index.html           # Main HTML file
 ```
 
-(2) Modify the content of each section, which corresponds to `contents/*.md`.
+## Local Development
 
-(3) Adjust the title, copyright information, and other text of the website in `contents/config.yml`
+To view the website locally:
 
-(4) Replace background image and photo with new ones for your web pages in `static/assets/img/`
+1. Clone this repository
+2. Open `index.html` in a web browser, or
+3. Use a local server (recommended):
+   ```bash
+   python -m http.server 8000
+   ```
+   Then visit `http://localhost:8000`
 
-(5) Push it: 
-```
-git commit -am 'init'
-git push
-```
+## Updating Content
 
-
-### 3. Enjoy
-
-Fire up a browser and go to `https://<username>.github.io`
-
-
+- **Personal information**: Edit `contents/config.yml`
+- **Sections**: Edit corresponding `.md` files in `contents/` folder
+- **Images**: Replace files in `static/assets/img/`
+- **Publications**: Update `contents/publications.md` and add PDFs to `paper/` folder
 
 ## License
 
-Copyright Sen Li, 2023. Licensed under an MIT license. You can copy and mess with this template.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+This website is built upon the excellent work of the following projects and individuals:
+
+- **Original Template**: [Sen Li's Academic Homepage Template](https://github.com/senli1073/senli1073.github.io) - A clean and elegant academic personal website template with Markdown support
+- **Bootstrap Theme**: [Start Bootstrap - New Age](https://github.com/StartBootstrap/startbootstrap-new-age) - The underlying Bootstrap theme
+- **Special Thanks**: Sen Li for creating and sharing the original template that made this website possible
