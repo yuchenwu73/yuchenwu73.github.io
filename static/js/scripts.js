@@ -70,6 +70,14 @@ window.addEventListener('DOMContentLoaded', event => {
         MathJax.typeset();
     }).catch(error => console.log(error));
 
+    // 设置最后更新时间
+    const lastUpdated = new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    document.getElementById('last-updated').textContent = lastUpdated;
+
 });
 
 // 加载markdown文件
