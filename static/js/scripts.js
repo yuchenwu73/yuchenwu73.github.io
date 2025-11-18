@@ -77,16 +77,18 @@ window.addEventListener('DOMContentLoaded', event => {
             const commitDate = new Date(data.commit.author.date);
             const lastUpdated = commitDate.toLocaleDateString('en-US', {
                 year: 'numeric',
-                month: 'long'
+                month: 'long',
+                day: 'numeric'
             });
             document.getElementById('last-updated').textContent = lastUpdated;
         })
         .catch(error => {
             console.log('Error fetching last commit date:', error);
-            // 如果API调用失败，显示当前年月作为后备
+            // 如果API调用失败，显示当前日期作为后备
             const fallbackDate = new Date().toLocaleDateString('en-US', {
                 year: 'numeric',
-                month: 'long'
+                month: 'long',
+                day: 'numeric'
             });
             document.getElementById('last-updated').textContent = fallbackDate;
         });
