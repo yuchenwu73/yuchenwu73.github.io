@@ -70,28 +70,9 @@ window.addEventListener('DOMContentLoaded', event => {
         MathJax.typeset();
     }).catch(error => console.log(error));
 
-    // 设置最后更新时间 - 从GitHub API获取最后一次提交时间
-    fetch('https://api.github.com/repos/yuchenwu73/yuchenwu73.github.io/commits/main')
-        .then(response => response.json())
-        .then(data => {
-            const commitDate = new Date(data.commit.author.date);
-            const lastUpdated = commitDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            document.getElementById('last-updated').textContent = lastUpdated;
-        })
-        .catch(error => {
-            console.log('Error fetching last commit date:', error);
-            // 如果API调用失败，显示当前日期作为后备
-            const fallbackDate = new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
-            document.getElementById('last-updated').textContent = fallbackDate;
-        });
+    // 设置最后更新时间 - 从config.yml读取固定日期
+    // 注意：last-updated已经在前面的config.yml加载中设置了
+    // 这里不需要额外的代码，因为config.yml中的last-updated会自动填充到id="last-updated"的元素中
 
 });
 
