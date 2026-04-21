@@ -418,8 +418,29 @@ a {
         max-height: 250px;
     }
 }
-.publication-note {
-    color: #666;
+.language-toggle {
+    border: 1px solid #304EA4;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #304EA4;
     font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.45rem 0.9rem;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus {
+    background: #304EA4;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.publication-note {
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.5;
     margin: -0.25rem 0 1.5rem 0;
 }

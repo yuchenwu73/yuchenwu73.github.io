@@ -21,12 +21,13 @@ This is the source code for my personal academic homepage, hosted at [https://yu
 ```
 .
 ├── contents/              # Content files
-│   ├── config.yml        # Site configuration
-│   ├── home.md           # Home section
-│   ├── publications.md   # Publications section
-│   ├── projects.md       # Projects section
-│   ├── competitions.md   # Selected competitions
-│   └── awards.md         # Selected awards
+│   ├── config.yml        # English site configuration
+│   ├── config_zh.yml     # Chinese site configuration
+│   ├── home.md           # English home section
+│   ├── home_zh.md        # Chinese home section
+│   ├── publications.md   # English publications section
+│   ├── publications_zh.md# Chinese publications section
+│   └── ...               # Other bilingual content sections
 ├── static/
 │   ├── assets/           # Images and other assets
 │   ├── css/             # Stylesheets
@@ -49,8 +50,8 @@ To view the website locally:
 
 ## Updating Content
 
-- **Personal information**: Edit `contents/config.yml`
-- **Sections**: Edit corresponding `.md` files in `contents/` folder
+- **Personal information**: Edit `contents/config.yml` and `contents/config_zh.yml`
+- **Sections**: Edit corresponding `.md` and `_zh.md` files in `contents/` folder
 - **Images**: Replace files in `static/assets/`
 - **Publications**: Update `contents/publications.md` and add PDFs to `paper/` folder
 

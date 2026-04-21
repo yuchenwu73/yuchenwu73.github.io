@@ -21,12 +21,13 @@
 ```
 .
 ├── contents/              # 内容文件
-│   ├── config.yml        # 网站配置
-│   ├── home.md           # 主页部分
-│   ├── publications.md   # 发表论文部分
-│   ├── projects.md       # 项目部分
-│   ├── competitions.md   # 精选竞赛
-│   └── awards.md         # 精选奖项
+│   ├── config.yml        # 英文网站配置
+│   ├── config_zh.yml     # 中文网站配置
+│   ├── home.md           # 英文主页部分
+│   ├── home_zh.md        # 中文主页部分
+│   ├── publications.md   # 英文发表论文部分
+│   ├── publications_zh.md# 中文发表论文部分
+│   └── ...               # 其他中英文内容部分
 ├── static/
 │   ├── assets/           # 图片和其他资源
 │   ├── css/             # 样式表
@@ -49,8 +50,8 @@
 
 ## 更新内容
 
-- **个人信息**：编辑`contents/config.yml`
-- **各部分内容**：编辑`contents/`文件夹中对应的`.md`文件
+- **个人信息**：编辑`contents/config.yml`和`contents/config_zh.yml`
+- **各部分内容**：编辑`contents/`文件夹中对应的`.md`和`_zh.md`文件
 - **图片**：替换`static/assets/`中的文件
 - **发表论文**：更新`contents/publications.md`并将PDF文件添加到`paper/`文件夹
 

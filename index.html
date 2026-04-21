@@ -93,19 +93,22 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#page-top">Home</a>
+                        <a id="nav-home" class="nav-link me-lg-3" href="#page-top">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#publications">Publications</a>
+                        <a id="nav-publications" class="nav-link me-lg-3" href="#publications">Publications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#projects">Projects</a>
+                        <a id="nav-projects" class="nav-link me-lg-3" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#competitions">Selected Competitions</a>
+                        <a id="nav-competitions" class="nav-link me-lg-3" href="#competitions">Selected Competitions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link me-lg-3" href="#awards">Selected Awards</a>
+                        <a id="nav-awards" class="nav-link me-lg-3" href="#awards">Selected Awards</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch language">中文</button>
                     </li>
                 </ul>
             </div>
@@ -194,15 +197,15 @@
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
             <div class="text-white-50 small footer-content">
-                <span>Copyright &copy; 2024-2026 Yuchen Wu</span>
+                <span id="copyright-text">Copyright &copy; 2024-2026 Yuchen Wu</span>
                 <span>
-                    <a id="github-link" href="https://github.com/yuchenwu73">Github</a>
+                    <a id="github-link" href="https://github.com/yuchenwu73">GitHub</a>
                     <span class="mx-1">&middot;</span>
                     <a id="license-link" href="https://github.com/yuchenwu73/yuchenwu73.github.io/blob/main/LICENSE">License</a>
                 </span>
             </div>
             <div class="text-white-50 small mt-2">
-                <span style="font-style: italic;">Last updated: <span id="last-updated"></span></span>
+                <span style="font-style: italic;"><span id="last-updated-label">Last updated:</span> <span id="last-updated"></span></span>
                 <span class="mx-2">|</span>
                 <img src="https://hits.sh/yuchenwu73.github.io.svg?style=flat&label=Visitors&color=4c71f2" alt="Visitor Count" style="vertical-align: middle;">
             </div>
