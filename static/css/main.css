@@ -418,3 +418,8 @@ a {
         max-height: 250px;
     }
 }
+.publication-note {
+    color: #666;
+    font-size: 0.95rem;
+    margin: -0.25rem 0 1.5rem 0;
+}

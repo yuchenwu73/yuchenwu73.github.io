@@ -29,7 +29,6 @@
 │   └── awards.md         # 精选奖项
 ├── static/
 │   ├── assets/           # 图片和其他资源
-│   │   └── img/         # 照片和背景图片
 │   ├── css/             # 样式表
 │   └── js/              # JavaScript文件
 ├── paper/               # 论文PDF文件
@@ -52,7 +51,7 @@
 
 - **个人信息**：编辑`contents/config.yml`
 - **各部分内容**：编辑`contents/`文件夹中对应的`.md`文件
-- **图片**：替换`static/assets/img/`中的文件
+- **图片**：替换`static/assets/`中的文件
 - **发表论文**：更新`contents/publications.md`并将PDF文件添加到`paper/`文件夹
 
 ## 许可证

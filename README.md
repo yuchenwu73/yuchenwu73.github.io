@@ -29,7 +29,6 @@ This is the source code for my personal academic homepage, hosted at [https://yu
 │   └── awards.md         # Selected awards
 ├── static/
 │   ├── assets/           # Images and other assets
-│   │   └── img/         # Photos and background images
 │   ├── css/             # Stylesheets
 │   └── js/              # JavaScript files
 ├── paper/               # PDF files of publications
@@ -52,7 +51,7 @@ To view the website locally:
 
 - **Personal information**: Edit `contents/config.yml`
 - **Sections**: Edit corresponding `.md` files in `contents/` folder
-- **Images**: Replace files in `static/assets/img/`
+- **Images**: Replace files in `static/assets/`
 - **Publications**: Update `contents/publications.md` and add PDFs to `paper/` folder
 
 ## License
