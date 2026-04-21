@@ -73,12 +73,13 @@ section header h2 {
 
 /* 
  * 正文内容样式 
- * 使用较大字号和细字重创建现代、易读的排版
+ * 采用主流学术主页的常规字重，保证中英文正文清晰可读。
  */
 section .main-body {
-    font-size: 1.3rem;          /* 较大基础字号提高可读性 */
-    font-weight: 200;           /* 使用细字体增强现代感和优雅外观 */
-    line-height: 2.4rem;        /* 宽松行高(约185%)提升可读性和专业感 */
+    font-size: 1.18rem;         /* 接近 academicpages 的正文比例，避免过大导致发虚 */
+    font-weight: 400;           /* 避免 200 细字重造成断续、发虚的观感 */
+    line-height: 1.75;          /* 保持舒适行距，同时减少松散感 */
+    color: #33383d;
 }
 
 /* 
@@ -220,28 +221,30 @@ a {
     font-size: 1.3rem;            /* 大号字体强调标题重要性 */
     font-weight: 700;             /* 加粗标题（从600调整为700） */
     margin-bottom: 0.75rem;       /* 增加标题与作者之间的间距 */
-    color: #333;                  /* 深灰色提高可读性但比纯黑更柔和 */
+    color: #1f2933;               /* 更深的标题色，提升清晰度 */
     line-height: 1.5;             /* 增加行高提高长标题可读性 */
 }
 
 .publication-authors {
     font-size: 1.05rem;           /* 略微增大字体提高可读性 */
     margin-bottom: 0.6rem;        /* 增加作者与期刊/会议之间的间距 */
-    color: #555;                  /* 中灰色，清晰但不抢眼 */
+    color: #30363d;               /* 更接近 academicpages 的深灰正文色 */
+    font-weight: 500;             /* 作者行略加重，避免细字重导致发虚 */
     line-height: 1.6;             /* 增加行高，使多行作者列表更易读 */
 }
 
 .publication-venue {
     font-style: italic;           /* 斜体突出发表场所 */
     margin-bottom: 0.5rem;
-    color: #666;                  /* 稍浅的灰色创建视觉层次 */
+    color: #3f454a;               /* 保持层次但不牺牲可读性 */
 }
 
 /* 期刊/会议信息样式 */
 .publication-info {
     font-size: 1rem;
     margin-bottom: 0.8rem;        /* 增加与链接按钮之间的间距 */
-    color: #666;                  /* 与 publication-venue 保持一致的颜色 */
+    color: #3f454a;               /* 比原先 #666 更清楚 */
+    font-weight: 400;
     line-height: 1.6;             /* 增加行高提高可读性 */
 }
 
@@ -466,6 +469,102 @@ body,
 .publication-note,
 .font-alt {
     font-family: var(--bs-body-font-family) !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Final typography pass: clear academic-page style for bilingual text. */
+:root {
+    --academic-text-color: #24292f;
+    --academic-muted-color: #3d444d;
+    --academic-title-color: #111827;
+    --academic-border-color: #d8dee4;
+}
+
+body {
+    color: var(--academic-text-color);
+    font-weight: 400;
+}
+
+.top-section h2 {
+    font-weight: 650;
+    letter-spacing: 0.045em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
+}
+
+html[lang="zh-CN"] .top-section h2 {
+    letter-spacing: 0.22em;
+}
+
+section header h2 {
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+}
+
+section .main-body {
+    color: var(--academic-text-color);
+    font-size: 1.12rem;
+    font-weight: 400;
+    line-height: 1.72;
+}
+
+section .main-body p,
+section .main-body li {
+    color: var(--academic-text-color);
+}
+
+.publication-card {
+    border-color: var(--academic-border-color);
+    box-shadow: 0 2px 10px rgba(27, 31, 36, 0.08);
+}
+
+.publication-title {
+    color: var(--academic-title-color);
+    font-size: 1.22rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.38;
+    margin-bottom: 0.65rem;
+}
+
+.publication-authors {
+    color: var(--academic-text-color);
+    font-size: 1.04rem;
+    font-weight: 500;
+    line-height: 1.62;
+}
+
+.publication-info,
+.publication-venue {
+    color: var(--academic-muted-color);
+    font-size: 1.01rem;
+    font-weight: 500;
+    line-height: 1.62;
+}
+
+.publication-note {
+    color: var(--academic-text-color);
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: 0.005em;
+}
+
+.publication-links a {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    section .main-body {
+        font-size: 1.04rem;
+        line-height: 1.68;
+    }
+
+    section header h2 {
+        font-size: 1.85rem;
+    }
+
+    .publication-title {
+        font-size: 1.13rem;
+    }
 }
