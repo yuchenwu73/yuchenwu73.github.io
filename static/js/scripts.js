@@ -1,7 +1,7 @@
 const contentDir = 'contents/';
 const defaultLanguage = 'en';
 const supportedLanguages = ['en', 'zh'];
-const sectionNames = ['home', 'competitions', 'awards', 'projects', 'publications'];
+const sectionNames = ['home', 'preprints', 'publications', 'projects', 'competitions', 'awards'];
 
 let currentLanguage = getInitialLanguage();
 
