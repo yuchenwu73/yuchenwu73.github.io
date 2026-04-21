@@ -41,6 +41,8 @@
         </p>
         <p class="publication-links">
             <a href="paper/applsci-14-06621-v2.pdf">论文</a>
+            <a href="https://www.mdpi.com/2076-3417/14/15/6621" target="_blank" rel="noopener noreferrer">官方</a>
+            <a href="paper/applsci2024.bib">BibTeX</a>
         </p>
     </div>
 </div>
@@ -63,6 +65,8 @@
         </p>
         <p class="publication-links">
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">论文</a>
+            <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">官方</a>
+            <a href="paper/auteee2023.bib">BibTeX</a>
         </p>
     </div>
 </div>
