@@ -106,9 +106,21 @@ function ensureBibtexModal() {
     return modal;
 }
 
+function getBibtexContent(sourceElement) {
+    if (!sourceElement) {
+        return '';
+    }
+
+    if (sourceElement.tagName === 'TEMPLATE') {
+        return sourceElement.innerHTML.trim();
+    }
+
+    return sourceElement.textContent.trim();
+}
+
 function openBibtexModal(templateId, title) {
-    const template = document.getElementById(templateId);
-    if (!template) {
+    const sourceElement = document.getElementById(templateId);
+    if (!sourceElement) {
         return;
     }
 
@@ -118,7 +130,7 @@ function openBibtexModal(templateId, title) {
     const copyButton = document.getElementById('bibtex-copy-button');
 
     titleElement.textContent = title ? `BibTeX · ${title}` : 'BibTeX';
-    contentElement.textContent = template.textContent.trim();
+    contentElement.textContent = getBibtexContent(sourceElement);
     copyButton.textContent = currentLanguage === 'zh' ? '复制' : 'Copy';
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');

@@ -23,7 +23,7 @@
             <a href="paper/applsci-14-06621-v2.pdf">PDF</a>
             <button type="button" class="bibtex-button" data-bibtex-id="bibtex-applsci2024" data-bibtex-title="Advanced UAV Material Transportation and Precision Delivery">BibTeX</button>
         </p>
-        <template id="bibtex-applsci2024">
+        <script type="application/x-bibtex" id="bibtex-applsci2024">
 @article{wu2024advanced,
   title={Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model},
   author={Wu, Yuchen and Wei, Zhijian and Liu, Huilin and Qi, Jiawei and Su, Xu and Yang, Jiqiang and Wu, Qinglin},
@@ -36,7 +36,7 @@
   doi={10.3390/app14156621},
   url={https://www.mdpi.com/2076-3417/14/15/6621}
 }
-        </template>
+        </script>
     </div>
 </div>
 
@@ -61,7 +61,7 @@
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">PDF</a>
             <button type="button" class="bibtex-button" data-bibtex-id="bibtex-auteee2023" data-bibtex-title="Using Improved DeepLabV3+ for Complex Scene Segmentation">BibTeX</button>
         </p>
-        <template id="bibtex-auteee2023">
+        <script type="application/x-bibtex" id="bibtex-auteee2023">
 @inproceedings{wu2023using,
   title={Using Improved DeepLabV3+ for Complex Scene Segmentation},
   author={Wu, Yuchen and Li, Jin and Yang, Junkai},
@@ -73,6 +73,6 @@
   doi={10.1109/AUTEEE60196.2023.10408693},
   url={https://doi.org/10.1109/AUTEEE60196.2023.10408693}
 }
-        </template>
+        </script>
     </div>
 </div>
