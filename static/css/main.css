@@ -568,3 +568,122 @@ section .main-body li {
         font-size: 1.24rem;
     }
 }
+
+/* Publication action buttons and BibTeX modal. */
+.publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.publication-links a,
+.publication-links button {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 18px;
+    background-color: #d7e8f9;
+    color: #304EA4;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: var(--bs-body-font-family) !important;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.publication-links a:hover,
+.publication-links button:hover,
+.publication-links a:focus,
+.publication-links button:focus {
+    background-color: #c4dcf5;
+    color: #1f3f91;
+    transform: translateY(-1px);
+}
+
+.bibtex-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+}
+
+.bibtex-modal.is-open {
+    display: block;
+}
+
+.bibtex-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.55);
+}
+
+.bibtex-modal-dialog {
+    position: relative;
+    width: min(760px, calc(100vw - 2rem));
+    max-height: calc(100vh - 4rem);
+    margin: 2rem auto;
+    padding: 1.25rem;
+    overflow: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.bibtex-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.bibtex-modal-header h3 {
+    margin: 0;
+    color: var(--academic-title-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.bibtex-modal-close {
+    border: 0;
+    background: transparent;
+    color: #3d444d;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.bibtex-modal-content {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    background: #f6f8fa;
+    border: 1px solid #d8dee4;
+    border-radius: 10px;
+    color: #24292f;
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.bibtex-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.bibtex-copy-button {
+    border: 0;
+    border-radius: 20px;
+    background: #304EA4;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+}

@@ -80,6 +80,116 @@ function loadLanguage() {
         .catch(error => console.log(error));
 }
 
+function ensureBibtexModal() {
+    let modal = document.getElementById('bibtex-modal');
+    if (modal) {
+        return modal;
+    }
+
+    modal = document.createElement('div');
+    modal.id = 'bibtex-modal';
+    modal.className = 'bibtex-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML = `
+        <div class="bibtex-modal-backdrop" data-bibtex-close="true"></div>
+        <div class="bibtex-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="bibtex-modal-title">
+            <div class="bibtex-modal-header">
+                <h3 id="bibtex-modal-title">BibTeX</h3>
+                <button type="button" class="bibtex-modal-close" data-bibtex-close="true" aria-label="Close">&times;</button>
+            </div>
+            <pre id="bibtex-modal-content" class="bibtex-modal-content"></pre>
+            <div class="bibtex-modal-actions">
+                <button type="button" id="bibtex-copy-button" class="bibtex-copy-button">Copy</button>
+            </div>
+        </div>`;
+    document.body.appendChild(modal);
+    return modal;
+}
+
+function openBibtexModal(templateId, title) {
+    const template = document.getElementById(templateId);
+    if (!template) {
+        return;
+    }
+
+    const modal = ensureBibtexModal();
+    const titleElement = document.getElementById('bibtex-modal-title');
+    const contentElement = document.getElementById('bibtex-modal-content');
+    const copyButton = document.getElementById('bibtex-copy-button');
+
+    titleElement.textContent = title ? `BibTeX · ${title}` : 'BibTeX';
+    contentElement.textContent = template.textContent.trim();
+    copyButton.textContent = currentLanguage === 'zh' ? '复制' : 'Copy';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function closeBibtexModal() {
+    const modal = document.getElementById('bibtex-modal');
+    if (!modal) {
+        return;
+    }
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+}
+
+function copyBibtex() {
+    const contentElement = document.getElementById('bibtex-modal-content');
+    const copyButton = document.getElementById('bibtex-copy-button');
+    const text = contentElement ? contentElement.textContent : '';
+
+    const markCopied = () => {
+        copyButton.textContent = currentLanguage === 'zh' ? '已复制' : 'Copied';
+        window.setTimeout(() => {
+            copyButton.textContent = currentLanguage === 'zh' ? '复制' : 'Copy';
+        }, 1400);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(markCopied).catch(() => fallbackCopy(text, markCopied));
+    } else {
+        fallbackCopy(text, markCopied);
+    }
+}
+
+function fallbackCopy(text, callback) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', 'true');
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    callback();
+}
+
+function setupBibtexModalEvents() {
+    document.addEventListener('click', event => {
+        const bibtexButton = event.target.closest('.bibtex-button');
+        if (bibtexButton) {
+            openBibtexModal(bibtexButton.dataset.bibtexId, bibtexButton.dataset.bibtexTitle);
+            return;
+        }
+
+        if (event.target.closest('[data-bibtex-close="true"]')) {
+            closeBibtexModal();
+            return;
+        }
+
+        if (event.target.closest('#bibtex-copy-button')) {
+            copyBibtex();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeBibtexModal();
+        }
+    });
+}
+
 function switchLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
     localStorage.setItem('preferred-language', currentLanguage);
@@ -99,6 +209,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (languageToggle) {
         languageToggle.addEventListener('click', switchLanguage);
     }
+
+    setupBibtexModalEvents();
 
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(

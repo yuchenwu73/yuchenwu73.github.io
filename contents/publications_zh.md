@@ -40,10 +40,24 @@
             <i><b>Applied Sciences-Basel</b></i>, vol. 14, no. 15, p. 6621, 2024.
         </p>
         <p class="publication-links">
-            <a href="paper/applsci-14-06621-v2.pdf">论文</a>
-            <a href="https://www.mdpi.com/2076-3417/14/15/6621" target="_blank" rel="noopener noreferrer">官方</a>
-            <a href="paper/applsci2024.bib">BibTeX</a>
+            <a href="https://www.mdpi.com/2076-3417/14/15/6621" target="_blank" rel="noopener noreferrer">Link</a>
+            <a href="paper/applsci-14-06621-v2.pdf">PDF</a>
+            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-applsci2024" data-bibtex-title="Advanced UAV Material Transportation and Precision Delivery">BibTeX</button>
         </p>
+        <template id="bibtex-applsci2024">
+@article{wu2024advanced,
+  title={Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model},
+  author={Wu, Yuchen and Wei, Zhijian and Liu, Huilin and Qi, Jiawei and Su, Xu and Yang, Jiqiang and Wu, Qinglin},
+  journal={Applied Sciences},
+  volume={14},
+  number={15},
+  pages={6621},
+  year={2024},
+  publisher={MDPI},
+  doi={10.3390/app14156621},
+  url={https://www.mdpi.com/2076-3417/14/15/6621}
+}
+        </template>
     </div>
 </div>
 
@@ -64,9 +78,22 @@
             2023 IEEE 第六届自动化、电子与电气工程国际会议 (<i><b>AUTEEE</b></i>)，中国沈阳，2023，pp. 855-860。
         </p>
         <p class="publication-links">
-            <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">论文</a>
-            <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">官方</a>
-            <a href="paper/auteee2023.bib">BibTeX</a>
+            <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">Link</a>
+            <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">PDF</a>
+            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-auteee2023" data-bibtex-title="Using Improved DeepLabV3+ for Complex Scene Segmentation">BibTeX</button>
         </p>
+        <template id="bibtex-auteee2023">
+@inproceedings{wu2023using,
+  title={Using Improved DeepLabV3+ for Complex Scene Segmentation},
+  author={Wu, Yuchen and Li, Jin and Yang, Junkai},
+  booktitle={2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (AUTEEE)},
+  pages={855--860},
+  year={2023},
+  address={Shenyang, China},
+  publisher={IEEE},
+  doi={10.1109/AUTEEE60196.2023.10408693},
+  url={https://doi.org/10.1109/AUTEEE60196.2023.10408693}
+}
+        </template>
     </div>
 </div>
