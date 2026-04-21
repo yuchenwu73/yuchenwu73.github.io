@@ -2,7 +2,7 @@
 
 你好！👋
 
-我目前是[电子科技大学](https://www.uestc.edu.cn/) [智能协同计算实验室（LICC）](https://icct.uestc.edu.cn/index.htm) 计算机科学硕士一年级学生，导师为[王国庆教授](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm)（国家海外优青）。我也是[未来媒体中心（CFM）](https://cfm.uestc.edu.cn/) [多模态智能组（MIG）](https://mig-uestc-lab.github.io/)的成员。
+我目前是[电子科技大学](https://www.uestc.edu.cn/) [智能协同计算技术国家级重点实验室](https://icct.uestc.edu.cn/index.htm) 硕士一年级学生，专业是计算机技术，导师为[王国庆教授](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm)（国家海外优青）。我也是[未来媒体中心（CFM）](https://cfm.uestc.edu.cn/) [多模态智能组（MIG）](https://mig-uestc-lab.github.io/)的成员。
 
 ### 联系方式
 
@@ -11,8 +11,8 @@
 
 ### 教育经历
 
-* **计算机科学硕士（预计：2025.09 - 2028.06）**：电子科技大学智能协同计算实验室，中国成都
-* **计算机科学与技术工学学士（2021.09 - 2025.06）**：安徽理工大学计算机科学与工程学院，中国淮南
+* **硕士，计算机技术（2025.09 - 2028.06，预计）**：电子科技大学智能协同计算技术国家级重点实验室
+* **学士，计算机科学与技术（2021.09 - 2025.06）**：安徽理工大学计算机科学与工程学院
 
 ### 研究兴趣
 

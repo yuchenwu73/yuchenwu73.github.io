@@ -62,10 +62,10 @@
 
 /* 
  * 章节标题样式 
- * 使用特定字体和颜色增强层次感和品牌一致性
+ * 使用与正文一致的学术主页系统字体栈，避免中英文混排时字体跳变。
  */
 section header h2 {
-    font-family: "Kanit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important; /* 特色字体优先，后跟系统字体回退链 */
+    font-family: var(--bs-body-font-family) !important;
     color: var(--h-title-color);  /* 使用主题色 */
     font-size: 2.3rem;            /* 较大字号增强视觉层次 */
     line-height: 4rem;            /* 增加行高改善可读性，特别适合较长标题 */
@@ -443,4 +443,29 @@ a {
     font-weight: 700;
     line-height: 1.5;
     margin: -0.25rem 0 1.5rem 0;
+}
+
+/*
+ * Font stack aligned with popular academic homepage templates:
+ * - Academic Pages / Minimal Mistakes: system sans-serif stack.
+ * - al-folio / Jon Barron-style pages: Roboto/Lato-like clean sans-serif.
+ * - Chinese fallback: PingFang SC, Microsoft YaHei, Noto/Source Han Sans.
+ */
+:root {
+    --bs-body-font-family: -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+body,
+.main-body,
+.navbar,
+.footer-content,
+.publication-card,
+.publication-title,
+.publication-authors,
+.publication-info,
+.publication-note,
+.font-alt {
+    font-family: var(--bs-body-font-family) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
