@@ -1,4 +1,4 @@
-const contentDir = 'contents/';
+const contentDir = '/contents/';
 const defaultLanguage = 'en';
 const supportedLanguages = ['en', 'zh'];
 const sectionNames = ['home', 'preprints', 'publications', 'projects', 'competitions', 'awards'];
@@ -6,8 +6,7 @@ const sectionNames = ['home', 'preprints', 'publications', 'projects', 'competit
 let currentLanguage = getInitialLanguage();
 
 function getInitialLanguage() {
-    const savedLanguage = localStorage.getItem('preferred-language');
-    return supportedLanguages.includes(savedLanguage) ? savedLanguage : defaultLanguage;
+    return window.location.pathname.replace(/\/$/, '').endsWith('/zh') ? 'zh' : defaultLanguage;
 }
 
 function localizedFile(name, extension) {
@@ -203,9 +202,8 @@ function setupBibtexModalEvents() {
 }
 
 function switchLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'zh' : 'en';
-    localStorage.setItem('preferred-language', currentLanguage);
-    loadLanguage();
+    const hash = window.location.hash || '';
+    window.location.href = currentLanguage === 'en' ? `/zh/${hash}` : `/${hash}`;
 }
 
 window.addEventListener('DOMContentLoaded', () => {

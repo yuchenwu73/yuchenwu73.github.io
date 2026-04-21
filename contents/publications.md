@@ -5,7 +5,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="static/assets/applsci2024.png" class="img-fluid publication-image" alt="Publication Image">
+            <img src="/static/assets/applsci2024.png" class="img-fluid publication-image" alt="Publication Image">
         </div>
     </div>
     <div class="col-md-6">
@@ -20,7 +20,7 @@
         </p>
         <p class="publication-links">
             <a href="https://www.mdpi.com/2076-3417/14/15/6621" target="_blank" rel="noopener noreferrer">Link</a>
-            <a href="paper/applsci-14-06621-v2.pdf">PDF</a>
+            <a href="/paper/applsci-14-06621-v2.pdf">PDF</a>
             <button type="button" class="bibtex-button" data-bibtex-id="bibtex-applsci2024">BibTeX</button>
         </p>
         <script type="application/x-bibtex" id="bibtex-applsci2024">
@@ -41,7 +41,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="static/assets/auteee2023.png" class="img-fluid publication-image" alt="Publication Image">
+            <img src="/static/assets/auteee2023.png" class="img-fluid publication-image" alt="Publication Image">
         </div>
     </div>
     <div class="col-md-6">
@@ -56,7 +56,7 @@
         </p>
         <p class="publication-links">
             <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">Link</a>
-            <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">PDF</a>
+            <a href="/paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">PDF</a>
             <button type="button" class="bibtex-button" data-bibtex-id="bibtex-auteee2023">BibTeX</button>
         </p>
         <script type="application/x-bibtex" id="bibtex-auteee2023">

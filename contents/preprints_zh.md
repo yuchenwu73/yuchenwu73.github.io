@@ -5,7 +5,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="static/assets/geobox-r1-mm2026.png" class="img-fluid publication-image" alt="GeoBox-R1 Overview">
+            <img src="/static/assets/geobox-r1-mm2026.png" class="img-fluid publication-image" alt="GeoBox-R1 Overview">
         </div>
     </div>
     <div class="col-md-6">
