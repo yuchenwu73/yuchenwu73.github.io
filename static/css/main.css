@@ -226,7 +226,7 @@ a {
 }
 
 .publication-authors {
-    font-size: 1.05rem;           /* 略微增大字体提高可读性 */
+    font-size: 1.08rem;           /* 略微增大字体提高可读性 */
     margin-bottom: 0.6rem;        /* 增加作者与期刊/会议之间的间距 */
     color: #30363d;               /* 更接近 academicpages 的深灰正文色 */
     font-weight: 500;             /* 作者行略加重，避免细字重导致发虚 */
@@ -442,7 +442,7 @@ a {
 
 .publication-note {
     color: #333;
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 700;
     line-height: 1.5;
     margin: -0.25rem 0 1.5rem 0;
@@ -504,7 +504,7 @@ section header h2 {
 
 section .main-body {
     color: var(--academic-text-color);
-    font-size: 1.12rem;
+    font-size: 1.20rem;
     font-weight: 400;
     line-height: 1.72;
 }
@@ -521,7 +521,7 @@ section .main-body li {
 
 .publication-title {
     color: var(--academic-title-color);
-    font-size: 1.22rem;
+    font-size: 1.28rem;
     font-weight: 700;
     letter-spacing: 0;
     line-height: 1.38;
@@ -530,7 +530,7 @@ section .main-body li {
 
 .publication-authors {
     color: var(--academic-text-color);
-    font-size: 1.04rem;
+    font-size: 1.10rem;
     font-weight: 500;
     line-height: 1.62;
 }
@@ -538,14 +538,14 @@ section .main-body li {
 .publication-info,
 .publication-venue {
     color: var(--academic-muted-color);
-    font-size: 1.01rem;
+    font-size: 1.07rem;
     font-weight: 500;
     line-height: 1.62;
 }
 
 .publication-note {
     color: var(--academic-text-color);
-    font-size: 1.02rem;
+    font-size: 1.08rem;
     font-weight: 700;
     letter-spacing: 0.005em;
 }
@@ -556,7 +556,7 @@ section .main-body li {
 
 @media (max-width: 768px) {
     section .main-body {
-        font-size: 1.04rem;
+        font-size: 1.10rem;
         line-height: 1.68;
     }
 
@@ -565,6 +565,6 @@ section .main-body li {
     }
 
     .publication-title {
-        font-size: 1.13rem;
+        font-size: 1.20rem;
     }
 }
