@@ -129,7 +129,7 @@ function openBibtexModal(templateId, title) {
     const contentElement = document.getElementById('bibtex-modal-content');
     const copyButton = document.getElementById('bibtex-copy-button');
 
-    titleElement.textContent = title ? `BibTeX · ${title}` : 'BibTeX';
+    titleElement.textContent = 'BibTeX';
     contentElement.textContent = getBibtexContent(sourceElement);
     copyButton.textContent = currentLanguage === 'zh' ? '复制' : 'Copy';
     modal.classList.add('is-open');

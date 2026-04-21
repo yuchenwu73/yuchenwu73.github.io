@@ -21,7 +21,7 @@
         <p class="publication-links">
             <a href="https://www.mdpi.com/2076-3417/14/15/6621" target="_blank" rel="noopener noreferrer">Link</a>
             <a href="paper/applsci-14-06621-v2.pdf">PDF</a>
-            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-applsci2024" data-bibtex-title="Advanced UAV Material Transportation and Precision Delivery">BibTeX</button>
+            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-applsci2024">BibTeX</button>
         </p>
         <script type="application/x-bibtex" id="bibtex-applsci2024">
 @article{wu2024advanced,
@@ -32,9 +32,7 @@
   number={15},
   pages={6621},
   year={2024},
-  publisher={MDPI},
-  doi={10.3390/app14156621},
-  url={https://www.mdpi.com/2076-3417/14/15/6621}
+  publisher={MDPI}
 }
         </script>
     </div>
@@ -59,7 +57,7 @@
         <p class="publication-links">
             <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">Link</a>
             <a href="paper/Using_Improved_DeepLabV3_for_Complex_Scene_Segmentation.pdf">PDF</a>
-            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-auteee2023" data-bibtex-title="Using Improved DeepLabV3+ for Complex Scene Segmentation">BibTeX</button>
+            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-auteee2023">BibTeX</button>
         </p>
         <script type="application/x-bibtex" id="bibtex-auteee2023">
 @inproceedings{wu2023using,
@@ -68,10 +66,7 @@
   booktitle={2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (AUTEEE)},
   pages={855--860},
   year={2023},
-  address={Shenyang, China},
-  publisher={IEEE},
-  doi={10.1109/AUTEEE60196.2023.10408693},
-  url={https://doi.org/10.1109/AUTEEE60196.2023.10408693}
+  organization={IEEE}
 }
         </script>
     </div>
