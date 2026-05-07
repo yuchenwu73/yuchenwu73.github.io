@@ -1,3 +1,6 @@
 *.DS_Store
 .idea
+.vscode
+.omc/
+*.log
 网页同步方法.md
