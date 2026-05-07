@@ -5,7 +5,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/apcr-yolov8-applsci2024.png" class="img-fluid publication-image" alt="Publication Image">
+            <img src="/static/assets/apcr-yolov8-applsci2024.png" class="img-fluid publication-image" alt="APCR-YOLOv8 无人机物资投放架构">
         </div>
     </div>
     <div class="col-md-6">
@@ -41,7 +41,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/deeplabv3plus-auteee2023.png" class="img-fluid publication-image" alt="Publication Image">
+            <img src="/static/assets/deeplabv3plus-auteee2023.png" class="img-fluid publication-image" alt="改进 DeepLabV3+ 复杂场景分割">
         </div>
     </div>
     <div class="col-md-6">

@@ -14,7 +14,7 @@
 - **基于Markdown的内容**：所有内容部分都使用Markdown文件编写，便于编辑
 - **LaTeX支持**：可以使用LaTeX语法和MathJax编写数学公式
 - **响应式设计**：基于Bootstrap的移动端友好布局
-- **自动更新**：最后更新日期自动生成
+- **自动更新**：最后更新日期通过 GitHub REST API 自动获取最近 commit 时间，`config.yml` 中保留静态兜底值
 
 ## 项目结构
 

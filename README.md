@@ -14,7 +14,7 @@ This is the source code for my personal academic homepage, hosted at [https://yu
 - **Markdown-based content**: All content sections are written in Markdown files for easy editing
 - **LaTeX support**: Mathematical formulas can be written using LaTeX syntax with MathJax
 - **Responsive design**: Mobile-friendly layout based on Bootstrap
-- **Auto-updated**: Last updated date is automatically generated
+- **Auto-updated**: Last updated date is automatically fetched from the GitHub REST API (latest commit timestamp), with a static fallback configured in `config.yml`
 
 ## Project Structure
 

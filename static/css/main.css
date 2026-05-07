@@ -94,7 +94,7 @@ section .main-body {
     background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important; /* 45度浅灰渐变 */
 }
 
-/* 
+/*
  * 元素置于顶层 - 用于重要交互元素
  * 确保元素不被其他内容覆盖
  */
@@ -103,31 +103,7 @@ section .main-body {
     z-index: 10000;              /* 高z-index确保元素位于大多数内容之上 */
 }
 
-/* 
- * 顶部背景图设置 - 用于创建全宽度背景图效果
- */
-.top-bg {
-    background-position: center;
-    background-size: fill;       /* 确保背景图填满容器 */
-    width: 100%;
-    height: 100%;
-}
-
-/* 
- * 顶部背景遮罩层 - 类似top-section:before
- * 但透明度较低，用于需要较高可见度的背景图
- */
-.top-bg::before {
-    content: "";                 /* 伪元素必需属性 */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40%透明度，比top-section略微透明 */
-}
-
-/* 
+/*
  * 头像定位与样式 - 复杂的响应式定位
  * 根据视窗宽度动态调整位置和大小
  */

@@ -3,10 +3,23 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Academic Webpage" />
-    <meta name="author" content="yuchenwu73" />
-    <title id="title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Personal academic homepage of Yuchen Wu — M.S. student in Computer Science at UESTC's Laboratory of Intelligent Collaborative Computing. Research interests: Computer Vision, Efficient AI, Multimodal Large Language Models." />
+    <meta name="author" content="Yuchen Wu" />
+    <title id="title">Yuchen Wu's Homepage</title>
+
+    <!-- Open Graph / Twitter Card for social previews -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://yuchenwu73.github.io/" />
+    <meta property="og:title" content="Yuchen Wu's Homepage" />
+    <meta property="og:description" content="M.S. student at UESTC. Research interests: Computer Vision, Efficient AI, Multimodal Large Language Models." />
+    <meta property="og:image" content="https://yuchenwu73.github.io/static/assets/profile.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Yuchen Wu's Homepage" />
+    <meta name="twitter:description" content="M.S. student at UESTC. Research interests: Computer Vision, Efficient AI, Multimodal Large Language Models." />
+    <meta name="twitter:image" content="https://yuchenwu73.github.io/static/assets/profile.png" />
 
     <link rel="canonical" href="https://yuchenwu73.github.io/" />
     <link rel="alternate" hreflang="en" href="https://yuchenwu73.github.io/" />
@@ -29,46 +42,9 @@
     <!-- Bootstrap core JS-->
     <script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
 
-    <!-- For Compatability -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    
     <!-- Markdown -->
     <script type="text/javascript" src="/static/js/marked.min.js"></script>
 
-    <!-- Mathematics -->
-    <script>
-        // See https://docs.mathjax.org/en/latest/index.html for more details.
-        MathJax = {
-            tex: {
-                packages: {},              // extensions to use
-                inlineMath: [              // start/end delimiter pairs for in-line math
-                    ['$', '$'],
-                    ['\\(', '\\)']
-                ],
-                displayMath: [             // start/end delimiter pairs for display math
-                    ['$$', '$$'],
-                    ['\\[', '\\]']
-                ],
-                processEscapes: false,      // use \$ to produce a literal dollar sign
-                processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
-                processRefs: true,         // process \ref{...} outside of math mode
-                digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,    // pattern for recognizing numbers
-                tags: 'all',              // or 'ams' or 'all'
-                tagSide: 'right',          // side for \tag macros
-                tagIndent: '0.8em',        // amount to indent tags
-                useLabelIds: true,         // use label name rather than tag for ids
-                maxMacros: 10000,          // maximum number of macro substitutions per expression
-                maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
-                // baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
-                // (document.getElementsByTagName('base').length === 0) ? '' : String(document.location).replace(/#.*$/, ''),
-                formatError:               // function called when TeX syntax errors occur
-                    (jax, err) => jax.formatError(err)
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
-<!--    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
-    
     <!-- Core JS-->
     <script type="text/javascript" src="/static/js/scripts.js"></script>
     <script type="text/javascript" src="/static/js/js-yaml.min.js"></script>
@@ -126,7 +102,7 @@
     <!-- Photo -->
     <div class="container px-5">
         <div id="avatar">
-            <img class="shadow" src="/static/assets/profile.png">
+            <img class="shadow" src="/static/assets/profile.png" alt="Yuchen Wu profile photo">
         </div>
     </div>
     <!-- Photo -->
