@@ -5,7 +5,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/risk-otta-nips2026.png" class="img-fluid publication-image" alt="Risk-Controlled Online Test-Time Adaptation Overview">
+            <img src="/static/assets/risk-otta-neurips2026.png" class="img-fluid publication-image" alt="Risk-Controlled Online Test-Time Adaptation Overview">
         </div>
     </div>
     <div class="col-md-6">
