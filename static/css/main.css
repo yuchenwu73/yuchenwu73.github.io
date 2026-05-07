@@ -1,322 +1,346 @@
 /* 导入外部样式表 - 包含基础样式定义和通用组件样式 */
 @import "./styles.css";
 
-/* 
- * 全局CSS变量定义
- * 使用CSS变量可以集中管理颜色主题，便于整站颜色统一调整
+/*
+ * 全局 CSS 变量定义 - 集中管理主题色与字体栈
+ *
+ * 字体栈对齐主流学术主页模板：
+ *   - Academic Pages / Minimal Mistakes: 系统无衬线字体栈
+ *   - al-folio / Jon Barron 风格: Roboto/Lato 风格干净无衬线
+ *   - 中文回退: PingFang SC / Microsoft YaHei / Noto/Source Han Sans
  */
 :root {
-    --h-title-color: #3948d2; /* 蓝紫色标题主题色 - 用于标题和强调元素 */
+    --h-title-color: #3948d2;                /* 蓝紫色标题主题色 */
+    --academic-text-color: #24292f;          /* 学术风格主体文字色 */
+    --academic-muted-color: #3d444d;         /* 学术风格次要文字色 */
+    --academic-title-color: #111827;         /* 学术风格标题色 */
+    --academic-border-color: #d8dee4;        /* 学术风格边框色 */
+    --bs-body-font-family: -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
 }
 
-/* 
- * 页面顶部导航栏样式 
- * 具有边框和较高层级，确保在页面滚动时始终可见
+/*
+ * 页面顶部导航栏样式 - 边框 + 高 z-index 保证滚动时常驻可见
  */
 .header {
-    border-bottom: solid 2px var(--bs-blue); /* 使用Bootstrap蓝色作为边框 */
-    z-index: 10000; /* 高z-index确保导航在滚动内容之上 */
+    border-bottom: solid 2px var(--bs-blue);
+    z-index: 10000;
 }
 
-/* 页面底部背景样式 - 使用主题色实现视觉一致性 */
+/* 页面底部背景 - 使用主题色 */
 .bg-bottom {
     background-color: var(--h-title-color);
 }
 
-/* 
- * 顶部横幅/英雄区域样式 
- * 大尺寸展示区域，通常放置背景图和主要标题
+/*
+ * 顶部横幅/英雄区域 - 背景图 + 遮罩 + 标题
  */
 .top-section {
-    position: relative;       /* 为绝对定位子元素创建定位上下文 */
-    padding: 10rem 0;         /* 大间距创造空旷感 */
+    position: relative;
+    padding: 10rem 0;
     background-position: center;
-    background-size: cover;   /* 背景图覆盖整个区域，不重复 */
-    height: 25rem;            /* 固定高度确保视觉一致性 */
+    background-size: cover;
+    height: 25rem;
 }
 
-/* 顶部横幅中的二级标题样式 - 使用较轻的字重增强现代感 */
 .top-section h2 {
-    font-weight: 400;         /* 中等字重，比默认的500更轻盈 */
+    font-weight: 650;
+    letter-spacing: 0.045em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
 }
 
-/* 顶部横幅内容定位 - 使用z-index确保内容在遮罩层之上 */
+/* 中文版顶部横幅标题 - 字距更大 */
+html[lang="zh-CN"] .top-section h2 {
+    letter-spacing: 0.22em;
+}
+
 .top-section .top-section-content {
     position: relative;
-    z-index: 1;               /* 确保内容在半透明遮罩层之上可见 */
+    z-index: 1;               /* 在遮罩层之上 */
 }
 
-/* 
- * 创建半透明遮罩层 - 伪元素实现
- * 用于增强顶部区域文字的可读性，特别是当背景图较亮或复杂时
- */
+/* 顶部横幅遮罩层 - 增强标题对比度 */
 .top-section:before {
-    content: "";              /* 伪元素必需属性 */
-    position: absolute;       /* 绝对定位使其覆盖父元素整个区域 */
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 50%透明度黑色遮罩 - 增强文字对比度 */
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* 
- * 章节标题样式 
- * 使用与正文一致的学术主页系统字体栈，避免中英文混排时字体跳变。
+/*
+ * 章节标题 - 使用主题色 + 学术主页字体栈
  */
 section header h2 {
     font-family: var(--bs-body-font-family) !important;
-    color: var(--h-title-color);  /* 使用主题色 */
-    font-size: 2.3rem;            /* 较大字号增强视觉层次 */
-    line-height: 4rem;            /* 增加行高改善可读性，特别适合较长标题 */
+    color: var(--h-title-color);
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
 }
 
-/* 
- * 正文内容样式 
- * 采用主流学术主页的常规字重，保证中英文正文清晰可读。
+/*
+ * 章节正文样式
  */
 section .main-body {
-    font-size: 1.18rem;         /* 接近 academicpages 的正文比例，避免过大导致发虚 */
-    font-weight: 400;           /* 避免 200 细字重造成断续、发虚的观感 */
-    line-height: 1.75;          /* 保持舒适行距，同时减少松散感 */
-    color: #33383d;
+    color: var(--academic-text-color);
+    font-size: 1.24rem;
+    font-weight: 400;
+    line-height: 1.72;
 }
 
-/* 
- * 背景渐变样式 - 用于创建微妙的视觉差异
- * 使用极其相近的颜色创造精致、低调的渐变效果
+section .main-body p,
+section .main-body li {
+    color: var(--academic-text-color);
+}
+
+/*
+ * 背景渐变 - 章节交替背景
  */
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important; /* 45度白色渐变 */
+    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important; /* 45度浅灰渐变 */
+    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
 }
 
-/*
- * 元素置于顶层 - 用于重要交互元素
- * 确保元素不被其他内容覆盖
- */
 .on-top {
     position: relative;
-    z-index: 10000;              /* 高z-index确保元素位于大多数内容之上 */
+    z-index: 10000;
 }
 
 /*
- * 头像定位与样式 - 复杂的响应式定位
- * 根据视窗宽度动态调整位置和大小
+ * 头像 - 响应式定位与尺寸
  */
 #avatar {
     position: relative;
-    height: 0;                    /* 高度设为0，避免占用空间 */
-    top: min(-65px, max(-100px, calc(-1*100vw/12))); /* 响应式垂直位置计算:
-                                     * -65px为最小上移距离
-                                     * -100px为最大上移距离
-                                     * calc(-1*100vw/12)根据视窗宽度动态计算上移距离
-                                     */
-    max-width: 55em;              /* 限制最大宽度增强在大屏幕上的布局控制 */
-    margin: 0 1.5rem 0 0;         /* 右侧边距创建与周围内容的间隔 */
-    float: right;                 /* 右浮动使其靠右对齐 */
-    z-index: 9000;                /* 高层级确保头像不被其他内容覆盖 */
+    height: 0;                                /* 高度为0避免占位 */
+    top: min(-65px, max(-100px, calc(-1*100vw/12))); /* 视窗宽度自适应上移 */
+    max-width: 55em;
+    margin: 0 1.5rem 0 0;
+    float: right;
+    z-index: 9000;
 }
 
 #avatar img {
-    height: max(130px, min(200px, calc(100vw/6))); /* 响应式高度计算:
-                                    * 130px为最小高度
-                                    * 200px为最大高度
-                                    * calc(100vw/6)根据视窗宽度动态计算，视窗宽度的1/6
-                                    */
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); /* 柔和阴影增强立体感 */
+    height: max(130px, min(200px, calc(100vw/6))); /* 130~200px 视窗自适应高度 */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* 
- * 媒体查询 - 平板与移动设备布局调整
- * 针对小于991px宽度的屏幕进行布局优化
- */
 @media screen and (max-width: 991px) {
     #avatar {
-        margin: 0;                /* 移除右侧边距，使头像在小屏上居中对齐 */
+        margin: 0;
     }
 }
 
-/* 
- * 链接样式 - 全站统一链接文本样式
- * 使用蓝色和精细下划线提升可访问性和视觉一致性
+/*
+ * 链接 - 蓝色 + 细下划线
  */
 a {
-    color: #1a73e8;               /* Google蓝色 - 广泛认可的链接色调 */
+    color: #1a73e8;
     text-decoration: underline;
-    text-decoration-thickness: 1px; /* 细下划线提升精致感 */
-    text-underline-offset: 0.3em;   /* 增加下划线与文本间距，提高可读性 */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
 }
 
-/* 
- * 页脚内容布局 - 使用Flexbox实现灵活居中布局
+/*
+ * 全站统一字体（中英混排回退）
+ */
+body,
+.main-body,
+.navbar,
+.footer-content,
+.publication-card,
+.publication-title,
+.publication-authors,
+.publication-info,
+.publication-note,
+.font-alt {
+    font-family: var(--bs-body-font-family) !important;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    color: var(--academic-text-color);
+    font-weight: 400;
+}
+
+/*
+ * 页脚布局
  */
 .footer-content {
     display: flex;
-    justify-content: center;       /* 水平居中对齐 */
-    align-items: center;           /* 垂直居中对齐 */
-    flex-wrap: wrap;               /* 允许内容在窄屏上换行 */
-    gap: 1rem;                     /* 元素之间的间距，比margin更现代的方法 */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-/* 
- * 出版物项目样式 - 使用Flexbox布局实现复杂内容排版
- * 水平排列图片和文本内容
+/*
+ * 出版物列表布局
  */
 .publication-item {
     display: flex;
-    margin-bottom: 2rem;          /* 项目间大间距提高可读性 */
-    align-items: flex-start;      /* 顶部对齐，适合长度不一的内容 */
-    justify-content: space-between; /* 分散对齐使内容充分利用空间 */
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .publication-image {
-    flex: 0 0 40%;                /* flex-grow:0, flex-shrink:0, flex-basis:40% 
-                                   * 不伸缩，保持固定40%宽度
-                                   */
+    flex: 0 0 40%;
     margin-right: 1.5rem;
 }
 
 .publication-image img {
-    max-width: 100%;              /* 充分利用图片容器宽度 */
-    max-height: 280px;            /* 略微减小最大高度，使图文更协调 */
-    border-radius: 8px;           /* 增加圆角提升现代感 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增强阴影效果，增加深度 */
-    object-fit: cover;            /* 确保图片填充容器同时保持比例 */
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 .publication-content {
-    flex: 1;                      /* 自动填充剩余空间 */
-    width: 55%;                   /* 基础宽度，在flex布局下可能被覆盖 */
+    flex: 1;
+    width: 55%;
 }
 
+/* 出版物标题 */
 .publication-title {
-    font-size: 1.3rem;            /* 大号字体强调标题重要性 */
-    font-weight: 700;             /* 加粗标题（从600调整为700） */
-    margin-bottom: 0.75rem;       /* 增加标题与作者之间的间距 */
-    color: #1f2933;               /* 更深的标题色，提升清晰度 */
-    line-height: 1.5;             /* 增加行高提高长标题可读性 */
+    color: var(--academic-title-color);
+    font-size: 1.32rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.38;
+    margin-bottom: 0.65rem;
 }
 
+/* 作者列表 */
 .publication-authors {
-    font-size: 1.12rem;           /* 略微增大字体提高可读性 */
-    margin-bottom: 0.6rem;        /* 增加作者与期刊/会议之间的间距 */
-    color: #30363d;               /* 更接近 academicpages 的深灰正文色 */
-    font-weight: 500;             /* 作者行略加重，避免细字重导致发虚 */
-    line-height: 1.6;             /* 增加行高，使多行作者列表更易读 */
+    color: var(--academic-text-color);
+    font-size: 1.14rem;
+    font-weight: 500;
+    line-height: 1.62;
+    margin-bottom: 0.6rem;
+}
+
+/* 期刊/会议名称 + 出版信息共享样式 */
+.publication-info,
+.publication-venue {
+    color: var(--academic-muted-color);
+    font-size: 1.11rem;
+    font-weight: 500;
+    line-height: 1.62;
+}
+
+.publication-info {
+    margin-bottom: 0.8rem;
 }
 
 .publication-venue {
-    font-style: italic;           /* 斜体突出发表场所 */
+    font-style: italic;
     margin-bottom: 0.5rem;
-    color: #3f454a;               /* 保持层次但不牺牲可读性 */
 }
 
-/* 期刊/会议信息样式 */
-.publication-info {
-    font-size: 1rem;
-    margin-bottom: 0.8rem;        /* 增加与链接按钮之间的间距 */
-    color: #3f454a;               /* 比原先 #666 更清楚 */
-    font-weight: 400;
-    line-height: 1.6;             /* 增加行高提高可读性 */
-}
-
-/* 作者姓名加粗和下划线样式 */
+/* 作者姓名加粗+下划线 */
 .publication-authors b u {
-    font-weight: 700;             /* 确保作者姓名加粗 */
-    text-decoration: underline;   /* 确保下划线显示 */
-    text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
-    text-underline-offset: 4px;   /* 增加下划线与文字的距离，避免与字母下降部分接触 */
-    text-decoration-skip-ink: none; /* 防止下划线在字母下方断开，保持连续性 */
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
 }
 
-/* 期刊/会议名称加粗加倾斜样式 */
+/* 期刊/会议名称加粗+倾斜 */
 .publication-info i b,
 .publication-info b i {
-    font-weight: 700;             /* 确保期刊/会议名称加粗 */
-    font-style: italic;           /* 确保倾斜显示 */
+    font-weight: 700;
+    font-style: italic;
 }
 
-/* 奖项名称加粗和下划线样式 */
+/* 奖项名称加粗+下划线 */
 .publication-info b u,
 .publication-info u b {
-    font-weight: 700;             /* 确保奖项名称加粗 */
-    text-decoration: underline;   /* 确保下划线显示 */
-    text-decoration-thickness: 1.5px; /* 适度的下划线粗细 */
-    text-underline-offset: 4px;   /* 增加下划线与文字的距离，避免与字母下降部分接触 */
-    text-decoration-skip-ink: none; /* 防止下划线在字母下方断开，保持连续性 */
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
 }
 
 .publication-description {
     margin-bottom: 0.5rem;
     font-size: 1rem;
-    line-height: 1.5;             /* 舒适的行高提高段落可读性 */
+    line-height: 1.5;
 }
 
-/* 
- * 出版物链接按钮样式 - 圆角胶囊设计
- * 与简单文本链接区分，用于强调可点击的操作
- */
-.publication-links a {
-    display: inline-block;
-    padding: 6px 18px;            /* 水平方向更宽的内边距创造胶囊形状 */
-    background-color: #d7e8f9;    /* 浅蓝色背景，与主题色协调 */
-    color: #304EA4;               /* 深蓝色文字，与背景形成足够对比 */
-    text-decoration: none;        /* 移除下划线，由于背景色已经足够表明这是链接 */
-    border-radius: 20px;          /* 大圆角实现胶囊外观 */
-    font-size: 1rem;
-    font-weight: 500;             /* 中等字重提高可见性 */
-    text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* 复合过渡效果:
-                                   * 背景颜色变化较慢(0.3s)
-                                   * 变形效果较快(0.2s)，提供即时反馈
-                                   */
+/* 出版物列表前的提示性说明（如 † 共同一作 / * 通讯作者） */
+.publication-note {
+    color: var(--academic-text-color);
+    font-size: 1.12rem;
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.5;
+    margin: -0.25rem 0 1.5rem 0;
 }
 
-/* 
- * 出版物卡片样式与悬停效果 - 现代卡片UI
- * 使用阴影和边框创建浮动卡片外观
+/*
+ * 出版物卡片
  */
 .publication-card {
     background: #ffffff;
-    border: 1px solid #e0e0e0;    /* 稍微加深边框颜色提高辨识度 */
-    border-radius: 12px;          /* 明显的圆角增强现代感 */
-    padding: 1.5rem;              /* 使用 rem 单位保持一致性 */
-    margin-bottom: 1.5rem;        /* 确保卡片间距合适 */
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* 添加变形动画 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 轻微阴影创建立体感 */
+    border: 1px solid var(--academic-border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(27, 31, 36, 0.08);
 }
 
 .publication-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* 悬停时明显加深阴影效果 */
-    transform: translateY(-2px);  /* 轻微上移营造"浮起"效果 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
 }
 
-/* 
- * 响应式设计 - 移动设备适配
- * 针对小屏设备(手机)进行布局重构
+/*
+ * 移动端响应式（出版物 + 章节字号）
  */
 @media (max-width: 768px) {
     .publication-item {
-        flex-direction: column;   /* 改为垂直堆叠布局，更适合窄屏 */
+        flex-direction: column;
     }
 
     .publication-image {
-        flex: 0 0 100%;           /* 占满整行宽度 */
-        margin-right: 0;          /* 移除右侧边距，因垂直布局不再需要 */
-        margin-bottom: 1rem;      /* 添加底部边距分隔图片和内容 */
-        max-width: 250px;         /* 限制图片在小屏上的最大宽度 */
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        max-width: 250px;
     }
 
     .publication-content {
-        width: 100%;              /* 确保内容块占满整行 */
+        width: 100%;
+    }
+
+    section .main-body {
+        font-size: 1.14rem;
+        line-height: 1.68;
+    }
+
+    section header h2 {
+        font-size: 1.85rem;
+    }
+
+    .publication-title {
+        font-size: 1.24rem;
     }
 }
 
-/* Projects section styling */
+/*
+ * 项目列表（Projects section）
+ */
 .project-container {
     display: flex;
     margin-bottom: 2rem;
@@ -387,16 +411,20 @@ a {
     .project-container {
         flex-direction: column;
     }
-    
+
     .project-image, .project-content {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    
+
     .project-image {
         max-height: 250px;
     }
 }
+
+/*
+ * 语言切换按钮
+ */
 .language-toggle {
     border: 1px solid #304EA4;
     border-radius: 999px;
@@ -416,136 +444,9 @@ a {
     transform: translateY(-1px);
 }
 
-.publication-note {
-    color: #333;
-    font-size: 1.12rem;
-    font-weight: 700;
-    line-height: 1.5;
-    margin: -0.25rem 0 1.5rem 0;
-}
-
 /*
- * Font stack aligned with popular academic homepage templates:
- * - Academic Pages / Minimal Mistakes: system sans-serif stack.
- * - al-folio / Jon Barron-style pages: Roboto/Lato-like clean sans-serif.
- * - Chinese fallback: PingFang SC, Microsoft YaHei, Noto/Source Han Sans.
+ * 出版物链接按钮（PDF / Link / BibTeX）
  */
-:root {
-    --bs-body-font-family: -apple-system, BlinkMacSystemFont, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", "WenQuanYi Micro Hei", sans-serif;
-}
-
-body,
-.main-body,
-.navbar,
-.footer-content,
-.publication-card,
-.publication-title,
-.publication-authors,
-.publication-info,
-.publication-note,
-.font-alt {
-    font-family: var(--bs-body-font-family) !important;
-    text-rendering: optimizeLegibility;
-}
-
-/* Final typography pass: clear academic-page style for bilingual text. */
-:root {
-    --academic-text-color: #24292f;
-    --academic-muted-color: #3d444d;
-    --academic-title-color: #111827;
-    --academic-border-color: #d8dee4;
-}
-
-body {
-    color: var(--academic-text-color);
-    font-weight: 400;
-}
-
-.top-section h2 {
-    font-weight: 650;
-    letter-spacing: 0.045em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
-}
-
-html[lang="zh-CN"] .top-section h2 {
-    letter-spacing: 0.22em;
-}
-
-section header h2 {
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    line-height: 1.25;
-    margin-bottom: 1.2rem;
-}
-
-section .main-body {
-    color: var(--academic-text-color);
-    font-size: 1.24rem;
-    font-weight: 400;
-    line-height: 1.72;
-}
-
-section .main-body p,
-section .main-body li {
-    color: var(--academic-text-color);
-}
-
-.publication-card {
-    border-color: var(--academic-border-color);
-    box-shadow: 0 2px 10px rgba(27, 31, 36, 0.08);
-}
-
-.publication-title {
-    color: var(--academic-title-color);
-    font-size: 1.32rem;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 1.38;
-    margin-bottom: 0.65rem;
-}
-
-.publication-authors {
-    color: var(--academic-text-color);
-    font-size: 1.14rem;
-    font-weight: 500;
-    line-height: 1.62;
-}
-
-.publication-info,
-.publication-venue {
-    color: var(--academic-muted-color);
-    font-size: 1.11rem;
-    font-weight: 500;
-    line-height: 1.62;
-}
-
-.publication-note {
-    color: var(--academic-text-color);
-    font-size: 1.12rem;
-    font-weight: 700;
-    letter-spacing: 0.005em;
-}
-
-.publication-links a {
-    font-weight: 600;
-}
-
-@media (max-width: 768px) {
-    section .main-body {
-        font-size: 1.14rem;
-        line-height: 1.68;
-    }
-
-    section header h2 {
-        font-size: 1.85rem;
-    }
-
-    .publication-title {
-        font-size: 1.24rem;
-    }
-}
-
-/* Publication action buttons and BibTeX modal. */
 .publication-links {
     display: flex;
     flex-wrap: wrap;
@@ -580,6 +481,9 @@ section .main-body li {
     transform: translateY(-1px);
 }
 
+/*
+ * BibTeX 弹窗
+ */
 .bibtex-modal {
     display: none;
     position: fixed;
