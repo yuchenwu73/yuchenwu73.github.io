@@ -32,7 +32,7 @@
     padding: 10rem 0;         /* 大间距创造空旷感 */
     background-position: center;
     background-size: cover;   /* 背景图覆盖整个区域，不重复 */
-    height: 32rem;            /* 提升高度让宽幅 banner 更完整呈现，仍保持固定视觉比例 */
+    height: 25rem;            /* 固定高度确保视觉一致性 */
 }
 
 /* 顶部横幅中的二级标题样式 - 使用较轻的字重增强现代感 */
