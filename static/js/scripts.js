@@ -68,12 +68,35 @@ function refreshScrollSpy() {
     }
 }
 
+function formatLastUpdated(date) {
+    if (currentLanguage === 'zh') {
+        return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+    }
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function updateLastUpdatedFromGitHub() {
+    return fetch('https://api.github.com/repos/yuchenwu73/yuchenwu73.github.io/commits?per_page=1')
+        .then(response => {
+            if (!response.ok) throw new Error('GitHub API error: ' + response.status);
+            return response.json();
+        })
+        .then(commits => {
+            if (!Array.isArray(commits) || commits.length === 0) return;
+            const element = document.getElementById('last-updated');
+            if (!element) return;
+            element.textContent = formatLastUpdated(new Date(commits[0].commit.author.date));
+        })
+        .catch(error => console.log('Last-updated fallback to config:', error));
+}
+
 function loadLanguage() {
     document.documentElement.lang = currentLanguage === 'zh' ? 'zh-CN' : 'en';
     updateLanguageToggle();
 
     return loadConfig()
         .then(() => Promise.all(sectionNames.map(loadSection)))
+        .then(updateLastUpdatedFromGitHub)
         .then(typesetMath)
         .then(refreshScrollSpy)
         .catch(error => console.log(error));
