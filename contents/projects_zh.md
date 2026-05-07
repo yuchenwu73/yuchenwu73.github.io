@@ -1,7 +1,7 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/lrs-detr.png" class="img-fluid publication-image" alt="LRS-DETR Project">
+            <img src="/static/assets/lrs-detr-aust2025.png" class="img-fluid publication-image" alt="LRS-DETR Project">
         </div>
     </div>
     <div class="col-md-6">
