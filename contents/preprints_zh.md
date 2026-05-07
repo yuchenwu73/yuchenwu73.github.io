@@ -16,7 +16,7 @@
             Pengwei Yang, Yeran Zhang, <b><u>Yuchen Wu</u></b>, Tianyu Li, Guoqing Wang<sup>*</sup>, and Yang Yang
         </p>
         <p class="publication-info">
-            已投稿至第四十届神经信息处理系统大会 (<i><b>NeurIPS 2026</b></i>)，审稿中。
+            已投稿至 <i><b>NeurIPS 2026</b></i>，审稿中。
         </p>
     </div>
 </div>
@@ -35,7 +35,7 @@
             Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Jun Zhang, Tianyu Li, and Guoqing Wang<sup>*</sup>
         </p>
         <p class="publication-info">
-            已投稿至 ACM Multimedia 2026 (<i><b>ACM MM 2026</b></i>)，审稿中。
+            已投稿至 <i><b>ACM MM 2026</b></i>，审稿中。
         </p>
     </div>
 </div>
