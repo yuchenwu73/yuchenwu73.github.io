@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            利用鲸鱼-蜂群混合算法 (WSHA) 与 APCR-YOLOv8 模型的无人机物资运输与精准投送
+            利用鲸鱼-蜂群混合算法 (WSHA) 与 APCR-YOLOv8 模型的先进的无人机物资运输与精准投送
         </h3>
         <p class="publication-subtitle">
             Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model

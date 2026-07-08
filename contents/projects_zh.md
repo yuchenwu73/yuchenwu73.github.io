@@ -6,8 +6,11 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer
+            LRS-DETR：低空遥感检测 Transformer
         </h3>
+        <p class="publication-subtitle">
+            LRS-DETR: Low-Altitude Remote Sensing DEtection TRansformer
+        </p>
         <p class="publication-info">
             这是我在安徽理工大学完成的本科毕业设计，面向无人机视觉场景实现了一种基于轻量化 Transformer 的实时目标检测器。
         </p>
