@@ -5,13 +5,16 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/risk-otta-neurips2026.png" class="img-fluid publication-image" alt="Risk-Controlled Online Test-Time Adaptation Overview">
+            <img src="/static/assets/risk-otta-neurips2026.png" class="img-fluid publication-image" alt="风险可控在线测试时自适应概览">
         </div>
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            Risk-Controlled Online Test-Time Adaptation for Structured Geometric Prediction
+            面向结构化几何预测的风险可控在线测试时自适应
         </h3>
+        <p class="publication-subtitle">
+            Risk-Controlled Online Test-Time Adaptation for Structured Geometric Prediction
+        </p>
         <p class="publication-authors">
             Pengwei Yang, Yeran Zhang, <b><u>Yuchen Wu</u></b>, Tianyu Li, Guoqing Wang<sup>*</sup>, and Yang Yang
         </p>
@@ -24,13 +27,16 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
-            <img src="/static/assets/geobox-r1-mm2026.png" class="img-fluid publication-image" alt="GeoBox-R1 Overview">
+            <img src="/static/assets/geobox-r1-mm2026.png" class="img-fluid publication-image" alt="GeoBox-R1 概览">
         </div>
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
+            GeoBox-R1：面向统一框级遥感视觉定位的课程引导监督微调与几何强化学习
         </h3>
+        <p class="publication-subtitle">
+            GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
+        </p>
         <p class="publication-authors">
             Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Jun Zhang, Tianyu Li, and Guoqing Wang<sup>*</sup>
         </p>
