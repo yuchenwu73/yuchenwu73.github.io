@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            基于鲸鱼-蜂群混合算法 (WSHA) 与 APCR-YOLOv8 模型的无人机物资运输与精准投放
+            利用鲸鱼-蜂群混合算法 (WSHA) 与 APCR-YOLOv8 模型的无人机物资运输与精准投送
         </h3>
         <p class="publication-subtitle">
             Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model
@@ -49,7 +49,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            改进 DeepLabV3+ 的复杂场景语义分割
+            基于改进 DeepLabV3+ 的复杂场景分割
         </h3>
         <p class="publication-subtitle">
             Using Improved DeepLabV3+ for Complex Scene Segmentation

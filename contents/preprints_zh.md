@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            面向结构化几何预测的风险可控在线测试时自适应
+            面向结构化几何预测的风险可控的在线测试时自适应
         </h3>
         <p class="publication-subtitle">
             Risk-Controlled Online Test-Time Adaptation for Structured Geometric Prediction
@@ -32,7 +32,7 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            GeoBox-R1：面向统一框级遥感视觉定位的课程引导监督微调与几何强化学习
+            GeoBox-R1：面向统一边界框级遥感视觉定位的课程引导的监督微调与几何强化学习
         </h3>
         <p class="publication-subtitle">
             GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
