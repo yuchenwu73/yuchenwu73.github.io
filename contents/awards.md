@@ -1,3 +1,4 @@
+- 👑 Outstanding Postgraduate Student Cadre, UESTC, 2026
 - 🏆 Outstanding Undergraduate Graduation Thesis (1/19 in Anhui Province), ACF, 2025
 - 🎓 Outstanding Graduate, Anhui Province, 2025
 - 💰 The Hongda Blasting Scholarship (5/3766), AUST, 2024

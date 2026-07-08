@@ -10,8 +10,11 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model
+            基于鲸鱼-蜂群混合算法 (WSHA) 与 APCR-YOLOv8 模型的无人机物资运输与精准投放
         </h3>
+        <p class="publication-subtitle">
+            Advanced UAV Material Transportation and Precision Delivery Utilizing the Whale-Swarm Hybrid Algorithm (WSHA) and APCR-YOLOv8 Model
+        </p>
         <p class="publication-authors">
             <b><u>Yuchen Wu</u></b>, Zhijian Wei, Huilin Liu<sup>*</sup>, Jiawei Qi, Xu Su, Jiqiang Yang, and Qinglin Wu
         </p>
@@ -46,13 +49,16 @@
     </div>
     <div class="col-md-6">
         <h3 class="publication-title">
-            Using Improved DeepLabV3+ for Complex Scene Segmentation
+            改进 DeepLabV3+ 的复杂场景语义分割
         </h3>
+        <p class="publication-subtitle">
+            Using Improved DeepLabV3+ for Complex Scene Segmentation
+        </p>
         <p class="publication-authors">
             <b><u>Yuchen Wu</u></b>, Jin Li, and Junkai Yang<sup>*</sup>
         </p>
         <p class="publication-info">
-            2023 IEEE 第六届自动化、电子与电气工程国际会议 (<i><b>AUTEEE</b></i>)，中国沈阳，2023，pp. 855-860。
+            In 2023 IEEE 6th International Conference on Automation, Electronics and Electrical Engineering (<i><b>AUTEEE</b></i>), Shenyang, China, 2023, pp. 855-860.
         </p>
         <p class="publication-links">
             <a href="https://doi.org/10.1109/AUTEEE60196.2023.10408693" target="_blank" rel="noopener noreferrer">Link</a>

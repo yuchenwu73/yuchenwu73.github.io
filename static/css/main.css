@@ -218,6 +218,15 @@ body {
     margin-bottom: 0.65rem;
 }
 
+.publication-subtitle {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--academic-text-color);
+    opacity: 0.72;
+    margin-top: 0.3rem;
+}
+
 /* 作者列表 */
 .publication-authors {
     color: var(--academic-text-color);
