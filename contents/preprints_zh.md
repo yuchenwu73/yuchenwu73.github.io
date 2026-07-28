@@ -5,6 +5,32 @@
 <div class="publication-card row align-items-center mb-4">
     <div class="col-md-6">
         <div class="publication-image-container">
+            <img src="/static/assets/geobox-r1-aaai2027.png" class="img-fluid publication-image" alt="GeoBox-R1 概览">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h3 class="publication-title">
+            GeoBox-R1：面向统一边界框级遥感视觉定位的课程引导的监督微调与几何强化学习
+        </h3>
+        <p class="publication-subtitle">
+            GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
+        </p>
+        <p class="publication-authors">
+            Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Jun Zhang, Tianyu Li, and Guoqing Wang<sup>*</sup>
+        </p>
+        <p class="publication-info">
+            已投稿至 <i><b>AAAI 2027</b></i>，审稿中。
+        </p>
+        <p class="publication-links">
+            <a href="https://yuchenwu73.github.io/GeoBox-R1/" target="_blank" rel="noopener noreferrer">项目主页</a>
+            <a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer">代码</a>
+        </p>
+    </div>
+</div>
+
+<div class="publication-card row align-items-center mb-4">
+    <div class="col-md-6">
+        <div class="publication-image-container">
             <img src="/static/assets/risk-otta-neurips2026.png" class="img-fluid publication-image" alt="风险可控在线测试时自适应概览">
         </div>
     </div>
@@ -24,24 +50,3 @@
     </div>
 </div>
 
-<div class="publication-card row align-items-center mb-4">
-    <div class="col-md-6">
-        <div class="publication-image-container">
-            <img src="/static/assets/geobox-r1-mm2026.png" class="img-fluid publication-image" alt="GeoBox-R1 概览">
-        </div>
-    </div>
-    <div class="col-md-6">
-        <h3 class="publication-title">
-            GeoBox-R1：面向统一边界框级遥感视觉定位的课程引导的监督微调与几何强化学习
-        </h3>
-        <p class="publication-subtitle">
-            GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
-        </p>
-        <p class="publication-authors">
-            Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Jun Zhang, Tianyu Li, and Guoqing Wang<sup>*</sup>
-        </p>
-        <p class="publication-info">
-            已投稿至 <i><b>ACM MM 2026</b></i>，审稿中。
-        </p>
-    </div>
-</div>
