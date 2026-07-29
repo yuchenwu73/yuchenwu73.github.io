@@ -1,25 +1,22 @@
-<!DOCTYPE html><html class="bg-white dark:bg-zinc-900" lang="en" data-theme="device"> <head><meta charset="UTF-8"><meta name="description" content="GeoBox-R1 unifies horizontal and oriented box-level remote sensing visual grounding via curriculum-guided SFT and geometric reinforcement learning. With only 4B parameters, it surpasses state-of-the-art 7B-8B models across 7 HBB and 3 OBB benchmarks."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v6.3.5"><link rel="icon" type="image/svg+xml" href="/GeoBox-R1/favicon.svg"><meta property="og:title" content="GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding"><meta property="og:description" content="GeoBox-R1 unifies horizontal and oriented box-level remote sensing visual grounding via curriculum-guided SFT and geometric reinforcement learning. With only 4B parameters, it surpasses state-of-the-art 7B-8B models across 7 HBB and 3 OBB benchmarks."><meta property="og:type" content="website"><meta property="og:image" content="/GeoBox-R1/screenshot-light.png"><style>:root{--font-noto-sans:"Noto Sans-e26573b19e8d949d",sans-serif;}</style><title>GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</title><link rel="stylesheet" href="/GeoBox-R1/_astro/index.CsKibPlx.css"></head> <body class="prose prose-lg prose-zinc dark:prose-invert prose-a:text-blue-600 prose-a:hover:text-blue-900 prose-a:dark:text-blue-200 prose-a:dark:hover:text-blue-100 prose-a:underline prose-a:decoration-dashed prose-a:underline-offset-4 prose-a:hover:decoration-solid prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-16 pb-6 font-(family-name:--font-noto-sans)"> <main> <header class="full-bleed relative mb-12" data-astro-cid-3ef6ksr2>  <div class="relative z-10 mx-auto flex max-w-[50rem] flex-col items-center px-6 text-center gap-6" data-astro-cid-3ef6ksr2> <h1 class="my-0 text-5xl font-medium" data-astro-cid-3ef6ksr2>GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</h1> <div class="flex flex-row flex-wrap justify-center gap-x-8 gap-y-4" data-astro-cid-3ef6ksr2> <div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Chenxi Lan <sup class="text-xl" data-astro-cid-3ef6ksr2> † </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> <a href="https://yuchenwu73.github.io" data-astro-cid-3ef6ksr2>Yuchen Wu</a> <sup class="text-xl" data-astro-cid-3ef6ksr2> † </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Minghang Zhou  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Jun Zhang  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Tianyu Li  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Guoqing Wang <sup class="text-xl" data-astro-cid-3ef6ksr2> * </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div> </div> <div data-astro-cid-3ef6ksr2>Under review at AAAI 2027</div> <div class="text-center text-sm" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2> <sup data-astro-cid-3ef6ksr2>†</sup>Equal contribution, </span><span data-astro-cid-3ef6ksr2> <sup data-astro-cid-3ef6ksr2>*</sup>Corresponding author </span> </div> <div class="not-prose flex flex-row flex-wrap justify-center gap-2" data-astro-cid-3ef6ksr2> <a href="https://yuchenwu73.github.io" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-zinc-800 text-white hover:bg-black dark:text-zinc-900 dark:hover:bg-zinc-50 dark:bg-zinc-200" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:file-pdf-2-line">   <symbol id="ai:ri:file-pdf-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h10v4h4v12H5zM3.999 2A.995.995 0 0 0 3 2.992v18.016a1 1 0 0 0 .993.992h16.014A1 1 0 0 0 21 20.992V7l-5-5zm6.5 5.5c0 1.577-.455 3.437-1.224 5.153c-.772 1.723-1.814 3.197-2.9 4.066l1.18 1.613c2.927-1.952 6.168-3.29 9.304-2.842l.457-1.939C14.644 12.661 12.5 9.99 12.5 7.5zm.6 5.972c.268-.597.505-1.216.705-1.843a9.7 9.7 0 0 0 1.706 1.966c-.982.176-1.944.465-2.875.833q.248-.471.465-.956"/></symbol><use href="#ai:ri:file-pdf-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Paper</span> </a><a href="https://github.com/yuchenwu73/GeoBox-R1" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-zinc-800 text-white hover:bg-black dark:text-zinc-900 dark:hover:bg-zinc-50 dark:bg-zinc-200" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:github-line">   <symbol id="ai:ri:github-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5.884 18.653c-.3-.2-.558-.455-.86-.816a51 51 0 0 1-.466-.579c-.463-.575-.755-.841-1.056-.95a1 1 0 1 1 .675-1.882c.752.27 1.261.735 1.947 1.588c-.094-.117.34.427.433.539c.19.227.33.365.44.438c.204.137.588.196 1.15.14c.024-.382.094-.753.202-1.095c-2.968-.726-4.648-2.64-4.648-6.396c0-1.24.37-2.356 1.058-3.292c-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047c.803-.124 1.937.17 3.415 1.096a11.7 11.7 0 0 1 2.687-.308c.912 0 1.819.104 2.684.308c1.477-.933 2.614-1.227 3.422-1.096q.128.02.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.296.302 3.19c.691.936 1.058 2.045 1.058 3.293c0 3.757-1.674 5.665-4.642 6.392c.125.415.19.878.19 1.38c0 .665-.002 1.299-.007 2.01c0 .19-.002.394-.005.706a1 1 0 0 1-.018 1.958c-1.14.227-1.984-.532-1.984-1.525l.002-.447l.005-.705c.005-.707.008-1.337.008-1.997c0-.697-.184-1.152-.426-1.361c-.661-.57-.326-1.654.541-1.751c2.966-.333 4.336-1.482 4.336-4.66c0-.955-.312-1.744-.913-2.404A1 1 0 0 1 17.2 6.19c.166-.414.236-.957.095-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135a9.6 9.6 0 0 0-2.592-.349c-.89 0-1.772.118-2.592.35a1 1 0 0 1-.829-.134c-.753-.507-1.374-.807-1.87-.947c-.143.653-.072 1.194.093 1.607a1 1 0 0 1-.189 1.045c-.597.655-.913 1.458-.913 2.404c0 3.172 1.371 4.328 4.322 4.66c.865.097 1.202 1.177.545 1.748c-.193.168-.43.732-.43 1.364v3.15c0 .985-.834 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.661-.088-2.254-.485"/></symbol><use href="#ai:ri:github-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Code</span> </a><a href="https://huggingface.co/yuchenwu73/GeoBox-R1" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-zinc-800 text-white hover:bg-black dark:text-zinc-900 dark:hover:bg-zinc-50 dark:bg-zinc-200" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:robot-2-line">   <symbol id="ai:ri:robot-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 2c0 .444-.193.843-.5 1.118V5h5a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h5V3.118A1.5 1.5 0 1 1 13.5 2M6 7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm-4 3H0v6h2zm20 0h2v6h-2zM9 14.5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m6 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3"/></symbol><use href="#ai:ri:robot-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Model</span> </a><a href="https://huggingface.co/datasets/yuchenwu73/refGeo-SFT-Ablation" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-zinc-800 text-white hover:bg-black dark:text-zinc-900 dark:hover:bg-zinc-50 dark:bg-zinc-200" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:database-2-line">   <symbol id="ai:ri:database-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12.5c0 .313.461.858 1.53 1.393C7.914 14.585 9.877 15 12 15s4.086-.415 5.47-1.107c1.069-.535 1.53-1.08 1.53-1.393v-2.171C17.35 11.349 14.827 12 12 12s-5.35-.652-7-1.671zm14 2.829C17.35 16.349 14.827 17 12 17s-5.35-.652-7-1.671V17.5c0 .313.461.858 1.53 1.393C7.914 19.585 9.877 20 12 20s4.086-.415 5.47-1.107c1.069-.535 1.53-1.08 1.53-1.393zM3 17.5v-10C3 5.015 7.03 3 12 3s9 2.015 9 4.5v10c0 2.485-4.03 4.5-9 4.5s-9-2.015-9-4.5m9-7.5c2.123 0 4.086-.415 5.47-1.107C18.539 8.358 19 7.813 19 7.5s-.461-.858-1.53-1.393C16.086 5.415 14.123 5 12 5s-4.086.415-5.47 1.107C5.461 6.642 5 7.187 5 7.5s.461.858 1.53 1.393C7.914 9.585 9.877 10 12 10"/></symbol><use href="#ai:ri:database-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Dataset</span> </a> </div> </div> </header>
-<figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_7A4Kh.avif 640w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Z2utsE1.avif 750w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Z1UKwot.avif 828w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Z1FmVS2.avif 1080w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_YqPP6.avif 1280w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Z2unEDU.avif 1536w" type="image/avif">  <img src="/GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Vo9bY.png" srcset="/GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Z2dIYQW.png 640w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_enAwG.png 750w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_N6wMe.png 828w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_1KoQWR.png 1080w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_ZDXt7V.png 1280w, /GeoBox-R1/_astro/Fig1-Motivation.CsM7HcHv_Vo9bY.png 1536w" alt="Under an explicit OBB prompt, a general-purpose MLLM returns a horizontal box, while GeoBox-R1 returns a correctly oriented box." loading="lazy" decoding="async" sizes="(min-width: 1536px) 1536px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1536" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> General-purpose MLLMs fall back to horizontal boxes when explicitly prompted for oriented boxes. GeoBox-R1 produces both formats reliably under a single unified interface. </figcaption> </figure>
+<!DOCTYPE html><html class="bg-white dark:bg-zinc-900" lang="en" data-theme="device"> <head><meta charset="UTF-8"><meta name="description" content="GeoBox-R1 unifies horizontal and oriented box-level remote sensing visual grounding via curriculum-guided SFT and geometric reinforcement learning. With only 4B parameters, it surpasses state-of-the-art 7B-8B models across 7 HBB and 3 OBB benchmarks."><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v6.3.5"><link rel="icon" type="image/svg+xml" href="/GeoBox-R1/favicon.svg"><meta property="og:title" content="GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding"><meta property="og:description" content="GeoBox-R1 unifies horizontal and oriented box-level remote sensing visual grounding via curriculum-guided SFT and geometric reinforcement learning. With only 4B parameters, it surpasses state-of-the-art 7B-8B models across 7 HBB and 3 OBB benchmarks."><meta property="og:type" content="website"><meta property="og:image" content="/GeoBox-R1/screenshot-light.png"><style>:root{--font-noto-sans:"Noto Sans-e26573b19e8d949d",sans-serif;}</style><title>GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</title><link rel="stylesheet" href="/GeoBox-R1/_astro/index.DSTRsXcO.css"></head> <body class="prose prose-lg prose-zinc dark:prose-invert prose-a:text-blue-600 prose-a:hover:text-blue-900 prose-a:dark:text-blue-200 prose-a:dark:hover:text-blue-100 prose-a:underline prose-a:decoration-dashed prose-a:underline-offset-4 prose-a:hover:decoration-solid prose-a:font-normal prose-code:bg-zinc-200 prose-code:dark:bg-zinc-800 prose-code:text-zinc-800 prose-code:dark:text-zinc-200 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-medium prose-code:before:content-none prose-code:after:content-none max-w-none pt-16 pb-6 font-(family-name:--font-noto-sans)"> <main> <header class="full-bleed relative mb-12 -mt-16 pt-24 pb-28" data-astro-cid-3ef6ksr2> <div class="cover absolute inset-0 z-0 overflow-hidden" data-astro-cid-3ef6ksr2> <picture> <source srcset="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z20u2mG.avif 640w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_rCy1W.avif 750w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_11luhu.avif 828w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1FnGhR.avif 1080w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Yq6qg.avif 1280w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z2uop3K.avif 1536w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_VnoM9.png" srcset="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_In1O1.png 640w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1SGvAh.png 750w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1jXzkJ.png 828w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_1Ko7y2.png 1080w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_ZDYdwL.png 1280w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_VnoM9.png 1536w" alt loading="eager" decoding="sync" fetchpriority="high" sizes="(min-width: 1536px) 1536px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1536" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture>  <div class="absolute inset-0 bg-black/40" data-astro-cid-3ef6ksr2></div> </div> <div class="relative z-10 mx-auto flex max-w-[50rem] flex-col items-center px-6 text-center gap-10 text-white prose-headings:text-white [text-shadow:0_0_8px_rgba(0,0,0,0.6)]" data-astro-cid-3ef6ksr2> <h1 class="my-0 text-5xl font-medium" data-astro-cid-3ef6ksr2>GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</h1> <div class="flex flex-row flex-wrap justify-center gap-x-8 gap-y-4" data-astro-cid-3ef6ksr2> <div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Chenxi Lan <sup class="text-xl" data-astro-cid-3ef6ksr2> † </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> <a class="not-prose text-blue-200 hover:text-blue-100 underline decoration-dashed underline-offset-4 hover:decoration-solid" href="https://yuchenwu73.github.io" data-astro-cid-3ef6ksr2>Yuchen Wu</a> <sup class="text-xl" data-astro-cid-3ef6ksr2> † </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Minghang Zhou  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Tianyu Li  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Zhihao Qiu  </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div><div class="flex flex-col items-center text-center" data-astro-cid-3ef6ksr2> <div class="flex flex-row text-xl" data-astro-cid-3ef6ksr2> Guoqing Wang <sup class="text-xl" data-astro-cid-3ef6ksr2> * </sup> </div> <div data-astro-cid-3ef6ksr2>UESTC</div> </div> </div> <div data-astro-cid-3ef6ksr2>Under review at AAAI 2027</div> <div class="text-center text-sm" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2> <sup data-astro-cid-3ef6ksr2>†</sup>Equal contribution, </span><span data-astro-cid-3ef6ksr2> <sup data-astro-cid-3ef6ksr2>*</sup>Corresponding author </span> </div> <div class="not-prose flex flex-row flex-wrap justify-center gap-2" data-astro-cid-3ef6ksr2> <a href="https://yuchenwu73.github.io" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-white hover:bg-zinc-200 text-zinc-800 text-shadow-none shadow-[0_0_8px_rgba(0,0,0,0.6)]" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:file-pdf-2-line">   <symbol id="ai:ri:file-pdf-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h10v4h4v12H5zM3.999 2A.995.995 0 0 0 3 2.992v18.016a1 1 0 0 0 .993.992h16.014A1 1 0 0 0 21 20.992V7l-5-5zm6.5 5.5c0 1.577-.455 3.437-1.224 5.153c-.772 1.723-1.814 3.197-2.9 4.066l1.18 1.613c2.927-1.952 6.168-3.29 9.304-2.842l.457-1.939C14.644 12.661 12.5 9.99 12.5 7.5zm.6 5.972c.268-.597.505-1.216.705-1.843a9.7 9.7 0 0 0 1.706 1.966c-.982.176-1.944.465-2.875.833q.248-.471.465-.956"/></symbol><use href="#ai:ri:file-pdf-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Paper</span> </a><a href="https://github.com/yuchenwu73/GeoBox-R1" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-white hover:bg-zinc-200 text-zinc-800 text-shadow-none shadow-[0_0_8px_rgba(0,0,0,0.6)]" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:github-line">   <symbol id="ai:ri:github-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5.884 18.653c-.3-.2-.558-.455-.86-.816a51 51 0 0 1-.466-.579c-.463-.575-.755-.841-1.056-.95a1 1 0 1 1 .675-1.882c.752.27 1.261.735 1.947 1.588c-.094-.117.34.427.433.539c.19.227.33.365.44.438c.204.137.588.196 1.15.14c.024-.382.094-.753.202-1.095c-2.968-.726-4.648-2.64-4.648-6.396c0-1.24.37-2.356 1.058-3.292c-.218-.894-.185-1.975.302-3.192a1 1 0 0 1 .63-.582c.081-.024.127-.035.208-.047c.803-.124 1.937.17 3.415 1.096a11.7 11.7 0 0 1 2.687-.308c.912 0 1.819.104 2.684.308c1.477-.933 2.614-1.227 3.422-1.096q.128.02.218.05a1 1 0 0 1 .616.58c.487 1.216.52 2.296.302 3.19c.691.936 1.058 2.045 1.058 3.293c0 3.757-1.674 5.665-4.642 6.392c.125.415.19.878.19 1.38c0 .665-.002 1.299-.007 2.01c0 .19-.002.394-.005.706a1 1 0 0 1-.018 1.958c-1.14.227-1.984-.532-1.984-1.525l.002-.447l.005-.705c.005-.707.008-1.337.008-1.997c0-.697-.184-1.152-.426-1.361c-.661-.57-.326-1.654.541-1.751c2.966-.333 4.336-1.482 4.336-4.66c0-.955-.312-1.744-.913-2.404A1 1 0 0 1 17.2 6.19c.166-.414.236-.957.095-1.614l-.01.003c-.491.139-1.11.44-1.858.949a1 1 0 0 1-.833.135a9.6 9.6 0 0 0-2.592-.349c-.89 0-1.772.118-2.592.35a1 1 0 0 1-.829-.134c-.753-.507-1.374-.807-1.87-.947c-.143.653-.072 1.194.093 1.607a1 1 0 0 1-.189 1.045c-.597.655-.913 1.458-.913 2.404c0 3.172 1.371 4.328 4.322 4.66c.865.097 1.202 1.177.545 1.748c-.193.168-.43.732-.43 1.364v3.15c0 .985-.834 1.725-1.96 1.528a1 1 0 0 1-.04-1.962v-.99c-.91.061-1.661-.088-2.254-.485"/></symbol><use href="#ai:ri:github-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Code</span> </a><a href="https://huggingface.co/yuchenwu73/GeoBox-R1" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-white hover:bg-zinc-200 text-zinc-800 text-shadow-none shadow-[0_0_8px_rgba(0,0,0,0.6)]" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:robot-2-line">   <symbol id="ai:ri:robot-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 2c0 .444-.193.843-.5 1.118V5h5a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h5V3.118A1.5 1.5 0 1 1 13.5 2M6 7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1zm-4 3H0v6h2zm20 0h2v6h-2zM9 14.5a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3m6 0a1.5 1.5 0 1 0 0-3a1.5 1.5 0 0 0 0 3"/></symbol><use href="#ai:ri:robot-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Model</span> </a><a href="https://huggingface.co/datasets/yuchenwu73/refGeo-SFT-Ablation" class="flex flex-row items-center gap-2 rounded-full px-5 py-2 text-lg hover:no-underline bg-white hover:bg-zinc-200 text-zinc-800 text-shadow-none shadow-[0_0_8px_rgba(0,0,0,0.6)]" data-astro-cid-3ef6ksr2> <svg width="1em" height="1em" data-astro-cid-3ef6ksr2="true" data-icon="ri:database-2-line">   <symbol id="ai:ri:database-2-line" viewBox="0 0 24 24"><path fill="currentColor" d="M5 12.5c0 .313.461.858 1.53 1.393C7.914 14.585 9.877 15 12 15s4.086-.415 5.47-1.107c1.069-.535 1.53-1.08 1.53-1.393v-2.171C17.35 11.349 14.827 12 12 12s-5.35-.652-7-1.671zm14 2.829C17.35 16.349 14.827 17 12 17s-5.35-.652-7-1.671V17.5c0 .313.461.858 1.53 1.393C7.914 19.585 9.877 20 12 20s4.086-.415 5.47-1.107c1.069-.535 1.53-1.08 1.53-1.393zM3 17.5v-10C3 5.015 7.03 3 12 3s9 2.015 9 4.5v10c0 2.485-4.03 4.5-9 4.5s-9-2.015-9-4.5m9-7.5c2.123 0 4.086-.415 5.47-1.107C18.539 8.358 19 7.813 19 7.5s-.461-.858-1.53-1.393C16.086 5.415 14.123 5 12 5s-4.086.415-5.47 1.107C5.461 6.642 5 7.187 5 7.5s.461.858 1.53 1.393C7.914 9.585 9.877 10 12 10"/></symbol><use href="#ai:ri:database-2-line"></use>  </svg> <span data-astro-cid-3ef6ksr2>Dataset</span> </a> </div> </div> </header>
+<video class="aspect-video h-auto w-full rounded-lg" src="/GeoBox-R1/_astro/geobox-r1-demo.Bo88zL_z.mp4" controls loop playsinline muted autoplay></video>
 <div class="full-bleed bg-zinc-200 py-8 dark:bg-zinc-800"> <div class="mx-[var(--actual-inline-margin)] [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <h2 id="abstract">Abstract</h2><p>Remote sensing visual grounding (RSVG) aims to localize the object referred to by a natural-language expression in aerial or satellite imagery. Recent multimodal large language models (MLLMs) make unified box-level grounding feasible, but general-purpose models do not reliably produce oriented bounding boxes (OBBs) and often fall back to horizontal bounding box (HBB) outputs. Jointly training a single model for HBB and OBB prediction is also challenging, because the two tasks require different levels of semantic grounding and geometric precision.</p><p>We propose <strong>GeoBox-R1</strong>, a two-stage training paradigm for unified box-level RSVG. It first performs <strong>curriculum-guided supervised fine-tuning</strong>, ordering training data from HBB grounding to OBB grounding and finally to HBB-to-OBB Chain-of-Thought supervision, establishing unified box-level grounding progressively. It then applies <strong>geometric reinforcement learning</strong> via Group Reward-Decoupled Normalization Policy Optimization (GDPO), using two rule-based geometric rewards — Rotated Intersection over Union (RIoU) and adaptive Wasserstein distance — to refine OBB prediction.</p><p>Across 7 HBB and 3 OBB benchmarks, GeoBox-R1 achieves the best macro averages on all three metrics (Acc@0.5, Acc@0.7, and mean overlap) for both tasks. With only <strong>4B parameters</strong>, it surpasses state-of-the-art 7B–8B models, leading by <strong>3.68/4.89/2.61</strong> points on HBB and <strong>5.36/7.74/2.89</strong> points on OBB, with the largest gains at the stricter Acc@0.7 threshold.</p> </div> </div>
+<h2 id="the-problem">The problem</h2>
+<figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z20u2mG.avif 640w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_rCy1W.avif 750w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_11luhu.avif 828w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1FnGhR.avif 1080w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Yq6qg.avif 1280w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z2uop3K.avif 1536w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_VnoM9.png" srcset="/GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_In1O1.png 640w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1SGvAh.png 750w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_Z1jXzkJ.png 828w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_1Ko7y2.png 1080w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_ZDYdwL.png 1280w, /GeoBox-R1/_astro/fig1-motivation.CsM7HcHv_VnoM9.png 1536w" alt="Under an explicit OBB prompt, a general-purpose MLLM returns a horizontal box, while GeoBox-R1 returns a correctly oriented box." loading="lazy" decoding="async" sizes="(min-width: 1536px) 1536px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1536" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> General-purpose MLLMs fall back to horizontal boxes when explicitly prompted for oriented boxes. GeoBox-R1 produces both formats reliably under a single unified interface. </figcaption> </figure>
 <h2 id="method">Method</h2>
-<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z28y6Ij.avif 640w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z10PINJ.avif 750w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_yH4jU.avif 828w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_1R3sTq.avif 1080w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_fEO4q.avif 1280w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z6U1vK.avif 1668w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_2hIe5Q.avif 1949w" type="image/avif">  <img src="/GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_DiT7O.png" srcset="/GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_IUTiR.png 640w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_1QDhdr.png 750w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z1D03rP.png 828w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_ZtgAHN.png 1080w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z25EfxN.png 1280w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_Z2sf68Y.png 1668w, /GeoBox-R1/_astro/Fig2_Pipeline.CtCuMad-_DiT7O.png 1949w" alt="Two-stage GeoBox-R1 pipeline: curriculum-guided SFT followed by GDPO geometric reinforcement learning." loading="lazy" decoding="async" sizes="(min-width: 1949px) 1949px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1949" height="1146" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> GeoBox-R1 pipeline. Stage 1 establishes unified box-level grounding through a curriculum from HBB to OBB to HBB-to-OBB CoT. Stage 2 refines oriented localization with GDPO under two rule-based geometric rewards. </figcaption> </figure> </div>
-<h3 id="stage-1--curriculum-guided-sft">Stage 1 — Curriculum-guided SFT</h3>
-<p>Training data is presented easy-to-hard rather than shuffled:</p>
-<ol>
+<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_1t6wTe.avif 640w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_Z2tne08.avif 750w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_ZSOpQt.avif 828w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_28kqtD.avif 1080w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_vVLDD.avif 1280w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_9lV3s.avif 1668w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_Z2wbW8R.avif 1949w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_TzQH2.png" srcset="/GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_ZIAzRw.png 640w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_o6M23.png 750w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_1XEAaH.png 828w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_ZcYD8A.png 1080w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_Z1OnhXA.png 1280w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_Z2bX8yL.png 1668w, /GeoBox-R1/_astro/fig2-pipeline.CtCuMad-_TzQH2.png 1949w" alt="Two-stage GeoBox-R1 pipeline: curriculum-guided SFT followed by GDPO geometric reinforcement learning." loading="lazy" decoding="async" sizes="(min-width: 1949px) 1949px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1949" height="1146" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> GeoBox-R1 pipeline. Stage 1 establishes unified box-level grounding through a curriculum from HBB to OBB to HBB-to-OBB CoT. Stage 2 refines oriented localization with GDPO under two rule-based geometric rewards. </figcaption> </figure> </div>
+<div class="flex w-full flex-wrap items-stretch gap-4"> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <h3 id="stage-1--curriculum-guided-sft"><span style="font-variant: small-caps;">Stage 1</span> — Curriculum-guided SFT</h3><p>Training data is presented easy-to-hard rather than shuffled:</p><ol>
 <li><strong>HBB grounding</strong> establishes coarse semantic localization.</li>
 <li><strong>OBB grounding</strong> introduces orientation and aspect-ratio sensitivity.</li>
-<li><strong>HBB-to-OBB Chain-of-Thought</strong> supervises the intermediate reasoning that refines a coarse horizontal box into a tight oriented box.</li>
-</ol>
-<h3 id="stage-2--geometric-rl-with-gdpo">Stage 2 — Geometric RL with GDPO</h3>
-<p>GDPO refines OBB prediction with two rule-based geometric rewards and no learned reward model:</p>
-<ul>
+<li><strong>HBB-to-OBB CoT</strong> supervises the reasoning that refines a coarse horizontal box into a tight oriented box.</li>
+</ol><p>The full SFT mixture holds 161,692 samples: 32,638 HBB, 96,791 OBB, and 32,263 CoT.</p> </div> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <h3 id="stage-2--geometric-rl-with-gdpo"><span style="font-variant: small-caps;">Stage 2</span> — Geometric RL with GDPO</h3><p>GDPO refines OBB prediction with two rule-based geometric rewards and no learned reward model:</p><ul>
 <li><strong>Rotated IoU (RIoU)</strong> gives direct overlap supervision for oriented boxes.</li>
-<li><strong>Adaptive Wasserstein distance</strong> stays informative when RIoU saturates near zero, which is common for small or elongated targets.</li>
-</ul>
-<p>The two rewards are combined with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">U</mi></mrow></msub><mo>=</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">D</mi></mrow></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\lambda_{\mathrm{RIoU}} = \lambda_{\mathrm{WD}} = 0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">RIoU</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WD</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.5</span></span></span></span>.</p>
+<li><strong>Adaptive Wasserstein distance</strong> stays informative when RIoU saturates near zero, common for small or elongated targets.</li>
+</ul><p>Rewards are combined with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">I</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">U</mi></mrow></msub><mo>=</mo><msub><mi>λ</mi><mrow><mi mathvariant="normal">W</mi><mi mathvariant="normal">D</mi></mrow></msub><mo>=</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\lambda_{\mathrm{RIoU}} = \lambda_{\mathrm{WD}} = 0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">RIoU</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal">λ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathrm mtight">WD</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.5</span></span></span></span>, on a 20% OBB subset (19,357 of 96,791 samples).</p> </div> </div>
 <h2 id="results">Results</h2>
-<p>GeoBox-R1 attains the best macro averages on every metric for both tasks.</p>
-<h3 id="hbb-grounding--7-benchmarks-macro-average">HBB grounding — 7 benchmarks, macro average</h3>
+<h3 id="hbb-grounding--7-evaluation-sets">HBB grounding — 7 evaluation sets</h3>
+<p>Each tab shows one metric across all seven HBB evaluation sets. <span style="font-variant: small-caps;">Avg.</span> is the macro average.</p>
+<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <div class="starwind-tabs" data-default-value="acc05" data-slot="tabs"> <div class="mx-auto flex flex-wrap w-fit items-center justify-center gap-2" data-slot="tabs-list" data-tabs-list role="tablist"> <button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="acc05" data-state="inactive" role="tab" aria-selected="false"> Acc@0.5 </button><button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="acc07" data-state="inactive" role="tab" aria-selected="false"> Acc@0.7 </button><button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="miou" data-state="inactive" role="tab" aria-selected="false"> mIoU </button> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="acc05" data-state="inactive" role="tabpanel" tabindex="0" hidden> 
 
 
 
@@ -60,9 +57,6 @@
 
 
 
-<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>Acc@0.5</th><th>Acc@0.7</th><th>mIoU</th></tr></thead><tbody><tr><td>Qwen3-VL-8B (zero-shot)</td><td>8B</td><td>43.70</td><td>—</td><td>—</td></tr><tr><td>InternVL3-8B (SFT)</td><td>8B</td><td>55.10</td><td>—</td><td>—</td></tr><tr><td>GeoGround</td><td>7B</td><td>52.35</td><td>35.02</td><td>46.80</td></tr><tr><td><strong>GeoBox-R1</strong></td><td><strong>4B</strong></td><td><strong>58.78</strong></td><td><strong>42.22</strong></td><td><strong>50.39</strong></td></tr></tbody> </table> </div>
-<p>Against GeoGround, the previously published state of the art for unified RSVG, the margins are <strong>+6.43 / +7.20 / +3.59</strong> points. Against InternVL3-8B — the strongest SFT baseline, with twice the parameters under the same recipe — GeoBox-R1 still leads by <strong>3.68</strong> points, indicating that parameter count alone does not explain the gain.</p>
-<h3 id="obb-grounding--3-benchmarks-macro-average">OBB grounding — 3 benchmarks, macro average</h3>
 
 
 
@@ -103,14 +97,437 @@
 
 
 
-<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>Acc@0.5</th><th>Acc@0.7</th><th>mRIoU</th></tr></thead><tbody><tr><td>InternVL3-8B (SFT)</td><td>8B</td><td>35.74</td><td>—</td><td>—</td></tr><tr><td>GeoGround</td><td>7B</td><td>41.96</td><td>19.81</td><td>36.96</td></tr><tr><td>GeoBox-R1 (SFT only)</td><td>4B</td><td>43.11</td><td>—</td><td>—</td></tr><tr><td><strong>GeoBox-R1 (SFT + GDPO)</strong></td><td><strong>4B</strong></td><td><strong>47.32</strong></td><td><strong>27.55</strong></td><td><strong>39.85</strong></td></tr></tbody> </table> </div>
-<p>GDPO lifts the SFT checkpoint from <strong>43.11</strong> to <strong>47.32</strong> average Acc@0.5, leading GeoGround by <strong>5.36 / 7.74 / 2.89</strong> points.</p>
-<h3 id="obb-only-rl-does-not-trade-away-hbb-performance">OBB-only RL does not trade away HBB performance</h3>
-<p>Although GDPO trains on OBB samples only, HBB macro averages <em>rise</em> from 57.17/40.33/48.82 to <strong>58.78/42.22/50.39</strong>. Acc@0.5 improves on six of seven HBB benchmarks, and Acc@0.7 and mIoU improve on all seven. This cross-format transfer is consistent with localization knowledge shared between the two box formats.</p>
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>DIOR-Test</th><th>DIOR-Val</th><th>RSVG-Test</th><th>RSVG-Val</th><th>GeoChat*</th><th>VRSBench*</th><th>AVVG</th><th>Avg.</th></tr></thead><tbody><tr><td>Qwen3-VL</td><td>4B</td><td>51.91</td><td>51.38</td><td>33.17</td><td>32.89</td><td>49.17</td><td>51.42</td><td>23.93</td><td>42.01</td></tr><tr><td>Qwen3-VL</td><td>8B</td><td>54.14</td><td>53.68</td><td>33.82</td><td>34.80</td><td>50.73</td><td>53.55</td><td>25.22</td><td>43.70</td></tr><tr><td>GeoGround</td><td>7B</td><td><strong>77.70</strong></td><td><strong>77.13</strong></td><td>26.65</td><td>27.81</td><td><strong>69.76</strong></td><td>65.76</td><td>21.60</td><td>52.35</td></tr><tr><td>InternVL3 (SFT)</td><td>8B</td><td>74.83</td><td>75.06</td><td>46.05</td><td>44.05</td><td>59.23</td><td>58.05</td><td>28.41</td><td>55.10</td></tr><tr><td>GeoBox-R1 (SFT)</td><td>4B</td><td>74.91</td><td>74.21</td><td>48.57</td><td>46.29</td><td>61.39</td><td>64.45</td><td>30.33</td><td>57.17</td></tr><tr><td><strong>GeoBox-R1 (SFT + GDPO)</strong></td><td><strong>4B</strong></td><td>76.61</td><td>75.11</td><td><strong>51.26</strong></td><td><strong>48.38</strong></td><td>61.13</td><td><strong>66.84</strong></td><td><strong>32.14</strong></td><td><strong>58.78</strong></td></tr></tbody> </table> </div> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="acc07" data-state="inactive" role="tabpanel" tabindex="0" hidden> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>DIOR-Test</th><th>DIOR-Val</th><th>RSVG-Test</th><th>RSVG-Val</th><th>GeoChat*</th><th>VRSBench*</th><th>AVVG</th><th>Avg.</th></tr></thead><tbody><tr><td>Qwen3-VL</td><td>4B</td><td>38.16</td><td>37.05</td><td>20.05</td><td>19.57</td><td>28.29</td><td>28.80</td><td>18.99</td><td>27.27</td></tr><tr><td>Qwen3-VL</td><td>8B</td><td>41.50</td><td>40.50</td><td>20.13</td><td>19.98</td><td>29.23</td><td>29.80</td><td>18.55</td><td>28.53</td></tr><tr><td>GeoGround</td><td>7B</td><td><strong>64.98</strong></td><td>63.00</td><td>10.02</td><td>9.08</td><td><strong>50.66</strong></td><td>39.05</td><td>8.37</td><td>35.02</td></tr><tr><td>InternVL3 (SFT)</td><td>8B</td><td>62.76</td><td>61.57</td><td>25.51</td><td>25.81</td><td>32.03</td><td>33.70</td><td>19.91</td><td>37.33</td></tr><tr><td>GeoBox-R1 (SFT)</td><td>4B</td><td>62.46</td><td>62.23</td><td>29.42</td><td>28.73</td><td>35.13</td><td>39.58</td><td>24.74</td><td>40.33</td></tr><tr><td><strong>GeoBox-R1 (SFT + GDPO)</strong></td><td><strong>4B</strong></td><td>64.78</td><td><strong>63.13</strong></td><td><strong>32.60</strong></td><td><strong>31.97</strong></td><td>35.49</td><td><strong>41.16</strong></td><td><strong>26.39</strong></td><td><strong>42.22</strong></td></tr></tbody> </table> </div> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="miou" data-state="inactive" role="tabpanel" tabindex="0" hidden> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>DIOR-Test</th><th>DIOR-Val</th><th>RSVG-Test</th><th>RSVG-Val</th><th>GeoChat*</th><th>VRSBench*</th><th>AVVG</th><th>Avg.</th></tr></thead><tbody><tr><td>Qwen3-VL</td><td>4B</td><td>48.21</td><td>47.58</td><td>30.72</td><td>30.45</td><td>43.37</td><td>45.21</td><td>19.79</td><td>37.90</td></tr><tr><td>Qwen3-VL</td><td>8B</td><td>50.81</td><td>49.63</td><td>31.81</td><td>30.78</td><td>44.37</td><td>46.72</td><td>20.21</td><td>39.19</td></tr><tr><td>GeoGround</td><td>7B</td><td><strong>68.28</strong></td><td><strong>67.54</strong></td><td>28.15</td><td>27.08</td><td><strong>57.97</strong></td><td><strong>56.27</strong></td><td>22.28</td><td>46.80</td></tr><tr><td>InternVL3 (SFT)</td><td>8B</td><td>65.99</td><td>65.71</td><td>40.08</td><td>39.19</td><td>48.16</td><td>50.57</td><td>24.74</td><td>47.78</td></tr><tr><td>GeoBox-R1 (SFT)</td><td>4B</td><td>65.99</td><td>65.55</td><td>40.51</td><td>39.75</td><td>50.34</td><td>54.28</td><td>25.32</td><td>48.82</td></tr><tr><td><strong>GeoBox-R1 (SFT + GDPO)</strong></td><td><strong>4B</strong></td><td>67.50</td><td>66.57</td><td><strong>42.99</strong></td><td><strong>42.00</strong></td><td>51.25</td><td>55.74</td><td><strong>26.68</strong></td><td><strong>50.39</strong></td></tr></tbody> </table> </div> </div> </div> <script type="module">class c{tabs;triggers;contents;currentTabIndex=0;tabsId;syncKey;storageKey;valueToTriggerMap;valueToContentMap;parentHandler=null;constructor(t,i,e=null){this.tabs=t,this.parentHandler=e,this.triggers=Array.from(t.querySelectorAll(":scope > [data-tabs-list] > [data-tabs-trigger]")),this.contents=Array.from(t.querySelectorAll(":scope > [data-tabs-content]")),this.tabsId=`starwind-tabs${i}`,this.syncKey=t.dataset.syncKey,this.storageKey=this.syncKey?`starwind-tabs-${this.syncKey}`:`starwind-tabs-${this.tabsId}`,this.valueToTriggerMap=new Map(this.triggers.map(s=>[s.getAttribute("data-value")??"",s])),this.valueToContentMap=new Map(this.contents.map(s=>[s.getAttribute("data-value")??"",s])),this.setupIds(),this.initializeTab(),this.addEventListeners(),this.syncKey&&this.setupSyncListener()}initializeTab(){const t=this.syncKey?localStorage.getItem(this.storageKey)??this.tabs.dataset.defaultValue:this.tabs.dataset.defaultValue;t&&(this.showTab(t),this.currentTabIndex=this.triggers.findIndex(i=>i.getAttribute("data-value")===t),this.setTabIndex())}setupSyncListener(){document.addEventListener(`starwind-tabs-sync:${this.syncKey}`,(t=>{const i=t.detail.value,e=this.valueToTriggerMap.get(i),s=e?this.triggers.indexOf(e):-1;s!==-1&&(this.showTab(i),this.currentTabIndex=s,this.setTabIndex())}))}setupIds(){this.triggers.forEach((t,i)=>{const e=`${this.tabsId}-t${i}`,s=`${this.tabsId}-c${i}`,n=t.getAttribute("data-value");if(t.id=e,n){t.setAttribute("aria-controls",s);const a=this.valueToContentMap.get(n);a&&(a.id=s,a.setAttribute("aria-labelledby",e))}})}setTabIndex(){this.triggers.forEach((t,i)=>{t.setAttribute("tabindex",i===this.currentTabIndex?"0":"-1")})}dispatchSyncEvent(t){this.syncKey&&(document.dispatchEvent(new CustomEvent(`starwind-tabs-sync:${this.syncKey}`,{detail:{value:t}})),localStorage.setItem(this.storageKey,t))}handleKeyNavigation=t=>{const i=t.key;let e=this.currentTabIndex;switch(i){case"ArrowRight":{for(let a=1;a<this.triggers.length;a++){const r=(this.currentTabIndex+a)%this.triggers.length;if(!this.triggers[r].disabled){e=r;break}}break}case"ArrowLeft":{for(let a=1;a<this.triggers.length;a++){const r=(this.currentTabIndex-a+this.triggers.length)%this.triggers.length;if(!this.triggers[r].disabled){e=r;break}}break}case"Home":{for(let a=0;a<this.triggers.length;a++)if(!this.triggers[a].disabled){e=a;break}break}case"End":{for(let a=this.triggers.length-1;a>=0;a--)if(!this.triggers[a].disabled){e=a;break}break}default:return}t.preventDefault();const s=this.triggers[e],n=s.getAttribute("data-value");n&&(this.showTab(n),this.currentTabIndex=e,this.setTabIndex(),s.focus(),this.dispatchSyncEvent(n))};handleClick=(t,i)=>{const e=t.getAttribute("data-value");e&&(this.showTab(e),this.currentTabIndex=i,this.setTabIndex(),t.focus(),this.dispatchSyncEvent(e))};addEventListeners(){this.triggers.forEach((t,i)=>{t.addEventListener("click",()=>this.handleClick(t,i)),t.addEventListener("keydown",e=>this.handleKeyNavigation(e))})}showTab(t){const i=this.valueToTriggerMap.get(t),e=this.valueToContentMap.get(t);!i||!e||(this.triggers.forEach(s=>{const n=s===i;s.setAttribute("data-state",n?"active":"inactive"),s.setAttribute("aria-selected",n.toString())}),this.contents.forEach(s=>{const n=s===e;s.setAttribute("data-state",n?"active":"inactive"),s.hidden=!n}),e.hasAttribute("data-state")&&e.getAttribute("data-state")==="active"&&e.querySelectorAll(".starwind-tabs").forEach((n,a)=>{if(!h.has(n)){const r=1e3+a,l=new c(n,r,this);h.set(n,l)}}))}}const h=new WeakMap;let g=0;const o=()=>{document.querySelectorAll(".starwind-tabs").forEach(d=>{!d.closest("[data-tabs-content]")&&!h.has(d)&&h.set(d,new c(d,g++))})};o();document.addEventListener("astro:after-swap",o);document.addEventListener("starwind:init",o);</script> </div>
+<p>GeoGround leads on DIOR-RSVG and GeoChat*, while GeoBox-R1 leads on RSVG and AVVG — the macro-average gain reflects complementary per-dataset behavior rather than uniform dominance. Against InternVL3-8B, the strongest SFT baseline with twice the parameters under the same recipe, GeoBox-R1 still leads by <strong>3.68</strong> points, so parameter count alone does not explain the gain.</p>
+<h3 id="obb-grounding--3-evaluation-sets">OBB grounding — 3 evaluation sets</h3>
+<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Model</th><th>Params</th><th>GeoChat* @0.5</th><th>@0.7</th><th>mRIoU</th><th>VRSBench* @0.5</th><th>@0.7</th><th>mRIoU</th><th>AVVG @0.5</th><th>@0.7</th><th>mRIoU</th><th>Avg. @0.5</th><th>@0.7</th><th>mRIoU</th></tr></thead><tbody><tr><td>InternVL3 (SFT)</td><td>8B</td><td>49.79</td><td>23.10</td><td>41.66</td><td>42.01</td><td>20.65</td><td>40.68</td><td>15.43</td><td>7.40</td><td>15.39</td><td>35.74</td><td>17.05</td><td>32.58</td></tr><tr><td>GeoGround</td><td>7B</td><td>58.72</td><td>25.49</td><td>46.89</td><td>53.26</td><td>29.82</td><td>48.35</td><td>13.89</td><td>4.10</td><td>15.64</td><td>41.96</td><td>19.81</td><td>36.96</td></tr><tr><td>GeoBox-R1 (SFT)</td><td>4B</td><td>55.96</td><td>30.45</td><td>45.45</td><td>51.14</td><td>27.69</td><td>45.91</td><td>22.23</td><td>15.07</td><td>19.20</td><td>43.11</td><td>24.40</td><td>36.85</td></tr><tr><td><strong>GeoBox-R1 (SFT + GDPO)</strong></td><td><strong>4B</strong></td><td><strong>60.56</strong></td><td><strong>35.19</strong></td><td><strong>48.92</strong></td><td><strong>56.61</strong></td><td><strong>30.55</strong></td><td><strong>49.43</strong></td><td><strong>24.79</strong></td><td><strong>16.89</strong></td><td><strong>21.18</strong></td><td><strong>47.32</strong></td><td><strong>27.55</strong></td><td><strong>39.85</strong></td></tr></tbody> </table> </div> </div>
+<p>GDPO lifts the SFT checkpoint from <strong>43.11</strong> to <strong>47.32</strong> average Acc@0.5, leading GeoGround by <strong>5.36 / 7.74 / 2.89</strong> points across the three metrics.</p>
+<h3 id="ablations">Ablations</h3>
+<div class="flex w-full flex-wrap items-stretch gap-4"> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <p><strong>Data organization and CoT</strong> (Acc@0.5 macro averages, fixed sample budget)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Organization</th><th>CoT</th><th>HBB Avg.</th><th>OBB Avg.</th></tr></thead><tbody><tr><td>Curriculum-guided</td><td>✗</td><td>53.56</td><td>42.43</td></tr><tr><td>Mixed</td><td>✗</td><td>54.87</td><td><strong>43.34</strong></td></tr><tr><td>Mixed</td><td>✓</td><td>56.29</td><td>42.42</td></tr><tr><td><strong>Curriculum-guided</strong></td><td>✓</td><td><strong>57.17</strong></td><td>43.11</td></tr></tbody> </table> </div><p>The curriculum only pays off when paired with CoT supervision — the two are complementary rather than independently beneficial.</p> </div> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <p><strong>OBB-only RL does not trade away HBB</strong></p><p>Although GDPO trains on OBB samples only, HBB macro averages <em>rise</em>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Metric</th><th>SFT</th><th>+ GDPO</th><th>Δ</th></tr></thead><tbody><tr><td>Acc@0.5</td><td>57.17</td><td>58.78</td><td>+1.61</td></tr><tr><td>Acc@0.7</td><td>40.33</td><td>42.22</td><td>+1.89</td></tr><tr><td>mIoU</td><td>48.82</td><td>50.39</td><td>+1.57</td></tr></tbody> </table> </div><p>Acc@0.5 improves on six of seven HBB sets; Acc@0.7 and mIoU improve on all seven. This cross-format transfer is consistent with localization knowledge shared between the two box formats.</p> </div> </div>
 <h2 id="qualitative-comparisons">Qualitative comparisons</h2>
-<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_Z1JEj6e.avif 640w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_2qqiNd.avif 750w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_ZFwr9q.avif 828w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_2gptXs.avif 1080w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_ZSmNqT.avif 1280w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_1Rbqgn.avif 1388w" type="image/avif">  <img src="/GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_2vHgu1.png" srcset="/GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_Z1omKod.png 640w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_Z2ithiH.png 750w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_ZkeSrp.png 828w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_Z2afNBP.png 1080w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_ZePXdg.png 1280w, /GeoBox-R1/_astro/Fig3_HBB_Qualitative.q5JtJuFR_2vHgu1.png 1388w" alt="HBB grounding comparison across a storage tank, a stadium, and a tennis court, showing ground truth alongside Qwen3-VL, GeoGround, and GeoBox-R1 predictions." loading="lazy" decoding="async" sizes="(min-width: 1388px) 1388px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1388" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> HBB grounding. Qwen3-VL selects a coarse salient region and GeoGround drifts toward nearby structures, while GeoBox-R1 resolves the storage tank’s relation to the reference court, captures the stadium extent tightly, and follows the rightward cue for the tennis court. Green: ground truth; red: Qwen3-VL; purple: GeoGround; blue: GeoBox-R1. </figcaption> </figure> </div>
-<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_u4nKH.avif 640w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_Zp288M.avif 750w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_1ycfHv.avif 828w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_ylfpl.avif 1080w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_2tK5NU.avif 1280w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_a7bHg.avif 1388w" type="image/avif">  <img src="/GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_ND1UT.png" srcset="/GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_PlVsI.png 640w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_Z3JzqL.png 750w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_1TtNpw.png 828w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_1cR5CY.png 1080w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_Z1VUcLn.png 1280w, /GeoBox-R1/_astro/Fig4_OBB_Qualitative.CZVEu20u_ND1UT.png 1388w" alt="OBB grounding comparison on airplane and ship targets, showing Qwen3-VL falling back to horizontal boxes while GeoGround and GeoBox-R1 produce oriented boxes." loading="lazy" decoding="async" sizes="(min-width: 1388px) 1388px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1388" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> OBB grounding. Prompted for oriented boxes, Qwen3-VL falls back to horizontal boxes and GeoGround shows corner or angle offsets, while GeoBox-R1 aligns tightly with elongated ships and airplanes where orientation and aspect ratio are critical. </figcaption> </figure> </div>
-<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Iaj9.avif 640w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_1y2WhO.avif 750w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_1RkBOD.avif 828w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Z17yOIT.avif 1080w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_OdVxP.avif 1280w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Z12N8fR.avif 1447w" type="image/avif">  <img src="/GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Zohi2e.png" srcset="/GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_m0I1a.png 640w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_1TkuYP.png 750w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_2dCawE.png 828w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Zt2Yvg.png 1080w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_1sJLLt.png 1280w, /GeoBox-R1/_astro/Fig5_CoT_Qualitative.kxC1hirK_Zohi2e.png 1447w" alt="Chain-of-thought reasoning on three car-grounding queries, each showing the query, intermediate horizontal box, refined oriented box, overlay against ground truth, and a zoomed view." loading="lazy" decoding="async" sizes="(min-width: 1447px) 1447px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1447" height="520" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> HBB-to-OBB Chain-of-Thought reasoning on three challenging car-grounding queries: a tiny target, dense distractors, and an ambiguous expression. Yellow marks the coarse HBB cue and zoom region; blue is the refined OBB; green is ground truth. </figcaption> </figure> </div>
+<div class="mx-[calc(max(var(--minimum-inline-margin),(100cqw-100rem)/2)-var(--actual-inline-margin))]"> <div class="starwind-tabs" data-default-value="hbb" data-slot="tabs"> <div class="mx-auto flex flex-wrap w-fit items-center justify-center gap-2" data-slot="tabs-list" data-tabs-list role="tablist"> <button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="hbb" data-state="inactive" role="tab" aria-selected="false"> HBB grounding </button><button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="obb" data-state="inactive" role="tab" aria-selected="false"> OBB grounding </button><button class="inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium whitespace-nowrap transition-[background-color] data-[state=active]:bg-zinc-200 hover:bg-zinc-300 hover:data-[state=active]:bg-zinc-300 dark:data-[state=active]:bg-zinc-700 hover:dark:bg-zinc-600 hover:dark:data-[state=active]:bg-zinc-600 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 focus-visible:border-outline focus-visible:ring-outline/50 focus-visible:outline-outline focus-visible:ring-3 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50" data-slot="tabs-trigger" data-tabs-trigger data-value="cot" data-state="inactive" role="tab" aria-selected="false"> HBB-to-OBB CoT </button> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="hbb" data-state="inactive" role="tabpanel" tabindex="0" hidden> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_PXYwt.avif 640w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_Z37wn1.avif 750w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_1U6Qth.avif 828w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_1wcDxm.avif 1080w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_Z1CzDR0.avif 1280w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_17XzPh.avif 1388w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_1Luq3U.png" srcset="/GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_1cgxeu.png 640w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_ia1k0.png 750w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_2gopbi.png 828w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_2aItL0.png 1080w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_ZY3NDm.png 1280w, /GeoBox-R1/_astro/fig3-qualitative-hbb.q5JtJuFR_1Luq3U.png 1388w" alt="HBB grounding comparison across a storage tank, a stadium, and a tennis court, showing ground truth alongside Qwen3-VL, GeoGround, and GeoBox-R1 predictions." loading="lazy" decoding="async" sizes="(min-width: 1388px) 1388px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1388" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> Qwen3-VL selects a coarse salient region and GeoGround drifts toward nearby structures, while GeoBox-R1 resolves the storage tank’s relation to the reference court, captures the stadium extent tightly, and follows the rightward cue for the tennis court. Green: ground truth; red: Qwen3-VL; purple: GeoGround; blue: GeoBox-R1. </figcaption> </figure> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="obb" data-state="inactive" role="tabpanel" tabindex="0" hidden> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_27Si36.avif 640w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_1dLL8B.avif 750w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_Z1SaXO2.avif 828w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_qHT4c.avif 1080w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_2m7JsL.avif 1280w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_2tPm7.avif 1388w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_G0FzK.png" srcset="/GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_2taPK7.png 640w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_1z4jPC.png 750w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_Z1wSq71.png 828w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_15eJhP.png 1080w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_Z24xy7w.png 1280w, /GeoBox-R1/_astro/fig4-qualitative-obb.CZVEu20u_G0FzK.png 1388w" alt="OBB grounding comparison on airplane and ship targets, showing Qwen3-VL falling back to horizontal boxes while GeoGround and GeoBox-R1 produce oriented boxes." loading="lazy" decoding="async" sizes="(min-width: 1388px) 1388px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1388" height="827" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> Prompted for oriented boxes, Qwen3-VL falls back to horizontal boxes and GeoGround shows corner or angle offsets, while GeoBox-R1 aligns tightly with elongated ships and airplanes where orientation and aspect ratio are critical. </figcaption> </figure> </div><div class="mt-4 focus-visible:outline-2 focus-visible:outline-offset-2 **:my-0" data-slot="tabs-content" data-tabs-content data-value="cot" data-state="inactive" role="tabpanel" tabindex="0" hidden> <figure> <div class="flex w-full justify-center **:my-0"> <picture> <source srcset="/GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_ZoEonH.avif 640w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_18EnzX.avif 750w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1rW37M.avif 828w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1e2WVt.avif 1080w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_Z1TlozI.avif 1280w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1iNEpv.avif 1447w" type="image/avif">  <img src="/GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1WkuD9.png" srcset="/GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_Z3mPFG.png 640w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1tVVhY.png 750w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1NeAON.png 828w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1RyNa7.png 1080w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_Z1fOym5.png 1280w, /GeoBox-R1/_astro/fig5-qualitative-cot.kxC1hirK_1WkuD9.png 1447w" alt="Chain-of-thought reasoning on three car-grounding queries, each showing the query, intermediate horizontal box, refined oriented box, overlay against ground truth, and a zoomed view." loading="lazy" decoding="async" sizes="(min-width: 1447px) 1447px, 100vw" data-astro-image="constrained" data-astro-image-fit="contain" data-astro-image-pos="center" width="1447" height="520" class="rounded-lg max-h-[calc(100svh-3rem)] max-w-full w-min mx-auto "> </picture> </div> <figcaption class="text-center"> HBB-to-OBB Chain-of-Thought reasoning on three challenging car-grounding queries: a tiny target, dense distractors, and an ambiguous expression. Yellow marks the coarse HBB cue and zoom region; blue is the refined OBB; green is ground truth. </figcaption> </figure> </div> </div>  </div>
+<h2 id="data">Data</h2>
+<p>Training data is built on <strong>refGeo</strong>, which aggregates five remote sensing grounding sources.</p>
+<div class="flex w-full flex-wrap items-stretch gap-4"> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <p><strong>SFT mixture</strong> (161,692 samples)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Source</th><th>HBB</th><th>OBB</th><th>CoT</th><th>Total</th></tr></thead><tbody><tr><td>DIOR-RSVG</td><td>27,133</td><td>0</td><td>0</td><td>27,133</td></tr><tr><td>RSVG</td><td>5,505</td><td>0</td><td>0</td><td>5,505</td></tr><tr><td>GeoChat</td><td>0</td><td>47,912</td><td>15,971</td><td>63,883</td></tr><tr><td>VRSBench</td><td>0</td><td>29,017</td><td>9,672</td><td>38,689</td></tr><tr><td>AVVG</td><td>0</td><td>19,862</td><td>6,620</td><td>26,482</td></tr><tr><td><strong>Total</strong></td><td><strong>32,638</strong></td><td><strong>96,791</strong></td><td><strong>32,263</strong></td><td><strong>161,692</strong></td></tr></tbody> </table> </div> </div> <div class="min-w-[16rem] flex-1 [&>:first-child]:mt-0 [&>:last-child]:mb-0"> <p><strong>OBB-only RL subset</strong> (20% of the full OBB pool)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="full-bleed overflow-auto px-6"> <table class="mx-auto w-auto"> <thead><tr><th>Source</th><th>Full OBB pool</th><th>20% subset</th></tr></thead><tbody><tr><td>GeoChat</td><td>47,912</td><td>9,582</td></tr><tr><td>VRSBench</td><td>29,017</td><td>5,803</td></tr><tr><td>AVVG</td><td>19,862</td><td>3,972</td></tr><tr><td><strong>Total</strong></td><td><strong>96,791</strong></td><td><strong>19,357</strong></td></tr></tbody> </table> </div> </div> </div>
 <h2 id="implementation">Implementation</h2>
 <p>GeoBox-R1 is instantiated on <strong>Qwen3-VL-4B-Instruct</strong>; both stages use <a href="https://github.com/modelscope/ms-swift">ms-swift</a>.</p>
 <ul>
@@ -118,5 +535,5 @@
 <li><strong>RL</strong> — continues from the SFT checkpoint with a frozen copy as the reference policy: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">G = 8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">8</span></span></span></span> rollouts per group, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>0.02</mn></mrow><annotation encoding="application/x-tex">\beta = 0.02</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em"></span><span class="mord mathnormal" style="margin-right:0.0528em">β</span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">0.02</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>c</mi></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">\tau_c = 8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1132em">τ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em"><span style="top:-2.55em;margin-left:-0.1132em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.6444em"></span><span class="mord">8</span></span></span></span>, learning rate <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup></mrow><annotation encoding="application/x-tex">5\times10^{-6}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:0.8141em"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em"><span style="top:-3.063em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>, one epoch, on 3× A100 (40 GB) — one vLLM rollout server and two GDPO workers.</li>
 </ul>
 <h2 id="bibtex">BibTeX</h2>
-<div class="expressive-code"><link rel="stylesheet" href="/GeoBox-R1/_astro/ec.0wf8d.css"/><script type="module" src="/GeoBox-R1/_astro/ec.0vx5m.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre data-language="bibtex"><code><div class="ec-line"><div class="code"><span style="--0:#F97583;--1:#BF3441">@inproceedings</span><span style="--0:#E1E4E8;--1:#24292E">{</span><span style="--0:#B392F0;--1:#6F42C1">geoboxr1</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">title</span><span style="--0:#E1E4E8;--1:#24292E">     = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">GeoBox-R1: Curriculum-Guided SFT and Geometric RL for</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#E1E4E8;--1:#24292E">               </span></span><span style="--0:#E1E4E8;--1:#24292E">Unified Box-Level Remote Sensing Visual Grounding</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">author</span><span style="--0:#E1E4E8;--1:#24292E">    = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Wu, Yuchen and others</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">booktitle</span><span style="--0:#E1E4E8;--1:#24292E"> = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Proceedings of the AAAI Conference on Artificial Intelligence</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">year</span><span style="--0:#E1E4E8;--1:#24292E">      = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">2027</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">note</span><span style="--0:#E1E4E8;--1:#24292E">      = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Under review</span><span style="--0:#9ECBFF;--1:#032F62">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#E1E4E8;--1:#24292E">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="@inproceedings{geoboxr1,  title     = {GeoBox-R1: Curriculum-Guided SFT and Geometric RL for               Unified Box-Level Remote Sensing Visual Grounding},  author    = {Wu, Yuchen and others},  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},  year      = {2027},  note      = {Under review}}"><div></div></button></div></figure></div> </main> <footer class="mx-auto max-w-[50rem] px-6 text-center"> <p class="prose-sm text-center">
+<div class="expressive-code"><link rel="stylesheet" href="/GeoBox-R1/_astro/ec.0wf8d.css"/><script type="module" src="/GeoBox-R1/_astro/ec.0vx5m.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre data-language="bibtex"><code><div class="ec-line"><div class="code"><span style="--0:#F97583;--1:#BF3441">@inproceedings</span><span style="--0:#E1E4E8;--1:#24292E">{</span><span style="--0:#B392F0;--1:#6F42C1">geoboxr1</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">title</span><span style="--0:#E1E4E8;--1:#24292E">     = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">GeoBox-R1: Curriculum-Guided SFT and Geometric RL for</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#E1E4E8;--1:#24292E">               </span></span><span style="--0:#E1E4E8;--1:#24292E">Unified Box-Level Remote Sensing Visual Grounding</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">author</span><span style="--0:#E1E4E8;--1:#24292E">    = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Lan, Chenxi and Wu, Yuchen and Zhou, Minghang and</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#E1E4E8;--1:#24292E">               </span></span><span style="--0:#E1E4E8;--1:#24292E">Li, Tianyu and Qiu, Zhihao and Wang, Guoqing</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">booktitle</span><span style="--0:#E1E4E8;--1:#24292E"> = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Proceedings of the AAAI Conference on Artificial Intelligence</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">year</span><span style="--0:#E1E4E8;--1:#24292E">      = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">2027</span><span style="--0:#9ECBFF;--1:#032F62">}</span><span style="--0:#E1E4E8;--1:#24292E">,</span></div></div><div class="ec-line"><div class="code"><span class="indent">  </span><span style="--0:#79B8FF;--1:#005CC5">note</span><span style="--0:#E1E4E8;--1:#24292E">      = </span><span style="--0:#9ECBFF;--1:#032F62">{</span><span style="--0:#E1E4E8;--1:#24292E">Under review</span><span style="--0:#9ECBFF;--1:#032F62">}</span></div></div><div class="ec-line"><div class="code"><span style="--0:#E1E4E8;--1:#24292E">}</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="@inproceedings{geoboxr1,  title     = {GeoBox-R1: Curriculum-Guided SFT and Geometric RL for               Unified Box-Level Remote Sensing Visual Grounding},  author    = {Lan, Chenxi and Wu, Yuchen and Zhou, Minghang and               Li, Tianyu and Qiu, Zhihao and Wang, Guoqing},  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},  year      = {2027},  note      = {Under review}}"><div></div></button></div></figure></div> </main> <footer class="mx-auto max-w-[50rem] px-6 text-center"> <p class="prose-sm text-center">
 Built with <a href="https://research-template.roman.technology" rel="nofollow">Roman Hauksson-Neill's project page template</a> </p> </footer> </body></html>

@@ -16,7 +16,7 @@
             GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
         </p>
         <p class="publication-authors">
-            Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Jun Zhang, Tianyu Li, and Guoqing Wang<sup>*</sup>
+            Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Tianyu Li, Zhihao Qiu, and Guoqing Wang<sup>*</sup>
         </p>
         <p class="publication-info">
             已投稿至 <i><b>AAAI 2027</b></i>，审稿中。
