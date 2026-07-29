@@ -18,8 +18,8 @@
 <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
 <link rel="stylesheet" href="static/css/index.css">
 <style>
-.hero.is-head { background: linear-gradient(165deg,#fbfdff 0%,#f1f6fc 55%,#e8f1fa 100%);
-  border-bottom:1px solid #e2e8f0; padding:3.5rem 0 3rem; }
+.hero.is-head { background: linear-gradient(165deg,#e9eff7 0%,#dbe6f3 55%,#cddcee 100%);
+  border-bottom:1px solid #c3d3e6; padding:3.5rem 0 3rem; }
 .hero.is-head .title { color:#0f172a !important; }
 .hero.is-head .publication-authors, .hero.is-head .is-size-5 { color:#334155 !important; }
 .hero.is-head .venue { display:inline-block; margin-top:.9rem; padding:.3rem 1rem; border:1px solid #b8c7d9;
@@ -36,10 +36,25 @@
 .headline .lab { font-size:.82rem; color:#64748b; margin-top:.35rem; }
 .metric-tabs { margin-bottom:.6rem !important; }
 .metric-tabs ul { border-bottom:none !important; }
-.metric-tabs.is-toggle li a { background:#f1f5f9; border:1px solid #e2e8f0; color:#64748b;
-  font-weight:500; transition:background .15s ease, color .15s ease; }
-.metric-tabs.is-toggle li a:hover { background:#e8eef6; color:#33507a; }
-.metric-tabs.is-toggle li.is-active a { background:#dbeafe; border-color:#bfdbfe; color:#1d4ed8; font-weight:600; }
+/* 未激活：淡灰。锁死 hover/focus/active，避免 Bulma 默认深色在点击后残留，
+   两组 tab（HBB 在白底、OBB 在 hero is-light 底）才会完全一致。 */
+.metric-tabs.is-toggle li a,
+.metric-tabs.is-toggle li a:hover,
+.metric-tabs.is-toggle li a:focus,
+.metric-tabs.is-toggle li a:active,
+.hero .metric-tabs.is-toggle li a {
+  background-color:#eef2f7 !important; border-color:#dbe3ec !important; color:#64748b !important;
+  font-weight:500; box-shadow:none !important; transition:background-color .15s ease, color .15s ease; }
+.metric-tabs.is-toggle li a:hover,
+.hero .metric-tabs.is-toggle li a:hover {
+  background-color:#e2e9f2 !important; color:#33507a !important; }
+.metric-tabs.is-toggle li.is-active a,
+.metric-tabs.is-toggle li.is-active a:hover,
+.metric-tabs.is-toggle li.is-active a:focus,
+.metric-tabs.is-toggle li.is-active a:active,
+.hero .metric-tabs.is-toggle li.is-active a {
+  background-color:#d6e4f7 !important; border-color:#adc8e8 !important; color:#1d4ed8 !important;
+  font-weight:600; box-shadow:none !important; }
 .tab-pane { display:none; }
 .tab-pane.is-active { display:block; }
 .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
