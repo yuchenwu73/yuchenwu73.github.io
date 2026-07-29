@@ -83,7 +83,20 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 .qual-item:last-child { margin-bottom:0; }
 .qual-item img { width:100%; border-radius:8px; border:1px solid #e2e8f0; background:#fff; }
 .section-tight { padding-top:2.4rem; padding-bottom:2.4rem; }
+/* 公式：块级居中，字号略小于正文以免压过文字 */
+.eq { margin:1rem 0 .3rem; text-align:center; font-size:1.02rem; overflow-x:auto; }
+.eq-note { font-size:.85rem; color:#64748b; text-align:center; margin-bottom:1.1rem; }
+mjx-container[display="true"] { margin:.6rem 0 !important; }
 </style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -131,15 +144,21 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 <section class="section section-tight"><div class="container is-max-desktop">
 <h2 class="title is-3 has-text-centered">Motivation</h2>
 <img src="static/images/fig1-motivation.png" alt="Under an explicit OBB prompt a general-purpose MLLM returns a horizontal box, while GeoBox-R1 returns a correctly oriented box.">
-<p class="fig-cap has-text-centered">General-purpose MLLMs fall back to horizontal boxes when explicitly prompted for oriented boxes. GeoBox-R1 produces both formats reliably.</p>
+<p class="fig-cap has-text-centered">Given the query &ldquo;1 dry-cargo-ship at the bottom&rdquo; the ground truth is an oriented box around the ship. A <b>general-purpose MLLM</b> fails to produce an OBB at all and returns a horizontal box that ignores orientation. SFT makes valid OBB outputs possible, but the <b>SFT-only model</b> still fits the target loosely. Geometric RL then tightens it: <b>ours (SFT&nbsp;+&nbsp;GDPO)</b> aligns closely with the ground truth.</p>
 </div></section>
 <section class="section hero is-light section-tight"><div class="container is-max-desktop">
 <h2 class="title is-3 has-text-centered">Method</h2>
 <img src="static/images/fig2-pipeline.png" alt="Two-stage GeoBox-R1 pipeline: curriculum-guided SFT followed by GDPO geometric reinforcement learning.">
 <p class="fig-cap has-text-centered" style="margin-bottom:1.8rem">Stage 1 establishes unified box-level grounding through a curriculum. Stage 2 refines oriented localization with GDPO.</p>
 <div class="two-col">
-<div><div class="stage-card"><h4>Stage 1 — Curriculum-guided SFT</h4><p>Training data is presented easy-to-hard rather than shuffled:</p><ol><li><b>HBB grounding</b> establishes coarse semantic localization.</li><li><b>OBB grounding</b> introduces orientation and aspect-ratio sensitivity.</li><li><b>HBB-to-OBB CoT</b> supervises the reasoning that refines a coarse horizontal box into a tight oriented box.</li></ol><p>161,692 samples: 32,638 HBB, 96,791 OBB, 32,263 CoT.</p></div></div>
-<div><div class="stage-card"><h4>Stage 2 — Geometric RL with GDPO</h4><p>Two rule-based geometric rewards, no learned reward model:</p><ul><li><b>Rotated IoU</b> gives direct overlap supervision for oriented boxes.</li><li><b>Adaptive Wasserstein distance</b> stays informative when RIoU saturates near zero, common for small or elongated targets.</li></ul><p>Equal weights (&lambda;=0.5 each), on a 20% OBB subset (19,357 of 96,791).</p></div></div>
+<div><div class="stage-card"><h4>Stage 1 — Curriculum-guided SFT</h4><p>Training data is presented easy-to-hard rather than shuffled:</p><ol><li><b>HBB grounding</b> establishes coarse semantic localization.</li><li><b>OBB grounding</b> introduces orientation and aspect-ratio sensitivity.</li><li><b>HBB-to-OBB CoT</b> supervises the reasoning that refines a coarse horizontal box into a tight oriented box.</li></ol><div class="eq">$$\mathcal{D}_{\mathrm{SFT}}=\mathcal{D}_{\mathrm{HBB}}\oplus\mathcal{D}_{\mathrm{OBB}}\oplus\mathcal{D}_{\mathrm{CoT}}$$</div><p class="eq-note">Concatenation, not shuffling &mdash; the curriculum lives in the data order, under one ordinary token-level objective.</p><p>161,692 samples: 32,638 HBB, 96,791 OBB, 32,263 CoT.</p></div></div>
+<div><div class="stage-card"><h4>Stage 2 — Geometric RL with GDPO</h4><p>Two rule-based geometric rewards, no learned reward model:</p><ul><li><b>Rotated IoU</b> gives direct overlap supervision for oriented boxes.</li><li><b>Adaptive Wasserstein distance</b> stays informative when RIoU saturates near zero, common for small or elongated targets.</li></ul><div class="eq">$$r^{\mathrm{WD}}=\frac{\tau}{\tau+W_2},\qquad\tau=\tau_c\sqrt{\mathrm{Tr}(\boldsymbol{\Sigma}_g)}$$</div><p class="eq-note">Scaling $\tau$ with target size keeps reward sensitivity comparable across scales; a fixed $\tau$ systematically under-rewards large objects.</p><p>Equal weights ($\lambda_k=0.5$ each), on a 20% OBB subset (19,357 of 96,791).</p></div></div>
+</div>
+<div style="margin-top:2.2rem">
+<h4 style="font-family:'Google Sans',sans-serif;font-weight:600;color:#1e3a5f;text-align:center;margin-bottom:.2rem">Reward-decoupled advantage</h4>
+<div class="eq">$$\tilde{A}_i=\sum_{k\in\{\mathrm{RIoU},\mathrm{WD}\}}\lambda_k\,\frac{r_i^{(k)}-\bar{r}^{(k)}}{\sigma^{(k)}+\varepsilon}\qquad\qquad\hat{A}_i=\frac{\tilde{A}_i-\mu_{\mathcal{B}}(\tilde{A})}{\sigma_{\mathcal{B}}(\tilde{A})+\varepsilon}$$</div>
+<p class="eq-note">Each reward channel is normalized within its own group of $G$ completions before the two are combined, so the channel with the larger numeric range cannot dominate. A second normalization over the mini-batch $\mathcal{B}$ then stabilizes the advantage scale under both geometric objectives.</p>
+</div>
 </div></div></section>
 <section class="section section-tight"><div class="container">
 <h2 class="title is-3 has-text-centered">HBB grounding — 7 evaluation sets</h2>
@@ -1078,7 +1097,7 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 </div></div></section>
 <section class="section hero is-light section-tight"><div class="container is-max-desktop content">
 <h2 class="title is-3 has-text-centered">Implementation</h2>
-<p>GeoBox-R1 is instantiated on <b>Qwen3-VL-4B-Instruct</b>; both stages use <a href="https://github.com/modelscope/ms-swift">ms-swift</a>.</p><ul><li><b>SFT</b> — LoRA (rank 16, alpha 32) with the vision encoder and merger frozen, learning rate 1&times;10<sup>-4</sup>, one epoch, on 2&times; RTX 4090 (24 GB).</li><li><b>RL</b> — continues from the SFT checkpoint with a frozen copy as the reference policy: G = 8 rollouts per group, &beta; = 0.02, &tau;<sub>c</sub> = 8, learning rate 5&times;10<sup>-6</sup>, one epoch, on 3&times; A100 (40 GB) — one vLLM rollout server and two GDPO workers.</li></ul>
+<p>GeoBox-R1 is instantiated on <b>Qwen3-VL-4B-Instruct</b>; both stages use <a href="https://github.com/modelscope/ms-swift">ms-swift</a>.</p><ul><li><b>SFT</b> — LoRA (rank 16, alpha 32) with the vision encoder and merger frozen, learning rate $1\times10^{-4}$, one epoch, on 2&times; RTX 4090 (24 GB).</li><li><b>RL</b> — continues from the SFT checkpoint with a frozen copy as the reference policy: $G=8$ rollouts per group, $\beta=0.02$, $\tau_c=8$, learning rate $5\times10^{-6}$, one epoch, on 3&times; A100 (40 GB) — one vLLM rollout server and two GDPO workers.</li></ul>
 </div></section>
 <section class="section" id="BibTeX"><div class="container is-max-desktop content">
 <h2 class="title">BibTeX</h2><pre><code>@inproceedings{geoboxr1,
