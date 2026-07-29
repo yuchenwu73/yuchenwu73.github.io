@@ -9,7 +9,8 @@
 <meta property="og:description" content="Curriculum-guided SFT and geometric RL. 4B parameters, state of the art on 7 HBB and 3 OBB benchmarks."/>
 <meta property="og:image" content="static/images/fig2-pipeline.png"/>
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="static/images/favicon.ico">
+<link rel="icon" href="static/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 <link rel="stylesheet" href="static/css/bulma.min.css">
 <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -17,12 +18,15 @@
 <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
 <link rel="stylesheet" href="static/css/index.css">
 <style>
-.hero.is-head { background: linear-gradient(160deg,#0f172a 0%,#1e3a5f 55%,#2c5282 100%); color:#fff; padding:3.5rem 0 3rem; }
-.hero.is-head .title, .hero.is-head .publication-authors, .hero.is-head .is-size-5 { color:#fff !important; }
-.hero.is-head .author-block a { color:#93c5fd; text-decoration:none; border-bottom:1px solid rgba(147,197,253,.5); }
-.hero.is-head .venue { display:inline-block; margin-top:.9rem; padding:.3rem 1rem; border:1px solid rgba(255,255,255,.45);
-  border-radius:999px; font-size:.95rem; letter-spacing:.02em; }
-.hero.is-head .institution { color:#cbd5e1 !important; }
+.hero.is-head { background: linear-gradient(165deg,#fbfdff 0%,#f1f6fc 55%,#e8f1fa 100%);
+  border-bottom:1px solid #e2e8f0; padding:3.5rem 0 3rem; }
+.hero.is-head .title { color:#0f172a !important; }
+.hero.is-head .publication-authors, .hero.is-head .is-size-5 { color:#334155 !important; }
+.hero.is-head .venue { display:inline-block; margin-top:.9rem; padding:.3rem 1rem; border:1px solid #b8c7d9;
+  border-radius:999px; font-size:.95rem; letter-spacing:.02em; color:#33507a; background:#fff; }
+.hero.is-head .institution { color:#64748b !important; }
+.hero.is-head .publication-links .button.is-dark { background:#33507a; border-color:#33507a; }
+.hero.is-head .publication-links .button.is-dark:hover { background:#28405f; }
 .publication-title { font-family:'Google Sans',sans-serif; line-height:1.22; }
 .teaser-wrap { max-width:1000px; margin:0 auto; }
 .teaser-wrap video { width:100%; border-radius:12px; box-shadow:0 12px 34px rgba(15,23,42,.22); display:block; }
@@ -30,8 +34,12 @@
 .headline .card { flex:1 1 190px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1.1rem .8rem; text-align:center; }
 .headline .num { font-size:1.85rem; font-weight:700; color:#1e3a5f; font-family:'Google Sans',sans-serif; line-height:1.1; }
 .headline .lab { font-size:.82rem; color:#64748b; margin-top:.35rem; }
-.metric-tabs { margin-bottom:.4rem !important; }
+.metric-tabs { margin-bottom:.6rem !important; }
 .metric-tabs ul { border-bottom:none !important; }
+.metric-tabs.is-toggle li a { background:#f1f5f9; border:1px solid #e2e8f0; color:#64748b;
+  font-weight:500; transition:background .15s ease, color .15s ease; }
+.metric-tabs.is-toggle li a:hover { background:#e8eef6; color:#33507a; }
+.metric-tabs.is-toggle li.is-active a { background:#dbeafe; border-color:#bfdbfe; color:#1d4ed8; font-weight:600; }
 .tab-pane { display:none; }
 .tab-pane.is-active { display:block; }
 .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
@@ -56,6 +64,9 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 .stage-card { background:#f8fafc; border-left:4px solid #2c5282; border-radius:8px; padding:1.1rem 1.3rem; }
 .stage-card h4 { font-family:'Google Sans',sans-serif; font-weight:600; color:#1e3a5f; margin-bottom:.5rem; }
 .fig-cap { font-size:.88rem; color:#475569; margin-top:.7rem; }
+.qual-item { margin-bottom:2.6rem; }
+.qual-item:last-child { margin-bottom:0; }
+.qual-item img { width:100%; border-radius:8px; border:1px solid #e2e8f0; background:#fff; }
 .section-tight { padding-top:2.4rem; padding-bottom:2.4rem; }
 </style>
 </head>
@@ -65,13 +76,13 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 <div class="columns is-centered"><div class="column has-text-centered">
 <h1 class="title is-2 publication-title">GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</h1>
 <div class="is-size-5 publication-authors"><span class="author-block"><span class="author-block">Chenxi Lan<sup>*</sup></span>,
-<span class="author-block"><a href="https://yuchenwu73.github.io">Yuchen Wu</a><sup>*</sup></span>,
+<span class="author-block">Yuchen Wu<sup>*</sup></span>,
 <span class="author-block">Minghang Zhou</span>,
 <span class="author-block">Tianyu Li</span>,
 <span class="author-block">Zhihao Qiu</span>,
 <span class="author-block">Guoqing Wang<sup>†</sup></span></span></div>
 <div class="is-size-6 publication-authors institution" style="margin-top:.6rem">University of Electronic Science and Technology of China</div>
-<div class="is-size-6 publication-authors" style="margin-top:.5rem;color:#cbd5e1"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</div>
+<div class="is-size-6 publication-authors" style="margin-top:.5rem;color:#64748b"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</div>
 <div><span class="venue">Under review at AAAI 2027</span></div>
 <div class="column has-text-centered" style="margin-top:1.4rem"><div class="publication-links"><span class="link-block"><a href="https://yuchenwu73.github.io" target="_blank" rel="noopener noreferrer"
    class="external-link button is-normal is-rounded is-dark">
@@ -87,7 +98,7 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
    <span class="icon"><i class="fas fa-database"></i></span><span>Data</span></a></span></div></div>
 </div></div></div></div></section>
 <section class="hero teaser"><div class="container is-max-desktop"><div class="hero-body">
-<div class="teaser-wrap"><video autoplay muted loop playsinline><source src="static/videos/geobox-r1-demo.mp4" type="video/mp4"></video></div>
+<div class="teaser-wrap"><video controls autoplay muted loop playsinline><source src="static/videos/geobox-r1-demo.mp4" type="video/mp4"></video></div>
 <h2 class="subtitle has-text-centered" style="margin-top:1.1rem"><b>GeoBox-R1</b> localizes objects from natural-language expressions in aerial imagery, returning either a horizontal or an oriented box under one unified interface.</h2>
 <div class="headline">
 <div class="card"><div class="num">58.78</div><div class="lab">HBB Acc@0.5 (macro avg.)</div></div>
@@ -103,7 +114,7 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 <p>Across 7 HBB and 3 OBB benchmarks, GeoBox-R1 achieves the best macro averages on all three metrics for both tasks. With only <b>4B parameters</b>, it surpasses state-of-the-art 7B–8B models, leading by <b>3.68/4.89/2.61</b> points on HBB and <b>5.36/7.74/2.89</b> points on OBB, with the largest gains at the stricter Acc@0.7 threshold.</p>
 </div></div></div></div></section>
 <section class="section section-tight"><div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">The problem</h2>
+<h2 class="title is-3 has-text-centered">Motivation</h2>
 <img src="static/images/fig1-motivation.png" alt="Under an explicit OBB prompt a general-purpose MLLM returns a horizontal box, while GeoBox-R1 returns a correctly oriented box.">
 <p class="fig-cap has-text-centered">General-purpose MLLMs fall back to horizontal boxes when explicitly prompted for oriented boxes. GeoBox-R1 produces both formats reliably.</p>
 </div></section>
@@ -1011,42 +1022,12 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 </tbody></table></div></div></div>
 <p class="tbl-note">GDPO lifts the SFT checkpoint from 43.11 to 47.32 average Acc@0.5, leading GeoGround by 5.36 / 7.74 / 2.89 points across the three metrics.</p>
 </div></section>
-<section class="section section-tight"><div class="container is-max-desktop">
-<h2 class="title is-3 has-text-centered">Ablations</h2>
-<div class="two-col">
-<div><h4 class="title is-6 has-text-centered">Data organization and CoT</h4><div class="table-scroll"><table class="res-table compact">
-<thead><tr>
-<th>Organization</th>
-<th>CoT</th>
-<th>HBB Avg.</th>
-<th>OBB Avg.</th>
-</tr></thead><tbody>
-<tr><td>Curriculum-guided</td><td>✗</td><td>53.56</td><td>42.43</td></tr>
-<tr><td>Mixed</td><td>✗</td><td>54.87</td><td>43.34</td></tr>
-<tr><td>Mixed</td><td>✓</td><td>56.29</td><td>42.42</td></tr>
-<tr><td>Curriculum-guided ★</td><td>✓</td><td>57.17</td><td>43.11</td></tr>
-</tbody>
-</table></div><p class="tbl-note">Acc@0.5 macro averages under a fixed sample budget. The curriculum only pays off when paired with CoT supervision — the two are complementary.</p></div>
-<div><h4 class="title is-6 has-text-centered">OBB-only RL does not trade away HBB</h4><div class="table-scroll"><table class="res-table compact">
-<thead><tr>
-<th>Metric</th>
-<th>SFT</th>
-<th>+ GDPO</th>
-<th>Δ</th>
-</tr></thead><tbody>
-<tr><td>Acc@0.5</td><td>57.17</td><td>58.78</td><td>+1.61</td></tr>
-<tr><td>Acc@0.7</td><td>40.33</td><td>42.22</td><td>+1.89</td></tr>
-<tr><td>mIoU</td><td>48.82</td><td>50.39</td><td>+1.57</td></tr>
-</tbody>
-</table></div><p class="tbl-note">Although GDPO trains on OBB samples only, HBB macro averages rise. Acc@0.5 improves on six of seven HBB sets; Acc@0.7 and mIoU improve on all seven.</p></div>
-</div></div></section>
 <section class="section hero is-light section-tight"><div class="container is-max-desktop">
 <h2 class="title is-3 has-text-centered">Qualitative comparisons</h2>
-<div id="results-carousel" class="carousel results-carousel">
-<div class="item"><img src="static/images/fig3-qualitative-hbb.png" alt=""><p class="fig-cap"><b>HBB grounding.</b> Qwen3-VL selects a coarse salient region and GeoGround drifts toward nearby structures, while GeoBox-R1 resolves the storage tank's relation to the reference court, captures the stadium extent tightly, and follows the rightward cue for the tennis court. Green: ground truth; red: Qwen3-VL; purple: GeoGround; blue: GeoBox-R1.</p></div>
-<div class="item"><img src="static/images/fig4-qualitative-obb.png" alt=""><p class="fig-cap"><b>OBB grounding.</b> Prompted for oriented boxes, Qwen3-VL falls back to horizontal boxes and GeoGround shows corner or angle offsets, while GeoBox-R1 aligns tightly with elongated ships and airplanes where orientation and aspect ratio are critical.</p></div>
-<div class="item"><img src="static/images/fig5-qualitative-cot.png" alt=""><p class="fig-cap"><b>HBB-to-OBB Chain-of-Thought.</b> Three challenging car-grounding queries: a tiny target, dense distractors, and an ambiguous expression. Yellow marks the coarse HBB cue and zoom region; blue is the refined OBB; green is ground truth.</p></div>
-</div></div></section>
+<div class="qual-item"><img src="static/images/fig3-qualitative-hbb.png" alt=""><p class="fig-cap"><b>HBB grounding.</b> Qwen3-VL selects a coarse salient region and GeoGround drifts toward nearby structures, while GeoBox-R1 resolves the storage tank's relation to the reference court, captures the stadium extent tightly, and follows the rightward cue for the tennis court. Green: ground truth; red: Qwen3-VL; purple: GeoGround; blue: GeoBox-R1.</p></div>
+<div class="qual-item"><img src="static/images/fig4-qualitative-obb.png" alt=""><p class="fig-cap"><b>OBB grounding.</b> Prompted for oriented boxes, Qwen3-VL falls back to horizontal boxes and GeoGround shows corner or angle offsets, while GeoBox-R1 aligns tightly with elongated ships and airplanes where orientation and aspect ratio are critical.</p></div>
+<div class="qual-item"><img src="static/images/fig5-qualitative-cot.png" alt=""><p class="fig-cap"><b>HBB-to-OBB Chain-of-Thought.</b> Three challenging car-grounding queries: a tiny target, dense distractors, and an ambiguous expression. Yellow marks the coarse HBB cue and zoom region; blue is the refined OBB; green is ground truth.</p></div>
+</div></section>
 <section class="section section-tight"><div class="container is-max-desktop">
 <h2 class="title is-3 has-text-centered">Data</h2>
 <p class="has-text-centered" style="margin-bottom:1.4rem;color:#475569">Training data is built on <b>refGeo</b>, aggregating five remote sensing grounding sources.</p>
@@ -1096,7 +1077,6 @@ table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
 }</code></pre></div></section>
 <footer class="footer"><div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content has-text-centered"><p>This page uses the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, adapted from <a href="https://nerfies.github.io">Nerfies</a>. Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div></div></div></div></footer>
 
-<script src="static/js/bulma-carousel.min.js"></script>
 <script src="static/js/bulma-slider.min.js"></script>
 <script src="static/js/fontawesome.all.min.js"></script>
 <script>
@@ -1116,12 +1096,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
-  // 定性结果轮播
-  if (window.bulmaCarousel) {
-    bulmaCarousel.attach('#results-carousel', {
-      slidesToScroll: 1, slidesToShow: 1, loop: true, infinite: true, autoplay: false, pagination: true
-    });
-  }
 });
 </script>
 </body>
