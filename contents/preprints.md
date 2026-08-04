@@ -36,7 +36,7 @@
             UrbanEagle-4K: A Hierarchical Benchmark with Visual Evidence Routing for Low-Altitude Urban Governance
         </h3>
         <p class="publication-authors">
-            Yangming Zhang, Jiening Zhang, <b><u>Yuchen Wu</u></b>, Zhihao Qiu, Tianyu Li, Guoqing Wang, and Peng Wang
+            Yangming Zhang<sup>*</sup>, Jiening Zhang<sup>*</sup>, <b><u>Yuchen Wu</u></b>, Zhihao Qiu, Tianyu Li, Guoqing Wang<sup>&dagger;</sup>, and Peng Wang
         </p>
         <p class="publication-info">
             Submitted to <i><b>AAAI 2027</b></i>, under review.
