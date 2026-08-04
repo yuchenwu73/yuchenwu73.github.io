@@ -1,5 +1,5 @@
 <p class="publication-note">
-    <sup>†</sup> Equal contribution, <sup>*</sup> Corresponding author.
+    <sup>*</sup> Equal contribution, <sup>†</sup> Corresponding author.
 </p>
 
 <div class="publication-card row align-items-center mb-4">
@@ -13,7 +13,7 @@
             GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding
         </h3>
         <p class="publication-authors">
-            Chenxi Lan<sup>†</sup>, <b><u>Yuchen Wu</u></b><sup>†</sup>, Minghang Zhou, Tianyu Li, Zhihao Qiu, and Guoqing Wang<sup>*</sup>
+            Chenxi Lan<sup>*</sup>, <b><u>Yuchen Wu</u></b><sup>*</sup>, Minghang Zhou, Tianyu Li, Zhihao Qiu, and Guoqing Wang<sup>&dagger;</sup>
         </p>
         <p class="publication-info">
             Submitted to <i><b>AAAI 2027</b></i>, under review.
@@ -21,6 +21,25 @@
         <p class="publication-links">
             <a href="https://yuchenwu73.github.io/GeoBox-R1/" target="_blank" rel="noopener noreferrer">Project Page</a>
             <a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer">Code</a>
+        </p>
+    </div>
+</div>
+
+<div class="publication-card row align-items-center mb-4">
+    <div class="col-md-6">
+        <div class="publication-image-container">
+            <img src="/static/assets/urbaneagle-4k-aaai2027.png" class="img-fluid publication-image" alt="UrbanEagle-4K Benchmark Construction Pipeline">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h3 class="publication-title">
+            UrbanEagle-4K: A Hierarchical Benchmark with Visual Evidence Routing for Low-Altitude Urban Governance
+        </h3>
+        <p class="publication-authors">
+            Yangming Zhang, Jiening Zhang, <b><u>Yuchen Wu</u></b>, Zhihao Qiu, Tianyu Li, Guoqing Wang, and Peng Wang
+        </p>
+        <p class="publication-info">
+            Submitted to <i><b>AAAI 2027</b></i>, under review.
         </p>
     </div>
 </div>
@@ -36,7 +55,7 @@
             Risk-Controlled Online Test-Time Adaptation for Structured Geometric Prediction
         </h3>
         <p class="publication-authors">
-            Pengwei Yang, Yeran Zhang, <b><u>Yuchen Wu</u></b>, Tianyu Li, Guoqing Wang<sup>*</sup>, and Yang Yang
+            Pengwei Yang, Yeran Zhang, <b><u>Yuchen Wu</u></b>, Tianyu Li, Guoqing Wang<sup>&dagger;</sup>, and Yang Yang
         </p>
         <p class="publication-info">
             Submitted to <i><b>NeurIPS 2026</b></i>, under review.

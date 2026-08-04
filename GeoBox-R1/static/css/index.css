@@ -752,9 +752,3 @@ a:focus {
 
 
 
-/* 论文未公开时的禁用态按钮：保持版式一致，但不可点击 */
-.publication-links .button.is-disabled {
-  opacity: .55;
-  cursor: default;
-  pointer-events: none;
-}
