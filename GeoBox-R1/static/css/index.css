@@ -50,7 +50,7 @@ body {
 }
 
 .button.is-dark {
-  background: var(--text-primary) !important;
+  background: #475569 !important;
   border: none !important;
   color: white !important;
   box-shadow: var(--shadow-md);
