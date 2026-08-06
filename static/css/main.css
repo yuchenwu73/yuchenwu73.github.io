@@ -286,7 +286,7 @@ body {
     line-height: 1.5;
 }
 
-/* 出版物列表前的提示性说明（如 † 共同一作 / * 通讯作者） */
+/* 出版物列表前的提示性说明（* 共同一作 / † 通讯作者） */
 .publication-note {
     color: var(--academic-text-color);
     font-size: 1.12rem;

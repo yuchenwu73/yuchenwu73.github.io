@@ -1,5 +1,5 @@
 <p class="publication-note">
-    <sup>*</sup> Equal contribution, <sup>†</sup> Corresponding author.
+    <sup>*</sup> Equal contribution; <sup>&dagger;</sup> Corresponding author.
 </p>
 
 <div class="publication-card row align-items-center mb-4">

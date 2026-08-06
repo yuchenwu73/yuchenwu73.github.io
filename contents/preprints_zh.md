@@ -1,5 +1,5 @@
 <p class="publication-note">
-    <sup>*</sup> 共同第一作者，<sup>&dagger;</sup> 通讯作者。
+    <sup>*</sup> 共同第一作者；<sup>&dagger;</sup> 通讯作者。
 </p>
 
 <div class="publication-card row align-items-center mb-4">
