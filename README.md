@@ -7,7 +7,7 @@
 
 ## About
 
-This is the source code for my personal academic homepage, hosted at [https://yuchenwu73.github.io](https://yuchenwu73.github.io).
+This is the source code for my personal academic homepage, hosted at [https://wycwzj.cyou](https://wycwzj.cyou).
 
 ## Features
 

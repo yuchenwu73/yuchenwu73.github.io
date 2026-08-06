@@ -7,7 +7,7 @@
 
 ## 关于
 
-这是我的个人学术主页的源代码，托管在[https://yuchenwu73.github.io](https://yuchenwu73.github.io)。
+这是我的个人学术主页的源代码，托管在 [https://wycwzj.cyou](https://wycwzj.cyou)。
 
 ## 特性
 
@@ -66,4 +66,3 @@
 - **原始模板**：[Sen Li的学术主页模板](https://github.com/senli1073/senli1073.github.io) - 一个简洁优雅的支持Markdown的学术个人网站模板
 - **Bootstrap主题**：[Start Bootstrap - New Age](https://github.com/StartBootstrap/startbootstrap-new-age) - 底层Bootstrap主题
 - **特别感谢**：感谢Sen Li创建并分享了原始模板，使本网站得以实现
-
