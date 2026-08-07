@@ -2,7 +2,7 @@
 
 你好！👋
 
-我目前是[电子科技大学](https://www.uestc.edu.cn/) [智能协同计算技术国家级重点实验室](https://icct.uestc.edu.cn/index.htm) 硕士一年级学生，专业是计算机技术，导师为[王国庆教授](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm)（国家海外优青）。我也是[未来媒体中心（CFM）](https://cfm.uestc.edu.cn/) [多模态智能组（MIG）](https://mig-uestc-lab.github.io/)的成员。
+我目前是 [电子科技大学](https://www.uestc.edu.cn/) [智能协同计算技术国家级重点实验室](https://icct.uestc.edu.cn/index.htm) 硕士一年级学生，专业是计算机技术，导师为 [王国庆教授](https://faculty.uestc.edu.cn/wangguoqing2/zh_CN/index.htm)（国家海外优青）。我也是 [未来媒体中心（CFM）](https://cfm.uestc.edu.cn/) [多模态智能组（MIG）](https://mig-uestc-lab.github.io/)的成员。
 
 ### 联系方式
 
