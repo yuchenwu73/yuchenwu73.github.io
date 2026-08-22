@@ -19,7 +19,7 @@
             Submitted to <i><b>AAAI 2027</b></i>, under review.
         </p>
         <p class="publication-links">
-            <a href="/GeoBox-R1/" target="_blank" rel="noopener noreferrer">Project Page</a>
+            <a href="/geobox-r1/" target="_blank" rel="noopener noreferrer">Project Page</a>
             <a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer">Code</a>
         </p>
     </div>

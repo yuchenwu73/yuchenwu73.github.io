@@ -22,7 +22,7 @@
             已投稿至 <i><b>AAAI 2027</b></i>，审稿中。
         </p>
         <p class="publication-links">
-            <a href="/GeoBox-R1/" target="_blank" rel="noopener noreferrer">项目主页</a>
+            <a href="/geobox-r1/" target="_blank" rel="noopener noreferrer">项目主页</a>
             <a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer">代码</a>
         </p>
     </div>

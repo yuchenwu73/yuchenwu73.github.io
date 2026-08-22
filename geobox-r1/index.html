@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level RSVG</title>
+<meta name="description" content="GeoBox-R1 unifies horizontal and oriented box-level remote sensing visual grounding via curriculum-guided SFT and geometric reinforcement learning. With 4B parameters it surpasses 7B-8B models on 7 HBB and 3 OBB benchmarks.">
+<link rel="canonical" href="https://yuchenwu73.github.io/geobox-r1/">
+<meta property="og:title" content="GeoBox-R1: Unified Box-Level Remote Sensing Visual Grounding"/>
+<meta property="og:description" content="Curriculum-guided SFT and geometric RL. 4B parameters, state of the art on 7 HBB and 3 OBB benchmarks."/>
+<meta property="og:url" content="https://yuchenwu73.github.io/geobox-r1/"/>
+<meta property="og:image" content="https://yuchenwu73.github.io/geobox-r1/static/images/fig2-pipeline.png"/>
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="static/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+<link rel="stylesheet" href="static/css/bulma.min.css">
+<link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="static/css/bulma-slider.min.css">
+<link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+<link rel="stylesheet" href="static/css/index.css">
+<style>
+.hero.is-head { background: linear-gradient(165deg,#e9eff7 0%,#dbe6f3 55%,#cddcee 100%);
+  border-bottom:1px solid #c3d3e6; padding:3.5rem 0 3rem; }
+.hero.is-head .title { color:#0f172a !important; }
+.hero.is-head .publication-authors, .hero.is-head .is-size-5 { color:#334155 !important; }
+.hero.is-head .venue { display:inline-block; margin-top:.9rem; padding:.3rem 1rem; border:1px solid #b8c7d9;
+  border-radius:999px; font-size:.95rem; letter-spacing:.02em; color:#33507a; background:#fff; }
+.hero.is-head .institution { color:#64748b !important; }
+.hero.is-head .publication-links .button.is-dark { background:#33507a; border-color:#33507a; }
+.hero.is-head .publication-links .button.is-dark:hover { background:#28405f; }
+.publication-title { font-family:'Google Sans',sans-serif; line-height:1.22; }
+.teaser-wrap { max-width:1000px; margin:0 auto; }
+.teaser-wrap video { width:100%; border-radius:12px; box-shadow:0 12px 34px rgba(15,23,42,.22); display:block; }
+.headline { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin:2.2rem auto 0; max-width:940px; }
+.headline .card { flex:1 1 190px; background:#fff; border:1px solid #e2e8f0; border-radius:12px; padding:1.1rem .8rem; text-align:center; }
+.headline .num { font-size:1.85rem; font-weight:700; color:#1e3a5f; font-family:'Google Sans',sans-serif; line-height:1.1; }
+.headline .lab { font-size:.82rem; color:#64748b; margin-top:.35rem; }
+.metric-tabs { margin-bottom:.6rem !important; }
+.metric-tabs ul { border-bottom:none !important; }
+/* 未激活：淡灰。锁死 hover/focus/active，避免 Bulma 默认深色在点击后残留，
+   两组 tab（HBB 在白底、OBB 在 hero is-light 底）才会完全一致。 */
+.metric-tabs.is-toggle li a,
+.metric-tabs.is-toggle li a:hover,
+.metric-tabs.is-toggle li a:focus,
+.metric-tabs.is-toggle li a:active,
+.hero .metric-tabs.is-toggle li a {
+  background-color:#eef2f7 !important; border-color:#dbe3ec !important; color:#64748b !important;
+  font-weight:500; box-shadow:none !important; transition:background-color .15s ease, color .15s ease; }
+.metric-tabs.is-toggle li a:hover,
+.hero .metric-tabs.is-toggle li a:hover {
+  background-color:#e2e9f2 !important; color:#33507a !important; }
+.metric-tabs.is-toggle li.is-active a,
+.metric-tabs.is-toggle li.is-active a:hover,
+.metric-tabs.is-toggle li.is-active a:focus,
+.metric-tabs.is-toggle li.is-active a:active,
+.hero .metric-tabs.is-toggle li.is-active a {
+  background-color:#d6e4f7 !important; border-color:#adc8e8 !important; color:#1d4ed8 !important;
+  font-weight:600; box-shadow:none !important; }
+.tab-pane { display:none; }
+.tab-pane.is-active { display:block; }
+.table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+table.res-table { border-collapse:collapse; margin:0 auto; font-size:.83rem; font-variant-numeric:tabular-nums; background:#fff; }
+table.res-table th, table.res-table td { padding:.42rem .58rem; text-align:right; white-space:nowrap; border:none; }
+table.res-table thead th { border-bottom:2px solid #334155; font-weight:600; color:#0f172a; text-align:right; }
+table.res-table th.model, table.res-table td.model { text-align:left; }
+table.res-table td.model { font-weight:500; }
+table.res-table th.avg, table.res-table td.avg { background:#f1f5f9; font-weight:600; }
+table.res-table tr.group td { text-align:left; font-style:italic; color:#475569; background:#f8fafc;
+  border-top:1px solid #cbd5e1; border-bottom:1px solid #e2e8f0; font-size:.8rem; padding:.34rem .58rem; }
+table.res-table tr.ours { background:#eff6ff; }
+table.res-table tr.final { background:#dbeafe; font-weight:600; }
+table.res-table tr.final td.model::before { content:"\2605 "; color:#2563eb; }
+table.res-table .best { color:#dc2626; font-weight:700; }
+table.res-table .second { color:#2563eb; text-decoration:underline; text-underline-offset:2px; }
+table.res-table.compact { font-size:.86rem; }
+table.res-table tfoot td { border-top:2px solid #334155; font-weight:700; }
+.tbl-note { font-size:.82rem; color:#64748b; text-align:center; margin-top:.7rem; }
+.two-col { display:flex; flex-wrap:wrap; gap:2rem; }
+.two-col > div { flex:1 1 320px; }
+.stage-card { background:#f8fafc; border-left:4px solid #2c5282; border-radius:8px; padding:1.1rem 1.3rem; }
+.stage-card h4 { font-family:'Google Sans',sans-serif; font-weight:600; color:#1e3a5f; margin-bottom:.5rem; }
+.fig-cap { font-size:.88rem; color:#475569; margin-top:.7rem; }
+.qual-item { margin-bottom:2.6rem; }
+.qual-item:last-child { margin-bottom:0; }
+.qual-item img { width:100%; border-radius:8px; border:1px solid #e2e8f0; background:#fff; }
+.section-tight { padding-top:2.4rem; padding-bottom:2.4rem; }
+/* 公式：块级居中，字号略小于正文以免压过文字 */
+.eq { margin:1rem 0 .3rem; text-align:center; font-size:1.02rem; overflow-x:auto; }
+.eq-note { font-size:.85rem; color:#64748b; text-align:center; margin-bottom:1.1rem; }
+mjx-container[display="true"] { margin:.6rem 0 !important; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<section class="hero is-head"><div class="hero-body"><div class="container is-max-desktop">
+<div class="columns is-centered"><div class="column has-text-centered">
+<h1 class="title is-2 publication-title">GeoBox-R1: Curriculum-Guided SFT and Geometric RL for Unified Box-Level Remote Sensing Visual Grounding</h1>
+<div class="is-size-5 publication-authors"><span class="author-block"><span class="author-block">Chenxi Lan<sup>*</sup></span>,
+<span class="author-block">Yuchen Wu<sup>*</sup></span>,
+<span class="author-block">Minghang Zhou</span>,
+<span class="author-block">Tianyu Li</span>,
+<span class="author-block">Zhihao Qiu</span>,
+<span class="author-block">Guoqing Wang<sup>†</sup></span></span></div>
+<div class="is-size-6 publication-authors institution" style="margin-top:.6rem">University of Electronic Science and Technology of China</div>
+<div class="is-size-6 publication-authors" style="margin-top:.5rem;color:#64748b"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</div>
+<div><span class="venue">Under review at AAAI 2027</span></div>
+<div class="column has-text-centered" style="margin-top:1.4rem"><div class="publication-links"><span class="link-block"><a
+   class="external-link button is-normal is-rounded is-dark">
+   <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper (coming soon)</span></a></span>
+<span class="link-block"><a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer"
+   class="external-link button is-normal is-rounded is-dark">
+   <span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+<span class="link-block"><a href="https://huggingface.co/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer"
+   class="external-link button is-normal is-rounded is-dark">
+   <span class="icon"><i class="fas fa-robot"></i></span><span>Model</span></a></span>
+<span class="link-block"><a href="https://huggingface.co/datasets/yuchenwu73/GeoBox-R1-Data" target="_blank" rel="noopener noreferrer"
+   class="external-link button is-normal is-rounded is-dark">
+   <span class="icon"><i class="fas fa-database"></i></span><span>Data</span></a></span></div></div>
+</div></div></div></div></section>
+<section class="hero teaser"><div class="container is-max-desktop"><div class="hero-body">
+<div class="teaser-wrap"><video controls autoplay muted loop playsinline><source src="static/videos/geobox-r1-demo.mp4" type="video/mp4"></video></div>
+<h2 class="subtitle has-text-centered" style="margin-top:1.1rem"><b>GeoBox-R1</b> localizes objects from natural-language expressions in aerial imagery, returning either a horizontal or an oriented box under one unified interface.</h2>
+<div class="headline">
+<div class="card"><div class="num">58.78</div><div class="lab">HBB Acc@0.5 (macro avg.)</div></div>
+<div class="card"><div class="num">47.32</div><div class="lab">OBB Acc@0.5 (macro avg.)</div></div>
+<div class="card"><div class="num">4B</div><div class="lab">parameters, beats 7B–8B</div></div>
+<div class="card"><div class="num">10</div><div class="lab">benchmarks (7 HBB + 3 OBB)</div></div>
+</div></div></div></section>
+<section class="section hero is-light section-tight"><div class="container is-max-desktop">
+<div class="columns is-centered has-text-centered"><div class="column is-four-fifths">
+<h2 class="title is-3">Abstract</h2><div class="content has-text-justified">
+<p>Remote sensing visual grounding (RSVG) aims to localize the object referred to by a natural-language expression in aerial or satellite imagery. Recent multimodal large language models (MLLMs) make unified box-level grounding feasible, but general-purpose models do not reliably produce oriented bounding boxes (OBBs) and often fall back to horizontal bounding box (HBB) outputs. Jointly training a single model for HBB and OBB prediction is also challenging, because the two tasks require different levels of semantic grounding and geometric precision.</p>
+<p>We propose <b>GeoBox-R1</b>, a two-stage training paradigm for unified box-level RSVG. It first performs <b>curriculum-guided supervised fine-tuning</b>, ordering training data from HBB grounding to OBB grounding and finally to HBB-to-OBB Chain-of-Thought supervision. It then applies <b>geometric reinforcement learning</b> via Group Reward-Decoupled Normalization Policy Optimization (GDPO), using two rule-based geometric rewards — Rotated IoU and adaptive Wasserstein distance — to refine OBB prediction.</p>
+<p>Across 7 HBB and 3 OBB benchmarks, GeoBox-R1 achieves the best macro averages on all three metrics for both tasks. With only <b>4B parameters</b>, it surpasses state-of-the-art 7B–8B models, leading by <b>3.68/4.89/2.61</b> points on HBB and <b>5.36/7.74/2.89</b> points on OBB, with the largest gains at the stricter Acc@0.7 threshold.</p>
+</div></div></div></div></section>
+<section class="section section-tight"><div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered">Motivation</h2>
+<img src="static/images/fig1-motivation.png" alt="Under an explicit OBB prompt a general-purpose MLLM returns a horizontal box, while GeoBox-R1 returns a correctly oriented box.">
+<p class="fig-cap has-text-centered">Given the query &ldquo;1 dry-cargo-ship at the bottom&rdquo; the ground truth is an oriented box around the ship. A <b>general-purpose MLLM</b> fails to produce an OBB at all and returns a horizontal box that ignores orientation. SFT makes valid OBB outputs possible, but the <b>SFT-only model</b> still fits the target loosely. Geometric RL then tightens it: <b>ours (SFT&nbsp;+&nbsp;GDPO)</b> aligns closely with the ground truth.</p>
+</div></section>
+<section class="section hero is-light section-tight"><div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered">Method</h2>
+<img src="static/images/fig2-pipeline.png" alt="Two-stage GeoBox-R1 pipeline: curriculum-guided SFT followed by GDPO geometric reinforcement learning.">
+<p class="fig-cap has-text-centered" style="margin-bottom:1.8rem">Stage 1 establishes unified box-level grounding through a curriculum. Stage 2 refines oriented localization with GDPO.</p>
+<div class="two-col">
+<div><div class="stage-card"><h4>Stage 1 — Curriculum-guided SFT</h4><p>Training data is presented easy-to-hard rather than shuffled:</p><ol><li><b>HBB grounding</b> establishes coarse semantic localization.</li><li><b>OBB grounding</b> introduces orientation and aspect-ratio sensitivity.</li><li><b>HBB-to-OBB CoT</b> supervises the reasoning that refines a coarse horizontal box into a tight oriented box.</li></ol><div class="eq">$$\mathcal{D}_{\mathrm{SFT}}=\mathcal{D}_{\mathrm{HBB}}\oplus\mathcal{D}_{\mathrm{OBB}}\oplus\mathcal{D}_{\mathrm{CoT}}$$</div><p class="eq-note">Concatenation, not shuffling &mdash; the curriculum lives in the data order, under one ordinary token-level objective.</p><p>161,692 samples: 32,638 HBB, 96,791 OBB, 32,263 CoT.</p></div></div>
+<div><div class="stage-card"><h4>Stage 2 — Geometric RL with GDPO</h4><p>Two rule-based geometric rewards, no learned reward model:</p><ul><li><b>Rotated IoU</b> gives direct overlap supervision for oriented boxes.</li><li><b>Adaptive Wasserstein distance</b> stays informative when RIoU saturates near zero, common for small or elongated targets.</li></ul><div class="eq">$$r^{\mathrm{WD}}=\frac{\tau}{\tau+W_2},\qquad\tau=\tau_c\sqrt{\mathrm{Tr}(\boldsymbol{\Sigma}_g)}$$</div><p class="eq-note">Scaling $\tau$ with target size keeps reward sensitivity comparable across scales; a fixed $\tau$ systematically under-rewards large objects.</p><p>Equal weights ($\lambda_k=0.5$ each), on a 20% OBB subset (19,357 of 96,791).</p></div></div>
+</div>
+<div style="margin-top:2.2rem">
+<h4 style="font-family:'Google Sans',sans-serif;font-weight:600;color:#1e3a5f;text-align:center;margin-bottom:.2rem">Reward-decoupled advantage</h4>
+<div class="eq">$$\tilde{A}_i=\sum_{k\in\{\mathrm{RIoU},\mathrm{WD}\}}\lambda_k\,\frac{r_i^{(k)}-\bar{r}^{(k)}}{\sigma^{(k)}+\varepsilon}\qquad\qquad\hat{A}_i=\frac{\tilde{A}_i-\mu_{\mathcal{B}}(\tilde{A})}{\sigma_{\mathcal{B}}(\tilde{A})+\varepsilon}$$</div>
+<p class="eq-note">Each reward channel is normalized within its own group of $G$ completions before the two are combined, so the channel with the larger numeric range cannot dominate. A second normalization over the mini-batch $\mathcal{B}$ then stabilizes the advantage scale under both geometric objectives.</p>
+</div>
+</div></div></section>
+<section class="section section-tight"><div class="container">
+<h2 class="title is-3 has-text-centered">HBB grounding — 7 evaluation sets</h2>
+<p class="has-text-centered" style="margin-bottom:1.2rem;color:#475569">Switch metric with the buttons. <span class="best" style="font-weight:700">Red</span> is best, <span class="second">blue underline</span> is second best, across the whole table.</p>
+<div class="tabs is-toggle is-centered metric-tabs" data-group="hbb"><ul><li class="is-active"><a data-tab="hbb-acc05">Acc@0.5</a></li><li class=""><a data-tab="hbb-acc07">Acc@0.7</a></li><li class=""><a data-tab="hbb-overlap">mIoU</a></li></ul></div>
+<div class="tab-panes" data-group="hbb"><div class="tab-pane is-active" id="pane-hbb-acc05"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>DIOR-RSVG-Test</th>
+<th>DIOR-RSVG-Val</th>
+<th>RSVG-Test</th>
+<th>RSVG-Val</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="group"><td colspan="10">General-Purpose MLLMs</td></tr>
+<tr class="">
+<td class="model">InternVL3</td><td>2B</td>
+<td>15.01</td>
+<td>13.60</td>
+<td>0.24</td>
+<td>0.33</td>
+<td>11.09</td>
+<td>5.51</td>
+<td>2.15</td>
+<td class="avg">6.85</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>4B</td>
+<td>18.39</td>
+<td>16.68</td>
+<td>1.79</td>
+<td>1.25</td>
+<td>11.92</td>
+<td>7.98</td>
+<td>1.69</td>
+<td class="avg">8.53</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>8B</td>
+<td>23.59</td>
+<td>22.63</td>
+<td>1.14</td>
+<td>1.50</td>
+<td>18.42</td>
+<td>13.39</td>
+<td>1.65</td>
+<td class="avg">11.76</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3</td><td>8B</td>
+<td>29.94</td>
+<td>27.44</td>
+<td>1.14</td>
+<td>1.58</td>
+<td>24.79</td>
+<td>19.45</td>
+<td>6.12</td>
+<td class="avg">15.78</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>3B</td>
+<td>37.52</td>
+<td>37.90</td>
+<td>13.69</td>
+<td>14.32</td>
+<td>36.07</td>
+<td>36.74</td>
+<td>18.83</td>
+<td class="avg">27.87</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>7B</td>
+<td>40.31</td>
+<td>38.59</td>
+<td>14.83</td>
+<td>16.74</td>
+<td>41.84</td>
+<td>41.51</td>
+<td>21.91</td>
+<td class="avg">30.82</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>4B</td>
+<td>51.91</td>
+<td>51.38</td>
+<td>33.17</td>
+<td>32.89</td>
+<td>49.17</td>
+<td>51.42</td>
+<td>23.93</td>
+<td class="avg">42.01</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>8B</td>
+<td>54.14</td>
+<td>53.68</td>
+<td>33.82</td>
+<td>34.80</td>
+<td>50.73</td>
+<td>53.55</td>
+<td>25.22</td>
+<td class="avg">43.70</td>
+</tr>
+<tr class="group"><td colspan="10">Remote Sensing MLLMs</td></tr>
+<tr class="">
+<td class="model">LHRS-Bot</td><td>7B</td>
+<td>13.15</td>
+<td>12.56</td>
+<td>0.65</td>
+<td>0.33</td>
+<td>2.16</td>
+<td>1.21</td>
+<td>0.15</td>
+<td class="avg">4.32</td>
+</tr>
+<tr class="">
+<td class="model">LHRS-Bot-Nova</td><td>8B</td>
+<td>31.31</td>
+<td>29.75</td>
+<td>2.12</td>
+<td>1.75</td>
+<td>26.13</td>
+<td>12.54</td>
+<td>1.04</td>
+<td class="avg">14.95</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>31.04</td>
+<td>29.16</td>
+<td>2.44</td>
+<td>4.16</td>
+<td>36.69</td>
+<td>14.38</td>
+<td>0.31</td>
+<td class="avg">16.88</td>
+</tr>
+<tr class="group"><td colspan="10">Supervised Fine-Tuning on refGeo</td></tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>45.42</td>
+<td>43.37</td>
+<td>2.20</td>
+<td>3.41</td>
+<td>35.81</td>
+<td>27.56</td>
+<td>0.78</td>
+<td class="avg">22.65</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>57.15</td>
+<td>56.12</td>
+<td>8.56</td>
+<td>10.32</td>
+<td>40.15</td>
+<td>36.29</td>
+<td>9.58</td>
+<td class="avg">31.17</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>61.49</td>
+<td>59.73</td>
+<td>20.70</td>
+<td>22.81</td>
+<td>45.49</td>
+<td>37.60</td>
+<td>10.00</td>
+<td class="avg">36.83</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>68.09</td>
+<td>66.72</td>
+<td>39.85</td>
+<td>34.55</td>
+<td>52.44</td>
+<td>57.26</td>
+<td>27.11</td>
+<td class="avg">49.43</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td><span class="best">77.70</span></td>
+<td><span class="best">77.13</span></td>
+<td>26.65</td>
+<td>27.81</td>
+<td><span class="best">69.76</span></td>
+<td><span class="second">65.76</span></td>
+<td>21.60</td>
+<td class="avg">52.35</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>74.83</td>
+<td>75.06</td>
+<td>46.05</td>
+<td>44.05</td>
+<td>59.23</td>
+<td>58.05</td>
+<td>28.41</td>
+<td class="avg">55.10</td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td>74.91</td>
+<td>74.21</td>
+<td><span class="second">48.57</span></td>
+<td><span class="second">46.29</span></td>
+<td><span class="second">61.39</span></td>
+<td>64.45</td>
+<td><span class="second">30.33</span></td>
+<td class="avg"><span class="second">57.17</span></td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="second">76.61</span></td>
+<td><span class="second">75.11</span></td>
+<td><span class="best">51.26</span></td>
+<td><span class="best">48.38</span></td>
+<td>61.13</td>
+<td><span class="best">66.84</span></td>
+<td><span class="best">32.14</span></td>
+<td class="avg"><span class="best">58.78</span></td>
+</tr>
+</tbody></table></div></div>
+<div class="tab-pane" id="pane-hbb-acc07"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>DIOR-RSVG-Test</th>
+<th>DIOR-RSVG-Val</th>
+<th>RSVG-Test</th>
+<th>RSVG-Val</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="group"><td colspan="10">General-Purpose MLLMs</td></tr>
+<tr class="">
+<td class="model">InternVL3</td><td>2B</td>
+<td>6.95</td>
+<td>6.61</td>
+<td>0.00</td>
+<td>0.08</td>
+<td>5.09</td>
+<td>1.67</td>
+<td>0.42</td>
+<td class="avg">2.98</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>4B</td>
+<td>4.10</td>
+<td>3.72</td>
+<td>0.24</td>
+<td>0.08</td>
+<td>2.03</td>
+<td>1.18</td>
+<td>0.07</td>
+<td class="avg">1.63</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>8B</td>
+<td>6.36</td>
+<td>6.14</td>
+<td>0.16</td>
+<td>0.25</td>
+<td>3.33</td>
+<td>2.55</td>
+<td>0.10</td>
+<td class="avg">2.70</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3</td><td>8B</td>
+<td>16.50</td>
+<td>14.82</td>
+<td>0.41</td>
+<td>0.33</td>
+<td>10.11</td>
+<td>6.89</td>
+<td>2.87</td>
+<td class="avg">7.42</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>3B</td>
+<td>25.98</td>
+<td>26.72</td>
+<td>8.15</td>
+<td>8.91</td>
+<td>19.68</td>
+<td>19.10</td>
+<td>12.56</td>
+<td class="avg">17.30</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>7B</td>
+<td>26.77</td>
+<td>25.13</td>
+<td>7.91</td>
+<td>10.16</td>
+<td>21.65</td>
+<td>21.18</td>
+<td>15.07</td>
+<td class="avg">18.27</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>4B</td>
+<td>38.16</td>
+<td>37.05</td>
+<td>20.05</td>
+<td>19.57</td>
+<td>28.29</td>
+<td>28.80</td>
+<td>18.99</td>
+<td class="avg">27.27</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>8B</td>
+<td>41.50</td>
+<td>40.50</td>
+<td>20.13</td>
+<td>19.98</td>
+<td>29.23</td>
+<td>29.80</td>
+<td>18.55</td>
+<td class="avg">28.53</td>
+</tr>
+<tr class="group"><td colspan="10">Remote Sensing MLLMs</td></tr>
+<tr class="">
+<td class="model">LHRS-Bot</td><td>7B</td>
+<td>3.02</td>
+<td>3.24</td>
+<td>0.08</td>
+<td>0.08</td>
+<td>0.30</td>
+<td>0.22</td>
+<td>0.02</td>
+<td class="avg">0.99</td>
+</tr>
+<tr class="">
+<td class="model">LHRS-Bot-Nova</td><td>8B</td>
+<td>12.36</td>
+<td>11.66</td>
+<td>0.24</td>
+<td>0.17</td>
+<td>8.68</td>
+<td>2.67</td>
+<td>0.00</td>
+<td class="avg">5.11</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>8.72</td>
+<td>8.18</td>
+<td>0.24</td>
+<td>0.42</td>
+<td>13.57</td>
+<td>3.16</td>
+<td>0.00</td>
+<td class="avg">4.90</td>
+</tr>
+<tr class="group"><td colspan="10">Supervised Fine-Tuning on refGeo</td></tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>21.40</td>
+<td>20.42</td>
+<td>0.41</td>
+<td>0.75</td>
+<td>14.44</td>
+<td>8.45</td>
+<td>0.10</td>
+<td class="avg">9.42</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>38.17</td>
+<td>36.73</td>
+<td>2.12</td>
+<td>1.92</td>
+<td>17.07</td>
+<td>14.94</td>
+<td>3.71</td>
+<td class="avg">16.38</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>40.97</td>
+<td>39.63</td>
+<td>5.05</td>
+<td>6.24</td>
+<td>16.50</td>
+<td>14.51</td>
+<td>2.41</td>
+<td class="avg">17.90</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>53.42</td>
+<td>53.23</td>
+<td>20.54</td>
+<td>17.32</td>
+<td>29.47</td>
+<td>34.31</td>
+<td>19.73</td>
+<td class="avg">32.57</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td><span class="best">64.98</span></td>
+<td><span class="second">63.00</span></td>
+<td>10.02</td>
+<td>9.08</td>
+<td><span class="best">50.66</span></td>
+<td>39.05</td>
+<td>8.37</td>
+<td class="avg">35.02</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>62.76</td>
+<td>61.57</td>
+<td>25.51</td>
+<td>25.81</td>
+<td>32.03</td>
+<td>33.70</td>
+<td>19.91</td>
+<td class="avg">37.33</td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td>62.46</td>
+<td>62.23</td>
+<td><span class="second">29.42</span></td>
+<td><span class="second">28.73</span></td>
+<td>35.13</td>
+<td><span class="second">39.58</span></td>
+<td><span class="second">24.74</span></td>
+<td class="avg"><span class="second">40.33</span></td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="second">64.78</span></td>
+<td><span class="best">63.13</span></td>
+<td><span class="best">32.60</span></td>
+<td><span class="best">31.97</span></td>
+<td><span class="second">35.49</span></td>
+<td><span class="best">41.16</span></td>
+<td><span class="best">26.39</span></td>
+<td class="avg"><span class="best">42.22</span></td>
+</tr>
+</tbody></table></div></div>
+<div class="tab-pane" id="pane-hbb-overlap"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>DIOR-RSVG-Test</th>
+<th>DIOR-RSVG-Val</th>
+<th>RSVG-Test</th>
+<th>RSVG-Val</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="group"><td colspan="10">General-Purpose MLLMs</td></tr>
+<tr class="">
+<td class="model">InternVL3</td><td>2B</td>
+<td>20.74</td>
+<td>19.52</td>
+<td>1.73</td>
+<td>2.16</td>
+<td>14.93</td>
+<td>11.08</td>
+<td>3.58</td>
+<td class="avg">10.53</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>4B</td>
+<td>24.63</td>
+<td>23.88</td>
+<td>4.88</td>
+<td>5.26</td>
+<td>20.34</td>
+<td>16.70</td>
+<td>5.30</td>
+<td class="avg">14.43</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5</td><td>8B</td>
+<td>27.58</td>
+<td>26.91</td>
+<td>4.08</td>
+<td>3.86</td>
+<td>24.19</td>
+<td>21.44</td>
+<td>4.02</td>
+<td class="avg">16.01</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3</td><td>8B</td>
+<td>30.56</td>
+<td>29.47</td>
+<td>3.99</td>
+<td>5.14</td>
+<td>26.38</td>
+<td>23.67</td>
+<td>6.94</td>
+<td class="avg">18.02</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>3B</td>
+<td>37.47</td>
+<td>37.29</td>
+<td>14.62</td>
+<td>15.48</td>
+<td>34.83</td>
+<td>35.25</td>
+<td>15.36</td>
+<td class="avg">27.18</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL</td><td>7B</td>
+<td>39.29</td>
+<td>38.09</td>
+<td>15.50</td>
+<td>16.97</td>
+<td>38.51</td>
+<td>38.76</td>
+<td>17.78</td>
+<td class="avg">29.27</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>4B</td>
+<td>48.21</td>
+<td>47.58</td>
+<td>30.72</td>
+<td>30.45</td>
+<td>43.37</td>
+<td>45.21</td>
+<td>19.79</td>
+<td class="avg">37.90</td>
+</tr>
+<tr class="">
+<td class="model">Qwen3-VL</td><td>8B</td>
+<td>50.81</td>
+<td>49.63</td>
+<td>31.81</td>
+<td>30.78</td>
+<td>44.37</td>
+<td>46.72</td>
+<td>20.21</td>
+<td class="avg">39.19</td>
+</tr>
+<tr class="group"><td colspan="10">Remote Sensing MLLMs</td></tr>
+<tr class="">
+<td class="model">LHRS-Bot</td><td>7B</td>
+<td>18.37</td>
+<td>18.22</td>
+<td>1.68</td>
+<td>1.04</td>
+<td>7.24</td>
+<td>6.14</td>
+<td>1.31</td>
+<td class="avg">7.71</td>
+</tr>
+<tr class="">
+<td class="model">LHRS-Bot-Nova</td><td>8B</td>
+<td>30.99</td>
+<td>29.89</td>
+<td>4.80</td>
+<td>4.12</td>
+<td>26.92</td>
+<td>19.55</td>
+<td>3.51</td>
+<td class="avg">17.11</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>32.52</td>
+<td>31.54</td>
+<td>7.99</td>
+<td>9.74</td>
+<td>36.17</td>
+<td>23.66</td>
+<td>1.86</td>
+<td class="avg">20.50</td>
+</tr>
+<tr class="group"><td colspan="10">Supervised Fine-Tuning on refGeo</td></tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>41.20</td>
+<td>39.93</td>
+<td>4.93</td>
+<td>6.10</td>
+<td>35.35</td>
+<td>31.69</td>
+<td>3.07</td>
+<td class="avg">23.18</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>50.18</td>
+<td>49.41</td>
+<td>12.67</td>
+<td>14.91</td>
+<td>37.34</td>
+<td>36.52</td>
+<td>10.70</td>
+<td class="avg">30.25</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>53.04</td>
+<td>51.90</td>
+<td>24.28</td>
+<td>24.37</td>
+<td>40.63</td>
+<td>38.13</td>
+<td>11.64</td>
+<td class="avg">34.86</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>59.85</td>
+<td>59.09</td>
+<td>34.68</td>
+<td>30.74</td>
+<td>45.66</td>
+<td>49.19</td>
+<td>22.36</td>
+<td class="avg">43.08</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td><span class="best">68.28</span></td>
+<td><span class="best">67.54</span></td>
+<td>28.15</td>
+<td>27.08</td>
+<td><span class="best">57.97</span></td>
+<td><span class="best">56.27</span></td>
+<td>22.28</td>
+<td class="avg">46.80</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>65.99</td>
+<td>65.71</td>
+<td>40.08</td>
+<td>39.19</td>
+<td>48.16</td>
+<td>50.57</td>
+<td>24.74</td>
+<td class="avg">47.78</td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td>65.99</td>
+<td>65.55</td>
+<td><span class="second">40.51</span></td>
+<td><span class="second">39.75</span></td>
+<td>50.34</td>
+<td>54.28</td>
+<td><span class="second">25.32</span></td>
+<td class="avg"><span class="second">48.82</span></td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="second">67.50</span></td>
+<td><span class="second">66.57</span></td>
+<td><span class="best">42.99</span></td>
+<td><span class="best">42.00</span></td>
+<td><span class="second">51.25</span></td>
+<td><span class="second">55.74</span></td>
+<td><span class="best">26.68</span></td>
+<td class="avg"><span class="best">50.39</span></td>
+</tr>
+</tbody></table></div></div></div>
+<p class="tbl-note">* denotes a modified test split. GeoGround leads on DIOR-RSVG and GeoChat*, GeoBox-R1 leads on RSVG and AVVG — the macro-average gain reflects complementary per-dataset behavior rather than uniform dominance.</p>
+</div></section>
+<section class="section hero is-light section-tight"><div class="container">
+<h2 class="title is-3 has-text-centered">OBB grounding — 3 evaluation sets</h2>
+<div class="tabs is-toggle is-centered metric-tabs" data-group="obb"><ul><li class="is-active"><a data-tab="obb-acc05">Acc@0.5</a></li><li class=""><a data-tab="obb-acc07">Acc@0.7</a></li><li class=""><a data-tab="obb-overlap">mIoU</a></li></ul></div>
+<div class="tab-panes" data-group="obb"><div class="tab-pane is-active" id="pane-obb-acc05"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>31.73</td>
+<td>11.76</td>
+<td>0.10</td>
+<td class="avg">14.53</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>28.95</td>
+<td>21.78</td>
+<td>0.26</td>
+<td class="avg">17.00</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>24.57</td>
+<td>19.82</td>
+<td>0.98</td>
+<td class="avg">15.12</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>33.23</td>
+<td>23.87</td>
+<td>2.69</td>
+<td class="avg">19.93</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>49.36</td>
+<td>41.67</td>
+<td>16.13</td>
+<td class="avg">35.72</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>49.79</td>
+<td>42.01</td>
+<td>15.43</td>
+<td class="avg">35.74</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td><span class="second">58.72</span></td>
+<td><span class="second">53.26</span></td>
+<td>13.89</td>
+<td class="avg">41.96</td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td>55.96</td>
+<td>51.14</td>
+<td><span class="second">22.23</span></td>
+<td class="avg"><span class="second">43.11</span></td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="best">60.56</span></td>
+<td><span class="best">56.61</span></td>
+<td><span class="best">24.79</span></td>
+<td class="avg"><span class="best">47.32</span></td>
+</tr>
+</tbody></table></div></div>
+<div class="tab-pane" id="pane-obb-acc07"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>8.27</td>
+<td>2.04</td>
+<td>0.00</td>
+<td class="avg">3.43</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>11.07</td>
+<td>5.80</td>
+<td>0.03</td>
+<td class="avg">5.64</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>5.26</td>
+<td>7.48</td>
+<td>0.15</td>
+<td class="avg">4.30</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>9.76</td>
+<td>8.71</td>
+<td>0.59</td>
+<td class="avg">6.35</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>22.65</td>
+<td>21.55</td>
+<td>8.63</td>
+<td class="avg">17.61</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>23.10</td>
+<td>20.65</td>
+<td>7.40</td>
+<td class="avg">17.05</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td>25.49</td>
+<td><span class="second">29.82</span></td>
+<td>4.10</td>
+<td class="avg">19.81</td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td><span class="second">30.45</span></td>
+<td>27.69</td>
+<td><span class="second">15.07</span></td>
+<td class="avg"><span class="second">24.40</span></td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="best">35.19</span></td>
+<td><span class="best">30.55</span></td>
+<td><span class="best">16.89</span></td>
+<td class="avg"><span class="best">27.55</span></td>
+</tr>
+</tbody></table></div></div>
+<div class="tab-pane" id="pane-obb-overlap"><div class="table-scroll"><table class="res-table">
+<thead><tr><th class="model">Model</th><th>Params</th>
+<th>GeoChat*</th>
+<th>VRSBench*</th>
+<th>AVVG</th>
+<th class="avg">Avg.</th>
+</tr></thead><tbody>
+<tr class="">
+<td class="model">GeoChat</td><td>7B</td>
+<td>31.25</td>
+<td>21.26</td>
+<td>1.08</td>
+<td class="avg">17.87</td>
+</tr>
+<tr class="">
+<td class="model">GeoChat (SFT)</td><td>7B</td>
+<td>30.14</td>
+<td>27.70</td>
+<td>1.97</td>
+<td class="avg">19.94</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>2B</td>
+<td>27.28</td>
+<td>24.84</td>
+<td>4.35</td>
+<td class="avg">18.82</td>
+</tr>
+<tr class="">
+<td class="model">LLaVA-OV-1.5 (SFT)</td><td>4B</td>
+<td>33.18</td>
+<td>28.54</td>
+<td>6.14</td>
+<td class="avg">22.62</td>
+</tr>
+<tr class="">
+<td class="model">Qwen2.5-VL (SFT)</td><td>3B</td>
+<td>40.46</td>
+<td>39.98</td>
+<td>15.12</td>
+<td class="avg">31.86</td>
+</tr>
+<tr class="">
+<td class="model">InternVL3 (SFT)</td><td>8B</td>
+<td>41.66</td>
+<td>40.68</td>
+<td>15.39</td>
+<td class="avg">32.58</td>
+</tr>
+<tr class="">
+<td class="model">GeoGround</td><td>7B</td>
+<td><span class="second">46.89</span></td>
+<td><span class="second">48.35</span></td>
+<td>15.64</td>
+<td class="avg"><span class="second">36.96</span></td>
+</tr>
+<tr class="ours">
+<td class="model">GeoBox-R1 (SFT)</td><td>4B</td>
+<td>45.45</td>
+<td>45.91</td>
+<td><span class="second">19.20</span></td>
+<td class="avg">36.85</td>
+</tr>
+<tr class="ours final">
+<td class="model">GeoBox-R1 (SFT + GDPO)</td><td>4B</td>
+<td><span class="best">48.92</span></td>
+<td><span class="best">49.43</span></td>
+<td><span class="best">21.18</span></td>
+<td class="avg"><span class="best">39.85</span></td>
+</tr>
+</tbody></table></div></div></div>
+<p class="tbl-note">GDPO lifts the SFT checkpoint from 43.11 to 47.32 average Acc@0.5, leading GeoGround by 5.36 / 7.74 / 2.89 points across the three metrics.</p>
+</div></section>
+<section class="section hero is-light section-tight"><div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered">Qualitative comparisons</h2>
+<div class="qual-item"><img src="static/images/fig3-qualitative-hbb.png" alt=""><p class="fig-cap"><b>HBB grounding.</b> Qwen3-VL selects a coarse salient region and GeoGround drifts toward nearby structures, while GeoBox-R1 resolves the storage tank's relation to the reference court, captures the stadium extent tightly, and follows the rightward cue for the tennis court. Green: ground truth; red: Qwen3-VL; purple: GeoGround; blue: GeoBox-R1.</p></div>
+<div class="qual-item"><img src="static/images/fig4-qualitative-obb.png" alt=""><p class="fig-cap"><b>OBB grounding.</b> Prompted for oriented boxes, Qwen3-VL falls back to horizontal boxes and GeoGround shows corner or angle offsets, while GeoBox-R1 aligns tightly with elongated ships and airplanes where orientation and aspect ratio are critical.</p></div>
+<div class="qual-item"><img src="static/images/fig5-qualitative-cot.png" alt=""><p class="fig-cap"><b>HBB-to-OBB Chain-of-Thought.</b> Three challenging car-grounding queries: a tiny target, dense distractors, and an ambiguous expression. Yellow marks the coarse HBB cue and zoom region; blue is the refined OBB; green is ground truth.</p></div>
+</div></section>
+<section class="section section-tight"><div class="container is-max-desktop">
+<h2 class="title is-3 has-text-centered">Data</h2>
+<p class="has-text-centered" style="margin-bottom:1.4rem;color:#475569">Training data is built on <b>refGeo</b>, aggregating five remote sensing grounding sources.</p>
+<div class="two-col">
+<div><h4 class="title is-6 has-text-centered">SFT mixture</h4><div class="table-scroll"><table class="res-table compact">
+<thead><tr>
+<th>Source</th>
+<th>HBB</th>
+<th>OBB</th>
+<th>CoT</th>
+<th>Total</th>
+</tr></thead><tbody>
+<tr><td>DIOR-RSVG</td><td>27,133</td><td>0</td><td>0</td><td>27,133</td></tr>
+<tr><td>RSVG</td><td>5,505</td><td>0</td><td>0</td><td>5,505</td></tr>
+<tr><td>GeoChat</td><td>0</td><td>47,912</td><td>15,971</td><td>63,883</td></tr>
+<tr><td>VRSBench</td><td>0</td><td>29,017</td><td>9,672</td><td>38,689</td></tr>
+<tr><td>AVVG</td><td>0</td><td>19,862</td><td>6,620</td><td>26,482</td></tr>
+</tbody>
+<tfoot><tr><td>Total</td><td>32,638</td><td>96,791</td><td>32,263</td><td>161,692</td></tr></tfoot>
+</table></div></div>
+<div><h4 class="title is-6 has-text-centered">OBB-only RL subset</h4><div class="table-scroll"><table class="res-table compact">
+<thead><tr>
+<th>Source</th>
+<th>Full OBB pool</th>
+<th>20% subset</th>
+</tr></thead><tbody>
+<tr><td>GeoChat</td><td>47,912</td><td>9,582</td></tr>
+<tr><td>VRSBench</td><td>29,017</td><td>5,803</td></tr>
+<tr><td>AVVG</td><td>19,862</td><td>3,972</td></tr>
+</tbody>
+<tfoot><tr><td>Total</td><td>96,791</td><td>19,357</td></tr></tfoot>
+</table></div><p class="tbl-note">The 20% subset used for GDPO.</p></div>
+</div></div></section>
+<section class="section hero is-light section-tight"><div class="container is-max-desktop content">
+<h2 class="title is-3 has-text-centered">Implementation</h2>
+<p>GeoBox-R1 is instantiated on <b>Qwen3-VL-4B-Instruct</b>; both stages use <a href="https://github.com/modelscope/ms-swift">ms-swift</a>.</p><ul><li><b>SFT</b> — LoRA (rank 16, alpha 32) with the vision encoder and merger frozen, learning rate $1\times10^{-4}$, one epoch, on 2&times; RTX 4090 (24 GB).</li><li><b>RL</b> — continues from the SFT checkpoint with a frozen copy as the reference policy: $G=8$ rollouts per group, $\beta=0.02$, $\tau_c=8$, learning rate $5\times10^{-6}$, one epoch, on 3&times; A100 (40 GB) — one vLLM rollout server and two GDPO workers.</li></ul>
+</div></section>
+<section class="section" id="BibTeX"><div class="container is-max-desktop content">
+<h2 class="title">BibTeX</h2><pre><code>@inproceedings{geoboxr1,
+  title     = {GeoBox-R1: Curriculum-Guided SFT and Geometric RL for
+               Unified Box-Level Remote Sensing Visual Grounding},
+  author    = {Lan, Chenxi and Wu, Yuchen and Zhou, Minghang and
+               Li, Tianyu and Qiu, Zhihao and Wang, Guoqing},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year      = {2027},
+  note      = {Under review}
+}</code></pre></div></section>
+<footer class="footer"><div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content has-text-centered"><p>This page uses the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, adapted from <a href="https://nerfies.github.io">Nerfies</a>. Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p></div></div></div></div></footer>
+
+<script src="static/js/bulma-slider.min.js"></script>
+<script src="static/js/fontawesome.all.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // 指标 tab 切换
+  document.querySelectorAll('.metric-tabs').forEach(function (tabs) {
+    var group = tabs.dataset.group;
+    tabs.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        tabs.querySelectorAll('li').forEach(function (li) { li.classList.remove('is-active'); });
+        a.parentElement.classList.add('is-active');
+        document.querySelectorAll('.tab-panes[data-group="' + group + '"] .tab-pane')
+          .forEach(function (p) { p.classList.remove('is-active'); });
+        var pane = document.getElementById('pane-' + a.dataset.tab);
+        if (pane) pane.classList.add('is-active');
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
