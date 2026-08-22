@@ -24,7 +24,19 @@
         <p class="publication-links">
             <a href="/geobox-r1/" target="_blank" rel="noopener noreferrer">项目主页</a>
             <a href="https://github.com/yuchenwu73/GeoBox-R1" target="_blank" rel="noopener noreferrer">代码</a>
+            <button type="button" class="bibtex-button" data-bibtex-id="bibtex-geoboxr1">BibTeX</button>
         </p>
+        <script type="application/x-bibtex" id="bibtex-geoboxr1">
+@misc{geoboxr1,
+  title  = {GeoBox-R1: Curriculum-Guided SFT and Geometric RL for
+            Unified Box-Level Remote Sensing Visual Grounding},
+  author = {Lan, Chenxi and Wu, Yuchen and Zhou, Minghang and
+            Li, Tianyu and Qiu, Zhihao and Wang, Guoqing},
+  year   = {2026},
+  url    = {https://yuchenwu73.github.io/geobox-r1/},
+  note   = {Preprint}
+}
+        </script>
     </div>
 </div>
 
