@@ -1,7 +1,8 @@
-- 👑 Outstanding Postgraduate Student Cadre, UESTC, 2026
-- 🏆 Outstanding Undergraduate Graduation Thesis (1/19 in Anhui Province), ACF, 2025
-- 🎓 Outstanding Graduate, Anhui Province, 2025
-- 💰 The Hongda Blasting Scholarship (5/3766), AUST, 2024
-- 🥇 The First Prize Scholarship (Top 3%), AUST, 2024, 2023
-- 🌟 Pacemaker to Merit Student (Top 1%), AUST, 2024
-- 👑 Pacemaker to Excellent Student Cadre (Top 0.4%), AUST, 2023
+- 🏅 **National Scholarship, Ministry of Education, 2026**
+- 🥇 **The First Prize Scholarship, UESTC, 2026**
+- 👑 **Outstanding Postgraduate Student Cadre, UESTC, 2026**
+- 🎓 **Outstanding Graduate, Anhui Province, 2025**
+- 🏆 **Outstanding Undergraduate Graduation Thesis (1/19 in Anhui Province), ACF, 2025**
+- 🥇 **The First Prize Scholarship (Top 3%), AUST, 2024, 2023**
+- 🌟 **Pacemaker to Merit Student (Top 1%), AUST, 2024**
+- 👑 **Pacemaker to Excellent Student Cadre (Top 0.4%), AUST, 2023**
